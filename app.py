@@ -7,14 +7,93 @@ from models.item import SALVAGE_KIT
 from models.recipes import Recipes
 
 app = Flask(__name__)
+data = Data()
 
 
 @app.route('/')
 def index():
-    recipes = (("Golem's Firm Axe", 40),)
-    data = Data()
+    return """
+    <a href="calculator">Calculator</a><br/>
+    <a href="equipment">Equipment</a><br/>
+    <a href="recipes">Recipes</a><br/>
+"""
+
+
+@app.route('/equipment')
+def equipment():
+    return """
+<table>
+    <tr>
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+    </tr>
+    <tr>
+        <th>Weapon</th>
+        <td>
+            Kobold's Axe<br/>
+            Merrow's Axe
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            Kobold's Firm Axe<br/>
+            Merrow's Calming Axe
+        </td>
+    </tr>
+    <tr>
+        <th>Shield</th>
+        <td></td>
+        <td>
+            Kobold's Shield<br/>
+            Merrow's Shield
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>Armor</th>
+        <td></td>
+        <td>
+            Kobold's Armor<br/>
+            Merrow's Armor
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>...</th>
+        <td></td>
+        <td></td>
+        <td>...</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>"""
+
+
+@app.route('/recipes')
+def recipes():
+    value = ''
+    for recipe in data.all_recipes():
+        value += '{}<br/>'.format(recipe)
+
+    return value
+
+
+@app.route('/calculator')
+def calculator():
+    recipes_to_calculate = (("Golem's Firm Axe", 40),)
     recipes_ = Recipes(data)
-    for recipe_name, quantity in recipes:
+    for recipe_name, quantity in recipes_to_calculate:
         recipes_.add(data.get_recipe(recipe_name), quantity)
     recipes_.calculate(salvaging=True)
 

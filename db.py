@@ -64,3 +64,6 @@ class Data:
             self._salvage_kit = self.get_item(SALVAGE_KIT)
 
         return self._salvage_kit
+
+    def all_recipes(self):
+        return self._recipes.values()
