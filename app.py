@@ -1,13 +1,14 @@
 from math import trunc
 
-from flask import Flask
 from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
 
 from db import Data
 from models.item import SALVAGE_KIT
 from models.recipes import Recipes
 
 app = Flask(__name__)
+bootstrap = Bootstrap(app)
 data = Data()
 
 

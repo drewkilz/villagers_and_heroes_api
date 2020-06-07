@@ -1,3 +1,4 @@
 dacite
 flask
+flask-bootstrap
 gunicorn
