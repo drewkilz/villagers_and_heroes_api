@@ -1,6 +1,7 @@
 from math import trunc
 
 from flask import Flask
+from flask import Flask, render_template
 
 from db import Data
 from models.item import SALVAGE_KIT
@@ -82,11 +83,7 @@ def equipment():
 
 @app.route('/recipes')
 def recipes():
-    value = ''
-    for recipe in data.all_recipes():
-        value += '{}<br/>'.format(recipe)
-
-    return value
+    return render_template('recipes.html', recipes=data.all_recipes())
 
 
 @app.route('/calculator')
