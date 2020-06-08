@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ super() }}
+    Internal Server Error
+{% endblock %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>Internal Server Error</h1>
+        <p>Bollocks, the developer screwed something up in the code.</p>
+        <p>Try again later and hopefully it will have been fixed!</p>
+    </div>
+{% endblock %}
