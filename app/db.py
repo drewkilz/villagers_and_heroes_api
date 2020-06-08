@@ -2,13 +2,15 @@
 
 from csv import DictReader
 from dataclasses import fields
+import os
 from typing import Type, Dict, Any
 
 from dacite.exceptions import MissingValueError
+from flask import current_app as app
 
-from models.item import Item, SALVAGE_KIT
-from models.object import Object
-from models.recipe import Recipe
+from .models.item import Item, SALVAGE_KIT
+from .models.object import Object
+from .models.recipe import Recipe
 
 
 class Data:
@@ -17,8 +19,8 @@ class Data:
     _salvage_kit: Item = None
 
     def __init__(self):
-        self._items = self.__get_data(r'data/items.csv', Item, 'name')
-        self._recipes = self.__get_data(r'data/recipes.csv', Recipe, 'name')
+        self._items = self.__get_data(r'app/data/items.csv', Item, 'name')
+        self._recipes = self.__get_data(r'app/data/recipes.csv', Recipe, 'name')
 
     def __get_data(self, file_path: str, class_: Type[Object], key: str) -> Dict[str, Any]:
         objects = {}

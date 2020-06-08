@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from typing import Union
 from math import trunc
 
-from models.item import Item
-from models.recipe import Recipe
+from .item import Item
+from .recipe import Recipe
 
 
 @dataclass

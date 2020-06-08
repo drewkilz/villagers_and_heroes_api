@@ -1,4 +1,5 @@
 dacite
 flask
 flask-bootstrap
+flask-wtf
 gunicorn

@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn villagers_and_heroes:app

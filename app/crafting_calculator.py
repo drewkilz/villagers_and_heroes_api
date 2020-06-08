@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 from math import ceil
 
-from db import Data
-from models.crafting_list import CraftingList
-from models.object_quantity import ObjectQuantity
-from models.recipe import Recipe
-from models.type import CraftingType
+from .db import Data
+from .models.crafting_list import CraftingList
+from .models.object_quantity import ObjectQuantity
+from .models.recipe import Recipe
+from .models.type import CraftingType
 
 
 @dataclass

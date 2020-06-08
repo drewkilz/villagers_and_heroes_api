@@ -4,12 +4,12 @@ from dataclasses import dataclass
 from decimal import Decimal
 from typing import List, Dict, Any
 
-from models.class_ import Class
-from models.ingredient import Ingredient
-from models.item import Item
-from models.object import Object
-from models.skill import CraftingSkill
-from models.type import CraftingType
+from .class_ import Class
+from .ingredient import Ingredient
+from .item import Item
+from .object import Object
+from .skill import CraftingSkill
+from .type import CraftingType
 
 
 @dataclass

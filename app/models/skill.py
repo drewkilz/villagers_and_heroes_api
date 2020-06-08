@@ -3,8 +3,8 @@
 from dataclasses import dataclass
 from enum import Enum
 
-from models.object import Object
-from models.type import SkillType
+from .object import Object
+from .type import SkillType
 
 
 @dataclass

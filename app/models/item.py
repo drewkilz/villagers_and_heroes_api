@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from models.object import Object
+from .object import Object
 
 SALVAGE_KIT = 'Salvage Kit'
 

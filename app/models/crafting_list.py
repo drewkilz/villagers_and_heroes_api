@@ -1,9 +1,9 @@
 from math import trunc
 from typing import Dict
 
-from models.object import Object
-from models.object_quantity import ObjectQuantity
-from models.recipe import Recipe
+from .object import Object
+from .object_quantity import ObjectQuantity
+from .recipe import Recipe
 
 
 class CraftingList(Object):
