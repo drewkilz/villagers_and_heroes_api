@@ -1,10 +1,10 @@
 from db import Data
-from models.recipes import Recipes
+from models.crafting_list import CraftingList
 
 
 def test(recipes):
     data = Data()
-    recipes_ = Recipes(data)
+    recipes_ = CraftingList(data)
     for recipe_name, quantity in recipes:
         recipes_.add(data.get_recipe(recipe_name), quantity)
     recipes_.calculate(salvaging=True)

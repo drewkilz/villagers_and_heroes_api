@@ -1,0 +1,22 @@
+{% macro render_stacks(stacks) %}
+    {% if stacks %}
+        {{ stacks }}
+    {% else %}
+        -
+    {% endif %}
+{% endmacro %}
+
+<tr>
+    <td>{{ object_quantity.object.name }}</td>
+    <!--
+    <td class="text-center">{{ render_stacks(object_quantity.stacks) }}</td>
+    <td class="text-center">{{ object_quantity.remainder }}</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    -->
+    <td class="text-center">{{ render_stacks(object_quantity.stacks) }}</td>
+    <td class="text-center">{{ object_quantity.remainder }}</td>
+    <!--
+    <td></td>
+    -->
+</tr>

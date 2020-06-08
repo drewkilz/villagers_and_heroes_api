@@ -6,6 +6,7 @@ from typing import List, Dict, Any
 
 from models.class_ import Class
 from models.ingredient import Ingredient
+from models.item import Item
 from models.object import Object
 from models.skill import CraftingSkill
 from models.type import CraftingType
@@ -21,6 +22,7 @@ class Recipe(Object):
     experience: int = None
     cost: Decimal = None
     class_: Class = None
+    item: Item = None
 
     @classmethod
     def from_dict(cls, dictionary: Dict, data: Any):
