@@ -57,7 +57,7 @@ class Recipe(Object):
 
         if 'class_' in dictionary:
             class_string = dictionary['class_']
-            if isinstance(class_string, str):
+            if isinstance(class_string, str) and class_string:
                 try:
                     class_ = Class(class_string)
                 except ValueError:

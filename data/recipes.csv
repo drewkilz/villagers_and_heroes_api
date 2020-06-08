@@ -1,540 +1,540 @@
-﻿name,skill,type,level,experience,cost,ingredients
-Copper Ingot,Smithing,Refined Ingredients,1,,0,2 Copper Ore
-Footman's Sword,Smithing,Warrior Swords,1,,0.0003,"2 Copper Ingot, 1 Wildpaw Handgrip"
-Silver Ingot,Smithing,Refined Ingredients,45,,0,2 Silver Ore
-Tin Ingot,Smithing,Refined Ingredients,15,,0,2 Tin Ore
-Iron Ingot,Smithing,Refined Ingredients,30,,0,2 Iron Ore
-Pyrrite Ingot,Smithing,Refined Ingredients,60,,0,2 Pyrrite Ore
-Mithril Ingot,Smithing,Refined Ingredients,75,,0,2 Mithril Ore
-Koldcore Ingot,Smithing,Refined Ingredients,90,,0,2 Koldcore Ore
-Copper Powder,Smithing,Metal Powder and Mineral Oil,4,,0.0025,5 Copper Ingot
-Copper Admix Powder,Smithing,Metal Powder and Mineral Oil,9,,0.0095,10 Copper Ingot
-Copper Alloy Powder,Smithing,Metal Powder and Mineral Oil,14,,0.065,15 Copper Ingot
-Tin Powder,Smithing,Metal Powder and Mineral Oil,19,,0.13,5 Tin Ingot
-Tin Admix Powder,Smithing,Metal Powder and Mineral Oil,24,,0.19,10 Tin Ingot
-Tin Alloy Powder,Smithing,Metal Powder and Mineral Oil,29,,0.228,15 Tin Ingot
-Iron Powder,Smithing,Metal Powder and Mineral Oil,34,,0.266,5 Iron Ingot
-Iron Admix Powder,Smithing,Metal Powder and Mineral Oil,39,,0.304,10 Iron Ingot
-Iron Alloy Powder,Smithing,Metal Powder and Mineral Oil,44,,0.342,15 Iron Ingot
-Silver Powder,Smithing,Metal Powder and Mineral Oil,49,,0.38,5 Silver Ingot
-Silver Admix Powder,Smithing,Metal Powder and Mineral Oil,54,,0.418,10 Silver Ingot
-Silver Alloy Powder,Smithing,Metal Powder and Mineral Oil,59,,0.456,15 Silver Ingot
-Pyrrite Powder,Smithing,Metal Powder and Mineral Oil,64,,0.57,5 Pyrrite Ingot
-Pyrrite Admix Powder,Smithing,Metal Powder and Mineral Oil,69,,0.665,10 Pyrrite Ingot
-Pyrrite Alloy Powder,Smithing,Metal Powder and Mineral Oil,74,,0.95,15 Pyrrite Ingot
-Mithril Powder,Smithing,Metal Powder and Mineral Oil,79,,1.425,5 Mithril Ingot
-Mithril Admix Powder,Smithing,Metal Powder and Mineral Oil,84,,1.9,10 Mithril Ingot
-Mithril Alloy Powder,Smithing,Metal Powder and Mineral Oil,89,,2.375,15 Mithril Ingot
-Koldcore Powder,Smithing,Metal Powder and Mineral Oil,94,,2.85,5 Koldcore Ingot
-Copper Mineral Extract,Smithing,Metal Powder and Mineral Oil,4,,0.0025,5 Copper Ingot
-Copper Mineral Spirits,Smithing,Metal Powder and Mineral Oil,9,,0.0095,10 Copper Ingot
-Copper Mineral Distillate,Smithing,Metal Powder and Mineral Oil,14,,0.065,15 Copper Ingot
-Tin Mineral Extract,Smithing,Metal Powder and Mineral Oil,19,,0.13,5 Tin Ingot
-Tin Mineral Spirits,Smithing,Metal Powder and Mineral Oil,24,,0.19,10 Tin Ingot
-Tin Mineral Distillate,Smithing,Metal Powder and Mineral Oil,29,,0.228,15 Tin Ingot
-Iron Mineral Extract,Smithing,Metal Powder and Mineral Oil,34,,0.266,5 Iron Ingot
-Iron Mineral Spirits,Smithing,Metal Powder and Mineral Oil,39,,0.304,10 Iron Ingot
-Iron Mineral Distillate,Smithing,Metal Powder and Mineral Oil,44,,0.342,15 Iron Ingot
-Silver Mineral Extract,Smithing,Metal Powder and Mineral Oil,49,,0.38,5 Silver Ingot
-Silver Mineral Spirits,Smithing,Metal Powder and Mineral Oil,54,,0.418,10 Silver Ingot
-Silver Mineral Distillate,Smithing,Metal Powder and Mineral Oil,59,,0.456,15 Silver Ingot
-Pyrrite Mineral Extract,Smithing,Metal Powder and Mineral Oil,64,,0.57,5 Pyrrite Ingot
-Pyrrite Mineral Spirits,Smithing,Metal Powder and Mineral Oil,69,,0.665,10 Pyrrite Ingot
-Pyrrite Mineral Distillate,Smithing,Metal Powder and Mineral Oil,74,,0.95,15 Pyrrite Ingot
-Mithril Mineral Extract,Smithing,Metal Powder and Mineral Oil,79,,1.425,5 Mithril Ingot
-Mithril Mineral Spirits,Smithing,Metal Powder and Mineral Oil,84,,1.9,10 Mithril Ingot
-Mithril Mineral Distillate,Smithing,Metal Powder and Mineral Oil,89,,2.375,15 Mithril Ingot
-Koldcore Mineral Extract,Smithing,Metal Powder and Mineral Oil,94,,2.85,5 Koldcore Ingot
-Blighted Koldcore Mineral Spirits,Smithing,Metal Powder and Mineral Oil,95,,9.975,"20 Koldcore Ingot, 1 Mote of Shade"
-Blight Koldcore Powder,Smithing,Metal Powder and Mineral Oil,95,,9.975,"20 Koldcore Ingot, 1 Mote of Death"
-Copper Belt Buckle,Smithing,Crafting Components,1,,0.0125,5 Copper Ingot
-Copper Hobnails,Smithing,Crafting Components,1,,0.0125,5 Copper Ingot
-Tin Belt Buckle,Smithing,Crafting Components,15,,0.135,5 Tin Ingot
-Tin Hobnails,Smithing,Crafting Components,15,,0.135,5 Tin Ingot
-Iron Belt Buckle,Smithing,Crafting Components,30,,0.35,5 Iron Ingot
-Iron Hobnails,Smithing,Crafting Components,30,,0.35,5 Iron Ingot
-Silver Belt Buckle,Smithing,Crafting Components,45,,0.578,5 Silver Ingot
-Silver Hobnails,Smithing,Crafting Components,45,,0.578,5 Silver Ingot
-Pyrrite Belt Buckle,Smithing,Crafting Components,60,,0.879,5 Pyrrite Ingot
-Pyrrite Hobnails,Smithing,Crafting Components,60,,0.879,5 Pyrrite Ingot
-Mithril Belt Buckle,Smithing,Crafting Components,75,,1.013,5 Mithril Ingot
-Mithril Hobnails,Smithing,Crafting Components,75,,1.013,5 Mithril Ingot
-Koldcore Belt Buckle,Smithing,Crafting Components,90,,1.325,5 Koldcore Ingot
-Koldcore Hobnails,Smithing,Crafting Components,90,,1.325,5 Koldcore Ingot
-Dustspun Cloth,Tailoring,Refined Ingredients,1,,0,2 Mudbelly Silkworm or Featherweight Fleece
-Wildpaw Leather,Tailoring,Refined Ingredients,1,,0,2 Wildpaw Pelt
-Gossburg Cloth,Tailoring,Refined Ingredients,15,,0,2 Greenburg Silkworm or Gauzygoss Fleece
-Bristlefur Leather,Tailoring,Refined Ingredients,15,,0,2 Bristlefur Pelt
-Eventwill Cloth,Tailoring,Refined Ingredients,30,,0,2 Sunset Silkworm or Duskdown Fleece
-Gildmane Leather,Tailoring,Refined Ingredients,30,,0,2 Gildmane Pelt
-Beachweave Cloth,Tailoring,Refined Ingredients,45,,0,2 Saltwater Silkworm or Shoresheer Fleece
-Saltskin Leather,Tailoring,Refined Ingredients,45,,0,2 Saltskin Pelt
-Cragcord Cloth,Tailoring,Refined Ingredients,60,,0,2 Pyrrick Silkworm or Cragtweed Fleece
-Stonehide Leather,Tailoring,Refined Ingredients,60,,0,2 Stonehide Pelt
-Twigtwine Cloth,Tailoring,Refined Ingredients,75,,0,2 Trunktail Silkworm or Twiltree Fleece
-Fellfur Leather,Tailoring,Refined Ingredients,75,,0,2 Fellfur Pelt
-Lavenmeer Cloth,Tailoring,Refined Ingredients,90,,0,2 Lavender Silkworm or Momeer Fleece
-Thornskin Leather,Tailoring,Refined Ingredients,90,,0,2 Thornskin Pelt
-Dustspun Thread,Tailoring,Crafting Components,1,,0.0125,5 Dustspun Cloth
-Wildpaw Handgrip,Tailoring,Crafting Components,1,,0.0125,5 Wildpaw Leather
-Gossburg Thread,Tailoring,Crafting Components,15,,0.135,5 Gossburg Cloth
-Bristlefur Handgrip,Tailoring,Crafting Components,15,,0.135,5 Bristlefur Leather
-Eventwill Thread,Tailoring,Crafting Components,30,,0.35,5 Eventwill Cloth
-Gildmane Handgrip,Tailoring,Crafting Components,30,,0.35,5 Gildmane Leather
-Beachweave Thread,Tailoring,Crafting Components,45,,0.578,5 Beachweave Cloth
-Saltskin Handgrip,Tailoring,Crafting Components,45,,0.578,5 Saltskin Leather
-Cragcord Thread,Tailoring,Crafting Components,60,,0.879,5 Cragcord Cloth
-Stonehide Handgrip,Tailoring,Crafting Components,60,,0.879,5 Stonehide Leather
-Twigtwine Thread,Tailoring,Crafting Components,75,,1.013,5 Twigtwine Cloth
-Fellfur Handgrip,Tailoring,Crafting Components,75,,1.013,5 Fellfur Leather
-Lavenmeer Thread,Tailoring,Crafting Components,90,,1.325,5 Lavenmeer Cloth
-Thornskin Handgrip,Tailoring,Crafting Components,90,,1.325,5 Thornskin Leather
-Purpond Oil,Cooking,Refined Ingredients,1,,0,"2 Pond Loach, 1 Water"
-Tigris Oil,Cooking,Refined Ingredients,15,,0,"2 Tiger Eel, 1 Water"
-Fangfin Oil,Cooking,Refined Ingredients,30,,0,"2 Greenfang Shark, 1 Water"
-Scaline Oil,Cooking,Refined Ingredients,45,,0,"2 Saltscale Terrelli, 1 Water"
-Specter Oil,Cooking,Refined Ingredients,60,,0,"2 Ghosteyed Trout, 1 Water"
-Starlight Oil,Cooking,Refined Ingredients,75,,0,"2 Spotted Galaxias, 1 Water"
-Turgid Oil,Cooking,Refined Ingredients,90,,0,"2 Bigbelly Hamachi, 1 Water"
-Pine Timber,Woodcrafting,Refined Ingredients,1,,0,2 Pine
-Oak Timber,Woodcrafting,Refined Ingredients,15,,0,2 Oak
-Ash Timber,Woodcrafting,Refined Ingredients,30,,0,2 Ash
-Birch Timber,Woodcrafting,Refined Ingredients,45,,0,2 Birch
-Mahogany Timber,Woodcrafting,Refined Ingredients,60,,0,2 Mahogany
-Cedar Timber,Woodcrafting,Refined Ingredients,75,,0,2 Cedar
-Teak Timber,Woodcrafting,Refined Ingredients,90,,0,2 Teak
-Stately Helm Clasp,Woodcrafting,Crafting Components,10,,0.0315,"2 Copper Ingot, 2 Dustspun Cloth, 2 Pine Timber, 2 Wildpaw Leather"
-Opulent Helm Clasp,Woodcrafting,Crafting Components,15,,0.337,"2 Tin Ingot, 2 Gossburg Cloth, 2 Oak Timber, 2 Bristlefur Leather"
-Gallant Helm Clasp,Woodcrafting,Crafting Components,30,,0.875,"2 Iron Ingot, 2 Eventwill Cloth, 2 Ash Timber, 2 Gildmane Leather"
-Regal Helm Clasp,Woodcrafting,Crafting Components,45,,1.445,"2 Silver Ingot, 2 Beachweave Cloth, 2 Birch Timber, 2 Saltskin Leather"
-Imperial Helm Clasp,Woodcrafting,Crafting Components,60,,2.197,"2 Pyrrite Ingot, 2 Cragcord Cloth, 2 Mahogany Timber, 2 Stonehide Leather"
-Baronial Helm Clasp,Woodcrafting,Crafting Components,75,,2.532,"2 Mithril Ingot, 2 Twigtwine Cloth, 2 Cedar Timber, 2 Fellfur Leather"
-Lordly Helm Clasp,Woodcrafting,Crafting Components,90,,3.312,"2 Koldcore Ingot, 2 Lavenmeer Cloth, 2 Teak Timber, 2 Thornskin Leather"
-Dustspun Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,4,,0.0025,5 Dustspun Cloth
-Thin Wildpaw Stitching,Tailoring,Cloth Embroidery and Leather Stitching,4,,0.0025,5 Wildpaw Leather
-Fine Dustspun Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,9,,0.0095,10 Dustspun Cloth
-Light Wildpaw Stitching,Tailoring,Cloth Embroidery and Leather Stitching,9,,0.0095,5 Wildpaw Leather
-Exquisite Dustspun Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,14,,0.065,15 Dustspun Cloth
-Heavy Wildpaw Stitching,Tailoring,Cloth Embroidery and Leather Stitching,14,,0.065,5 Wildpaw Leather
-Gossburg Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,19,,0.13,5 Gossburg Cloth
-Thin Bristlefur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,19,,0.13,5 Bristlefur Leather
-Fine Gossburg Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,24,,0.19,10 Gossburg Cloth
-Light Bristlefur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,24,,0.19,5 Bristlefur Leather
-Exquisite Gossburg Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,29,,0.228,15 Gossburg Cloth
-Heavy Bristlefur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,29,,0.228,5 Bristlefur Leather
-Eventwill Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,34,,0.266,5 Eventwill Cloth
-Thin Gildmane Stitching,Tailoring,Cloth Embroidery and Leather Stitching,34,,0.266,5 Gildmane Leather
-Fine Eventwill Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,39,,0.304,10 Eventwill Cloth
-Light Gildmane Stitching,Tailoring,Cloth Embroidery and Leather Stitching,39,,0.304,5 Gildmane Leather
-Exquisite Eventwill Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,44,,0.342,15 Eventwill Cloth
-Heavy Gildmane Stitching,Tailoring,Cloth Embroidery and Leather Stitching,44,,0.342,5 Gildmane Leather
-Beachweave Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,49,,0.38,5 Beachweave Cloth
-Thin Saltskin Stitching,Tailoring,Cloth Embroidery and Leather Stitching,49,,0.38,5 Saltskin Leather
-Fine Beachweave Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,54,,0.418,10 Beachweave Cloth
-Light Saltskin Stitching,Tailoring,Cloth Embroidery and Leather Stitching,54,,0.418,5 Saltskin Leather
-Exquisite Beachweave Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,59,,0.456,15 Beachweave Cloth
-Heavy Saltskin Stitching,Tailoring,Cloth Embroidery and Leather Stitching,59,,0.456,5 Saltskin Leather
-Cragcord Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,64,,0.57,5 Cragcord Cloth
-Thin Stonehide Stitching,Tailoring,Cloth Embroidery and Leather Stitching,64,,0.57,5 Stonehide Leather
-Fine Cragcord Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,69,,0.665,10 Cragcord Cloth
-Light Stonehide Stitching,Tailoring,Cloth Embroidery and Leather Stitching,69,,0.665,5 Stonehide Leather
-Exquisite Cragcord Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,74,,0.95,15 Cragcord Cloth
-Heavy Stonehide Stitching,Tailoring,Cloth Embroidery and Leather Stitching,74,,0.95,5 Stonehide Leather
-Twigtwine Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,79,,1.425,5 Twigtwine Cloth
-Thin Fellfur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,79,,1.425,5 Fellfur Leather
-Fine Twigtwine Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,84,,1.9,10 Twigtwine Cloth
-Light Fellfur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,84,,1.9,5 Fellfur Leather
-Exquisite Twigtwine Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,89,,2.375,15 Twigtwine Cloth
-Heavy Fellfur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,89,,2.375,5 Fellfur Leather
-Lavenmeer Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,94,,2.85,5 Lavenmeer Cloth
-Thin Thornskin Stitching,Tailoring,Cloth Embroidery and Leather Stitching,94,,2.85,5 Thornskin Leather
-Blighted Lavenmeer Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,95,,9.975,"20 Lavenmeer Cloth, 1 Mote of Death"
-Blighted Thornskin Stitching,Tailoring,Cloth Embroidery and Leather Stitching,95,,9.975,"10 Thornskin Leather, 1 Mote of Ash"
-Pine Resin,Woodcrafting,Wood Resins and Pitch,4,,0.0025,5 Pine Timber
-Pine Pitch,Woodcrafting,Wood Resins and Pitch,4,,0.0025,5 Pine Timber
-Refined Pine Resin,Woodcrafting,Wood Resins and Pitch,9,,0.0095,10 Pine Timber
-Sticky Pine Pitch,Woodcrafting,Wood Resins and Pitch,9,,0.0095,10 Pine Timber
-Pure Pine Resin,Woodcrafting,Wood Resins and Pitch,14,,0.065,15 Pine Timber
-Viscid Pine Pitch,Woodcrafting,Wood Resins and Pitch,14,,0.065,15 Pine Timber
-Oak Resin,Woodcrafting,Wood Resins and Pitch,19,,0.13,5 Oak Timber
-Oak Pitch,Woodcrafting,Wood Resins and Pitch,19,,0.13,5 Oak Timber
-Refined Oak Resin,Woodcrafting,Wood Resins and Pitch,24,,0.19,10 Oak Timber
-Sticky Oak Pitch,Woodcrafting,Wood Resins and Pitch,24,,0.19,10 Oak Timber
-Pure Oak Resin,Woodcrafting,Wood Resins and Pitch,29,,0.228,15 Oak Timber
-Viscid Oak Pitch,Woodcrafting,Wood Resins and Pitch,29,,0.228,15 Oak Timber
-Ash Resin,Woodcrafting,Wood Resins and Pitch,34,,0.266,5 Ash Timber
-Ash Pitch,Woodcrafting,Wood Resins and Pitch,34,,0.266,5 Ash Timber
-Refined Ash Resin,Woodcrafting,Wood Resins and Pitch,39,,0.304,10 Ash Timber
-Sticky Ash Pitch,Woodcrafting,Wood Resins and Pitch,39,,0.304,10 Ash Timber
-Pure Ash Resin,Woodcrafting,Wood Resins and Pitch,44,,0.342,15 Ash Timber
-Viscid Ash Pitch,Woodcrafting,Wood Resins and Pitch,44,,0.342,15 Ash Timber
-Birch Resin,Woodcrafting,Wood Resins and Pitch,49,,0.38,5 Birch Timber
-Birch Pitch,Woodcrafting,Wood Resins and Pitch,49,,0.38,5 Birch Timber
-Refined Birch Resin,Woodcrafting,Wood Resins and Pitch,54,,0.418,10 Birch Timber
-Sticky Birch Pitch,Woodcrafting,Wood Resins and Pitch,54,,0.418,10 Birch Timber
-Pure Birch Resin,Woodcrafting,Wood Resins and Pitch,59,,0.456,15 Birch Timber
-Viscid Birch Pitch,Woodcrafting,Wood Resins and Pitch,59,,0.456,15 Birch Timber
-Mahogany Resin,Woodcrafting,Wood Resins and Pitch,64,,0.57,5 Mahogany Timber
-Mahogany Pitch,Woodcrafting,Wood Resins and Pitch,64,,0.57,5 Mahogany Timber
-Refined Mahogany Resin,Woodcrafting,Wood Resins and Pitch,69,,0.665,10 Mahogany Timber
-Sticky Mahogany Pitch,Woodcrafting,Wood Resins and Pitch,69,,0.665,10 Mahogany Timber
-Pure Mahogany Resin,Woodcrafting,Wood Resins and Pitch,74,,0.95,15 Mahogany Timber
-Viscid Mahogany Pitch,Woodcrafting,Wood Resins and Pitch,74,,0.95,15 Mahogany Timber
-Cedar Resin,Woodcrafting,Wood Resins and Pitch,79,,1.425,5 Cedar Timber
-Cedar Pitch,Woodcrafting,Wood Resins and Pitch,79,,1.425,5 Cedar Timber
-Refined Cedar Resin,Woodcrafting,Wood Resins and Pitch,84,,1.9,10 Cedar Timber
-Sticky Cedar Pitch,Woodcrafting,Wood Resins and Pitch,84,,1.9,10 Cedar Timber
-Pure Cedar Resin,Woodcrafting,Wood Resins and Pitch,89,,2.375,15 Cedar Timber
-Viscid Cedar Pitch,Woodcrafting,Wood Resins and Pitch,89,,2.375,15 Cedar Timber
-Teak Resin,Woodcrafting,Wood Resins and Pitch,94,,2.85,5 Teak Timber
-Teak Pitch,Woodcrafting,Wood Resins and Pitch,94,,2.85,5 Teak Timber
-Blighted Teak Resin,Woodcrafting,Wood Resins and Pitch,95,,9.975,"20 Teak Timber, 1 Mote of Ash"
-Blighted Teak Pitch,Woodcrafting,Wood Resins and Pitch,95,,9.975,"20 Teak Timber, 1 Mote of Blood"
-Kobold's Axe,Woodcrafting,Shaman Axes,1,,0.0003,"2 Pine Timber, 1 Wildpaw Handgrip"
-Merrow's Axe,Woodcrafting,Shaman Axes,1,,0.0003,"2 Pine Timber, 1 Wildpaw Handgrip"
-Kobold's Firm Axe,Woodcrafting,Shaman Axes,6,,0.0034,"4 Pine Timber, 1 Wildpaw Handgrip"
-Merrow's Calming Axe,Woodcrafting,Shaman Axes,6,,0.0034,"4 Pine Timber, 1 Wildpaw Handgrip"
-Kobold's Stout Axe,Woodcrafting,Shaman Axes,11,,0.0202,"6 Pine Timber, 1 Wildpaw Handgrip"
-Merrow's Soothing Axe,Woodcrafting,Shaman Axes,11,,0.0202,"6 Pine Timber, 1 Wildpaw Handgrip"
-Kobold's Staunch Axe,Woodcrafting,Shaman Axes,16,,0.0404,"2 Oak Timber, 1 Bristlefur Handgrip"
-Merrow's Tranquil Axe,Woodcrafting,Shaman Axes,16,,0.0404,"2 Oak Timber, 1 Bristlefur Handgrip"
-Kobold's Adamant Axe,Woodcrafting,Shaman Axes,21,,0.0672,"4 Oak Timber, 1 Bristlefur Handgrip"
-Merrow's Serene Axe,Woodcrafting,Shaman Axes,21,,0.0672,"4 Oak Timber, 1 Bristlefur Handgrip"
-Oread's Axe,Woodcrafting,Shaman Axes,26,,0.1008,"6 Oak Timber, 1 Bristlefur Handgrip"
-Naiad's Axe,Woodcrafting,Shaman Axes,26,,0.1008,"6 Oak Timber, 1 Bristlefur Handgrip"
-Oread's Firm Axe,Woodcrafting,Shaman Axes,31,,0.1412,"2 Ash Timber, 1 Gildmane Handgrip"
-Naiad's Calming Axe,Woodcrafting,Shaman Axes,31,,0.1412,"2 Ash Timber, 1 Gildmane Handgrip"
-Oread's Stout Axe,Woodcrafting,Shaman Axes,36,,0.1882,"4 Ash Timber, 1 Gildmane Handgrip"
-Naiad's Soothing Axe,Woodcrafting,Shaman Axes,36,,0.1882,"4 Ash Timber, 1 Gildmane Handgrip"
-Oread's Staunch Axe,Woodcrafting,Shaman Axes,41,,0.242,"6 Ash Timber, 1 Gildmane Handgrip"
-Naiad's Tranquil Axe,Woodcrafting,Shaman Axes,41,,0.242,"6 Ash Timber, 1 Gildmane Handgrip"
-Oread's Adamant Axe,Woodcrafting,Shaman Axes,46,,0.3024,"4 Birch Timber, 1 Saltskin Handgrip"
-Naiad's Serene Axe,Woodcrafting,Shaman Axes,46,,0.3024,"4 Birch Timber, 1 Saltskin Handgrip"
-Golem's Axe,Woodcrafting,Shaman Axes,51,,0.3696,"8 Birch Timber, 1 Saltskin Handgrip"
-Selkie's Axe,Woodcrafting,Shaman Axes,51,,0.3696,"8 Birch Timber, 1 Saltskin Handgrip"
-Golem's Firm Axe,Woodcrafting,Shaman Axes,56,,0.4436,"12 Birch Timber, 1 Saltskin Handgrip"
-Selkie's Calming Axe,Woodcrafting,Shaman Axes,56,,0.4436,"12 Birch Timber, 1 Saltskin Handgrip"
-Golem's Stout Axe,Woodcrafting,Shaman Axes,61,,0.5242,"6 Mahogany Timber, 1 Stonehide Handgrip"
-Sellkie's Soothing Axe,Woodcrafting,Shaman Axes,61,,0.5242,"6 Mahogany Timber, 1 Stonehide Handgrip"
-Golem's Staunch Axe,Woodcrafting,Shaman Axes,66,,0.6116,"12 Mahogany Timber, 1 Stonehide Handgrip"
-Selkie's Tranquil Axe,Woodcrafting,Shaman Axes,66,,0.6116,"12 Mahogany Timber, 1 Stonehide Handgrip"
-Golem's Adamant Axe,Woodcrafting,Shaman Axes,71,,0.7056,"18 Mahogany Timber, 1 Stonehide Handgrip"
-Selkie's Serene Axe,Woodcrafting,Shaman Axes,71,,0.7056,"18 Mahogany Timber, 1 Stonehide Handgrip"
-Giant's Axe,Woodcrafting,Shaman Axes,76,,0.8064,"8 Cedar Timber, 1 Fellfur Handgrip"
-Leviathan's Axe,Woodcrafting,Shaman Axes,76,,0.8064,"8 Cedar Timber, 1 Fellfur Handgrip"
-Giant's Firm Axe,Woodcrafting,Shaman Axes,81,,0.9072,"16 Cedar Timber, 1 Fellfur Handgrip"
-Leviathan's Calming Axe,Woodcrafting,Shaman Axes,81,,0.9072,"16 Cedar Timber, 1 Fellfur Handgrip"
-Giant's Stout Axe,Woodcrafting,Shaman Axes,86,,1.008,"24 Cedar Timber, 1 Fellfur Handgrip"
-Leviathan's Soothing Axe,Woodcrafting,Shaman Axes,86,,1.008,"24 Cedar Timber, 1 Fellfur Handgrip"
-Swamp-touched Earthweald Axe,Woodcrafting,Shaman Axes,90,,1.1088,"6 Earthentine, 1 Living Fossil, 30 Teak Timber, 1 Thornskin Handgrip"
-Swamp-touched Waterweald Axe,Woodcrafting,Shaman Axes,90,,1.1088,"6 Aquatear, 1 Living Fossil, 30 Teak Timber, 1 Thornskin Handgrip"
-Giant's Staunch Axe,Woodcrafting,Shaman Axes,91,,1.1088,"10 Teak Timber, 1 Thornskin Handgrip"
-Leviathan's Tranquil Axe,Woodcrafting,Shaman Axes,91,,1.1088,"10 Teak Timber, 1 Thornskin Handgrip"
-Ash-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Ash, 35 Teak Timber, 1 Thornskin Handgrip"
-Ash-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Ash, 35 Teak Timber, 1 Thornskin Handgrip"
-Blood-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Blood, 35 Teak Timber, 1 Thornskin Handgrip"
-Blood-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Blood, 35 Teak Timber, 1 Thornskin Handgrip"
-Death-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Death, 35 Teak Timber, 1 Thornskin Handgrip"
-Death-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Death, 35 Teak Timber, 1 Thornskin Handgrip"
-Shade-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Shade, 35 Teak Timber, 1 Thornskin Handgrip"
-Shade-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Shade, 35 Teak Timber, 1 Thornskin Handgrip"
-Mythic Ash-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Ash, 75 Teak Timber, 1 Thornskin Handgrip"
-Mythic Ash-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Ash, 75 Teak Timber, 1 Thornskin Handgrip"
-Mythic Blood-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Blood, 75 Teak Timber, 1 Thornskin Handgrip"
-Mythic Blood-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Blood, 75 Teak Timber, 1 Thornskin Handgrip"
-Mythic Death-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Death, 75 Teak Timber, 1 Thornskin Handgrip"
-Mythic Death-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Death, 75 Teak Timber, 1 Thornskin Handgrip"
-Mythic Shade-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Shade, 75 Teak Timber, 1 Thornskin Handgrip"
-Mythic Shade-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Shade, 75 Teak Timber, 1 Thornskin Handgrip"
-Kobold's Armor,Smithing,Armor and Outfits,1,,0.0004,"4 Copper Ingot, 1 Dustspun Thread"
-Merrow's Armor,Smithing,Armor and Outfits,1,,0.0004,"4 Copper Ingot, 1 Dustspun Thread"
-Kobold's Firm Armor,Smithing,Armor and Outfits,6,,0.0045,"8 Copper Ingot, 1 Dustspun Thread"
-Merrow's Calming Armor,Smithing,Armor and Outfits,6,,0.0045,"8 Copper Ingot, 1 Dustspun Thread"
-Kobold's Stout Armor,Smithing,Armor and Outfits,11,,0.0269,"12 Copper Ingot, 1 Dustspun Thread"
-Merrow's Soothing Armor,Smithing,Armor and Outfits,11,,0.0269,"12 Copper Ingot, 1 Dustspun Thread"
-Kobold's Staunch Armor,Smithing,Armor and Outfits,16,,0.0538,"4 Tin Ingot, 1 Gossburg Thread"
-Merrow's Tranquil Armor,Smithing,Armor and Outfits,16,,0.0538,"4 Tin Ingot, 1 Gossburg Thread"
-Kobold's Adamant Armor,Smithing,Armor and Outfits,21,,0.0896,"8 Tin Ingot, 1 Gossburg Thread"
-Merrow's Serene Armor,Smithing,Armor and Outfits,21,,0.0896,"8 Tin Ingot, 1 Gossburg Thread"
-Oread's Armor,Smithing,Armor and Outfits,26,,0.1344,"12 Tin Ingot, 1 Gossburg Thread"
-Naiad's Armor,Smithing,Armor and Outfits,26,,0.1344,"12 Tin Ingot, 1 Gossburg Thread"
-Oread's Firm Armor,Smithing,Armor and Outfits,31,,0.1882,"4 Iron Ingot, 1 Eventwill Thread"
-Naiad's Calming Armor,Smithing,Armor and Outfits,31,,0.1882,"4 Iron Ingot, 1 Eventwill Thread"
-Oread's Stout Armor,Smithing,Armor and Outfits,36,,0.259,"8 Iron Ingot, 1 Eventwill Thread"
-Naiad's Soothing Armor,Smithing,Armor and Outfits,36,,0.259,"8 Iron Ingot, 1 Eventwill Thread"
-Oread's Staunch Armor,Smithing,Armor and Outfits,41,,0.3226,"12 Iron Ingot, 1 Eventwill Thread"
-Naiad's Tranquil Armor,Smithing,Armor and Outfits,41,,0.3226,"12 Iron Ingot, 1 Eventwill Thread"
-Oread's Adamant Armor,Smithing,Armor and Outfits,46,,0.4032,"8 Silver Ingot, 1 Beachweave Thread"
-Naiad's Serene Armor,Smithing,Armor and Outfits,46,,0.4032,"8 Silver Ingot, 1 Beachweave Thread"
-Golem's Armor,Smithing,Armor and Outfits,51,,0.4928,"16 Silver Ingot, 1 Beachweave Thread"
-Selkie's Armor,Smithing,Armor and Outfits,51,,0.4928,"16 Silver Ingot, 1 Beachweave Thread"
-Golem's Firm Armor,Smithing,Armor and Outfits,56,,0.5914,"24 Silver Ingot, 1 Beachweave Thread"
-Selkie's Calming Armor,Smithing,Armor and Outfits,56,,0.5914,"24 Silver Ingot, 1 Beachweave Thread"
-Golem's Stout Armor,Smithing,Armor and Outfits,61,,0.6989,"12 Pyrrite Ingot, 1 Cragcord Thread"
-Sellkie's Soothing Armor,Smithing,Armor and Outfits,61,,0.6989,"12 Pyrrite Ingot, 1 Cragcord Thread"
-Golem's Staunch Armor,Smithing,Armor and Outfits,66,,0.8154,"24 Pyrrite Ingot, 1 Cragcord Thread"
-Selkie's Tranquil Armor,Smithing,Armor and Outfits,66,,0.8154,"24 Pyrrite Ingot, 1 Cragcord Thread"
-Golem's Adamant Armor,Smithing,Armor and Outfits,71,,0.9408,"36 Pyrrite Ingot, 1 Cragcord Thread"
-Selkie's Serene Armor,Smithing,Armor and Outfits,71,,0.9408,"36 Pyrrite Ingot, 1 Cragcord Thread"
-Giant's Armor,Smithing,Armor and Outfits,76,,1.0752,"16 Mithril Ingot, 1 Twigtwine Thread"
-Leviathan's Armor,Smithing,Armor and Outfits,76,,1.0752,"16 Mithril Ingot, 1 Twigtwine Thread"
-Giant's Firm Armor,Smithing,Armor and Outfits,81,,1.2096,"32 Mithril Ingot, 1 Twigtwine Thread"
-Leviathan's Calming Armor,Smithing,Armor and Outfits,81,,1.2096,"32 Mithril Ingot, 1 Twigtwine Thread"
-Giant's Stout Armor,Smithing,Armor and Outfits,86,,1.344,"48 Mithril Ingot, 1 Twigtwine Thread"
-Leviathan's Soothing Armor,Smithing,Armor and Outfits,86,,1.344,"48 Mithril Ingot, 1 Twigtwine Thread"
-Swamp-touched Terrasteel Armor,Smithing,Armor and Outfits,90,,1.4784,"4 Earthentine, 1 Living Fossil, 60 Koldcore Ingot, 1 Lavenmeer Thread"
-Swamp-touched Surgesteel Armor,Smithing,Armor and Outfits,90,,1.4784,"4 Aquatear, 1 Living Fossil, 60 Koldcore Ingot, 1 Lavenmeer Thread"
-Giant's Staunch Armor,Smithing,Armor and Outfits,91,,1.4784,"20 Koldcore Ingot, 1 Lavenmeer Thread"
-Leviathan's Tranquil Armor,Smithing,Armor and Outfits,91,,1.4784,"20 Koldcore Ingot, 1 Lavenmeer Thread"
-Blood-Blighted Earth Armor,Smithing,Armor and Outfits,95,,1.6934,"1 Mote of Blood, 36 Koldcore Ingot, 1 Lavenmeer Thread"
-Blood-Blighted Water Armor,Smithing,Armor and Outfits,95,,1.6934,"1 Mote of Blood, 36 Koldcore Ingot, 1 Lavenmeer Thread"
-Mythic Blood-Blighted Earth Armor,Smithing,Armor and Outfits,95,,8.467,"1 Primal Blood, 54 Koldcore Ingot, 1 Lavenmeer Thread"
-Mythic Blood-Blighted Water Armor,Smithing,Armor and Outfits,95,,8.467,"1 Primal Blood, 54 Koldcore Ingot, 1 Lavenmeer Thread"
-Kobold's Belt,Smithing,Belts,2,,0.0001,"2 Copper Ingot, 1 Copper Belt Buckle"
-Merrow's Belt,Smithing,Belts,2,,0.0001,"2 Copper Ingot, 1 Copper Belt Buckle"
-Kobold's Firm Belt,Smithing,Belts,7,,0.0015,"4 Copper Ingot, 1 Copper Belt Buckle"
-Merrow's Calming Belt,Smithing,Belts,7,,0.0015,"4 Copper Ingot, 1 Copper Belt Buckle"
-Kobold's Stout Belt,Smithing,Belts,12,,0.0089,"6 Copper Ingot, 1 Copper Belt Buckle"
-Merrow's Soothing Belt,Smithing,Belts,12,,0.0089,"6 Copper Ingot, 1 Copper Belt Buckle"
-Kobold's Staunch Belt,Smithing,Belts,17,,0.0178,"2 Tin Ingot, 1 Tin Belt Buckle"
-Merrow's Tranquil Belt,Smithing,Belts,17,,0.0178,"2 Tin Ingot, 1 Tin Belt Buckle"
-Kobold's Adamant Belt,Smithing,Belts,22,,0.0296,"4 Tin Ingot, 1 Tin Belt Buckle"
-Merrow's Serene Belt,Smithing,Belts,22,,0.0296,"4 Tin Ingot, 1 Tin Belt Buckle"
-Oread's Belt,Smithing,Belts,27,,0.0444,"6 Tin Ingot, 1 Tin Belt Buckle"
-Naiad's Belt,Smithing,Belts,27,,0.0444,"6 Tin Ingot, 1 Tin Belt Buckle"
-Oread's Firm Belt,Smithing,Belts,32,,0.0621,"2 Iron Ingot, 1 Iron Belt Buckle"
-Naiad's Calming Belt,Smithing,Belts,32,,0.0621,"2 Iron Ingot, 1 Iron Belt Buckle"
-Oread's Stout Belt,Smithing,Belts,37,,0.0828,"4 Iron Ingot, 1 Iron Belt Buckle"
-Naiad's Soothing Belt,Smithing,Belts,37,,0.0828,"4 Iron Ingot, 1 Iron Belt Buckle"
-Oread's Staunch Belt,Smithing,Belts,42,,0.1065,"6 Iron Ingot, 1 Iron Belt Buckle"
-Naiad's Tranquil Belt,Smithing,Belts,42,,0.1065,"6 Iron Ingot, 1 Iron Belt Buckle"
-Oread's Adamant Belt,Smithing,Belts,47,,0.1331,"4 Silver Ingot, 1 Silver Belt Buckle"
-Naiad's Serene Belt,Smithing,Belts,47,,0.1331,"4 Silver Ingot, 1 Silver Belt Buckle"
-Golem's Belt,Smithing,Belts,52,,0.1627,"8 Silver Ingot, 1 Silver Belt Buckle"
-Selkie's Belt,Smithing,Belts,52,,0.1627,"8 Silver Ingot, 1 Silver Belt Buckle"
-Golem's Firm Belt,Smithing,Belts,57,,0.1952,"12 Silver Ingot, 1 Silver Belt Buckle"
-Selkie's Calming Belt,Smithing,Belts,57,,0.1952,"12 Silver Ingot, 1 Silver Belt Buckle"
-Golem's Stout Belt,Smithing,Belts,62,,0.237,"6 Pyrrite Ingot, 1 Pyrrite Belt Buckle"
-Sellkie's Soothing Belt,Smithing,Belts,62,,0.237,"6 Pyrrite Ingot, 1 Pyrrite Belt Buckle"
-Golem's Staunch Belt,Smithing,Belts,67,,0.2691,"12 Pyrrite Ingot, 1 Pyrrite Belt Buckle"
-Selkie's Tranquil Belt,Smithing,Belts,67,,0.2691,"12 Pyrrite Ingot, 1 Pyrrite Belt Buckle"
-Golem's Adamant Belt,Smithing,Belts,72,,0.3105,"18 Pyrrite Ingot, 1 Pyrrite Belt Buckle"
-Selkie's Serene Belt,Smithing,Belts,72,,0.3105,"18 Pyrrite Ingot, 1 Pyrrite Belt Buckle"
-Giant's Belt,Smithing,Belts,77,,0.3548,"8 Mithril Ingot, 1 Mithril Belt Buckle"
-Leviathan's Belt,Smithing,Belts,77,,0.3548,"8 Mithril Ingot, 1 Mithril Belt Buckle"
-Giant's Firm Belt,Smithing,Belts,82,,0.3992,"16 Mithril Ingot, 1 Mithril Belt Buckle"
-Leviathan's Calming Belt,Smithing,Belts,82,,0.3992,"16 Mithril Ingot, 1 Mithril Belt Buckle"
-Giant's Stout Belt,Smithing,Belts,87,,0.4436,"24 Mithril Ingot, 1 Mithril Belt Buckle"
-Leviathan's Soothing Belt,Smithing,Belts,87,,0.4436,"24 Mithril Ingot, 1 Mithril Belt Buckle"
-Swamp-touched Terrasteel Belt,Smithing,Belts,90,,0.4879,"2 Earthentine, 1 Living Fossil, 30 Koldcore Ingot, 1 Koldcore Belt Buckle"
-Swamp-touched Surgesteel Belt,Smithing,Belts,90,,0.4879,"2 Aquatear, 1 Living Fossil, 30 Koldcore Ingot, 1 Koldcore Belt Buckle"
-Giant's Staunch Belt,Smithing,Belts,92,,0.4879,"10 Koldcore Ingot, 1 Koldcore Belt Buckle"
-Leviathan's Tranquil Belt,Smithing,Belts,92,,0.4879,"10 Koldcore Ingot, 1 Koldcore Belt Buckle"
-Shade-Blighted Earth Belt,Smithing,Belts,95,,0.5411,"1 Mote of Shade, 16 Koldcore Ingot, 1 Koldcore Belt Buckle"
-Shade-Blighted Water Belt,Smithing,Belts,95,,0.5411,"1 Mote of Shade, 16 Koldcore Ingot, 1 Koldcore Belt Buckle"
-Mythic Shade-Blighted Earth Belt,Smithing,Belts,95,,2.7055,"1 Primal Shade, 24 Koldcore Ingot, 1 Koldcore Belt Buckle"
-Mythic Shade-Blighted Water Belt,Smithing,Belts,95,,2.7055,"1 Primal Shade, 24 Koldcore Ingot, 1 Koldcore Belt Buckle"
-Kobold's Gauntlets,Smithing,Gloves,3,,0.0001,"2 Copper Ingot, 1 Dustspun Thread"
-Merrow's Gloves,Smithing,Gloves,3,,0.0001,"2 Copper Ingot, 1 Dustspun Thread"
-Kobold's Firm Gauntlets,Smithing,Gloves,8,,0.0015,"4 Copper Ingot, 1 Dustspun Thread"
-Merrow's Calming Gloves,Smithing,Gloves,8,,0.0015,"4 Copper Ingot, 1 Dustspun Thread"
-Kobold's Stout Gauntlets,Smithing,Gloves,13,,0.0089,"6 Copper Ingot, 1 Dustspun Thread"
-Merrow's Soothing Gloves,Smithing,Gloves,13,,0.0089,"6 Copper Ingot, 1 Dustspun Thread"
-Kobold's Staunch Gauntlets,Smithing,Gloves,18,,0.0178,"2 Tin Ingot, 1 Gossburg Thread"
-Merrow's Tranquil Gloves,Smithing,Gloves,18,,0.0178,"2 Tin Ingot, 1 Gossburg Thread"
-Kobold's Adamant Gauntlets,Smithing,Gloves,23,,0.0296,"4 Tin Ingot, 1 Gossburg Thread"
-Merrow's Serene Gloves,Smithing,Gloves,23,,0.0296,"4 Tin Ingot, 1 Gossburg Thread"
-Oread's Gauntlets,Smithing,Gloves,28,,0.0444,"6 Tin Ingot, 1 Gossburg Thread"
-Naiad's Gloves,Smithing,Gloves,28,,0.0444,"6 Tin Ingot, 1 Gossburg Thread"
-Oread's Firm Gauntlets,Smithing,Gloves,33,,0.0621,"2 Iron Ingot, 1 Eventwill Thread"
-Naiad's Calming Gloves,Smithing,Gloves,33,,0.0621,"2 Iron Ingot, 1 Eventwill Thread"
-Oread's Stout Gauntlets,Smithing,Gloves,38,,0.0828,"4 Iron Ingot, 1 Eventwill Thread"
-Naiad's Soothing Gloves,Smithing,Gloves,38,,0.0828,"4 Iron Ingot, 1 Eventwill Thread"
-Oread's Staunch Gauntlets,Smithing,Gloves,43,,0.1065,"6 Iron Ingot, 1 Eventwill Thread"
-Naiad's Tranquil Gloves,Smithing,Gloves,43,,0.1065,"6 Iron Ingot, 1 Eventwill Thread"
-Oread's Adamant Gauntlets,Smithing,Gloves,48,,0.1331,"4 Silver Ingot, 1 Beachweave Thread"
-Naiad's Serene Gloves,Smithing,Gloves,48,,0.1331,"4 Silver Ingot, 1 Beachweave Thread"
-Golem's Gauntlets,Smithing,Gloves,53,,0.1627,"8 Silver Ingot, 1 Beachweave Thread"
-Selkie's Gloves,Smithing,Gloves,53,,0.1627,"8 Silver Ingot, 1 Beachweave Thread"
-Golem's Firm Gauntlets,Smithing,Gloves,58,,0.1952,"12 Silver Ingot, 1 Beachweave Thread"
-Selkie's Calming Gloves,Smithing,Gloves,58,,0.1952,"12 Silver Ingot, 1 Beachweave Thread"
-Golem's Stout Gauntlets,Smithing,Gloves,63,,0.237,"6 Pyrrite Ingot, 1 Cragcord Thread"
-Sellkie's Soothing Gloves,Smithing,Gloves,63,,0.237,"6 Pyrrite Ingot, 1 Cragcord Thread"
-Golem's Staunch Gauntlets,Smithing,Gloves,68,,0.2691,"12 Pyrrite Ingot, 1 Cragcord Thread"
-Selkie's Tranquil Gloves,Smithing,Gloves,68,,0.2691,"12 Pyrrite Ingot, 1 Cragcord Thread"
-Golem's Adamant Gauntlets,Smithing,Gloves,73,,0.3105,"18 Pyrrite Ingot, 1 Cragcord Thread"
-Selkie's Serene Gloves,Smithing,Gloves,73,,0.3105,"18 Pyrrite Ingot, 1 Cragcord Thread"
-Giant's Gauntlets,Smithing,Gloves,78,,0.3548,"8 Mithril Ingot, 1 Twigtwine Thread"
-Leviathan's Gloves,Smithing,Gloves,78,,0.3548,"8 Mithril Ingot, 1 Twigtwine Thread"
-Giant's Firm Gauntlets,Smithing,Gloves,83,,0.3992,"16 Mithril Ingot, 1 Twigtwine Thread"
-Leviathan's Calming Gloves,Smithing,Gloves,83,,0.3992,"16 Mithril Ingot, 1 Twigtwine Thread"
-Giant's Stout Gauntlets,Smithing,Gloves,88,,0.4436,"24 Mithril Ingot, 1 Twigtwine Thread"
-Leviathan's Soothing Gloves,Smithing,Gloves,88,,0.4436,"24 Mithril Ingot, 1 Twigtwine Thread"
-Swamp-touched Terrasteel Gloves,Smithing,Gloves,90,,0.4879,"2 Earthentine, 1 Living Fossil, 30 Koldcore Ingot, 1 Lavenmeer Thread"
-Swamp-touched Surgesteel Gloves,Smithing,Gloves,90,,0.4879,"2 Aquatear, 1 Living Fossil, 30 Koldcore Ingot, 1 Lavenmeer Thread"
-Giant's Staunch Gauntlets,Smithing,Gloves,93,,0.4879,"10 Koldcore Ingot, 1 Lavenmeer Thread"
-Leviathan's Tranquil Gloves,Smithing,Gloves,93,,0.4879,"10 Koldcore Ingot, 1 Lavenmeer Thread"
-Death-Blighted Earth Gloves,Smithing,Gloves,95,,0.5411,"1 Mote of Death, 14 Koldcore Ingot, 1 Lavenmeer Thread"
-Death-Blighted Water Gloves,Smithing,Gloves,95,,0.5411,"1 Mote of Death, 14 Koldcore Ingot, 1 Lavenmeer Thread"
-Mythic Death-Blighted Earth Gloves,Smithing,Gloves,95,,2.7055,"1 Primal Death, 21 Koldcore Ingot, 1 Lavenmeer Thread"
-Mythic Death-Blighted Water Gloves,Smithing,Gloves,95,,2.7055,"1 Primal Death, 21 Koldcore Ingot, 1 Lavenmeer Thread"
-Kobold's Boots,Smithing,Boots and Shoes,4,,0.0001,"2 Copper Ingot, 1 Copper Hobnails"
-Merrow's Boots,Smithing,Boots and Shoes,4,,0.0001,"2 Copper Ingot, 1 Copper Hobnails"
-Kobold's Firm Boots,Smithing,Boots and Shoes,9,,0.0015,"4 Copper Ingot, 1 Copper Hobnails"
-Merrow's Calming Boots,Smithing,Boots and Shoes,9,,0.0015,"4 Copper Ingot, 1 Copper Hobnails"
-Kobold's Stout Boots,Smithing,Boots and Shoes,14,,0.0089,"6 Copper Ingot, 1 Copper Hobnails"
-Merrow's Soothing Boots,Smithing,Boots and Shoes,14,,0.0089,"6 Copper Ingot, 1 Copper Hobnails"
-Kobold's Staunch Boots,Smithing,Boots and Shoes,19,,0.0178,"2 Tin Ingot, 1 Tin Hobnails"
-Merrow's Tranquil Boots,Smithing,Boots and Shoes,19,,0.0178,"2 Tin Ingot, 1 Tin Hobnails"
-Kobold's Adamant Boots,Smithing,Boots and Shoes,24,,0.0296,"4 Tin Ingot, 1 Tin Hobnails"
-Merrow's Serene Boots,Smithing,Boots and Shoes,24,,0.0296,"4 Tin Ingot, 1 Tin Hobnails"
-Oread's Boots,Smithing,Boots and Shoes,29,,0.0444,"6 Tin Ingot, 1 Tin Hobnails"
-Naiad's Boots,Smithing,Boots and Shoes,29,,0.0444,"6 Tin Ingot, 1 Tin Hobnails"
-Oread's Firm Boots,Smithing,Boots and Shoes,34,,0.0621,"2 Iron Ingot, 1 Iron Hobnails"
-Naiad's Calming Boots,Smithing,Boots and Shoes,34,,0.0621,"2 Iron Ingot, 1 Iron Hobnails"
-Oread's Stout Boots,Smithing,Boots and Shoes,39,,0.0828,"4 Iron Ingot, 1 Iron Hobnails"
-Naiad's Soothing Boots,Smithing,Boots and Shoes,39,,0.0828,"4 Iron Ingot, 1 Iron Hobnails"
-Oread's Staunch Boots,Smithing,Boots and Shoes,44,,0.1065,"6 Iron Ingot, 1 Iron Hobnails"
-Naiad's Tranquil Boots,Smithing,Boots and Shoes,44,,0.1065,"6 Iron Ingot, 1 Iron Hobnails"
-Oread's Adamant Boots,Smithing,Boots and Shoes,49,,0.1331,"4 Silver Ingot, 1 Silver Hobnails"
-Naiad's Serene Boots,Smithing,Boots and Shoes,49,,0.1331,"4 Silver Ingot, 1 Silver Hobnails"
-Golem's Boots,Smithing,Boots and Shoes,54,,0.1627,"8 Silver Ingot, 1 Silver Hobnails"
-Selkie's Boots,Smithing,Boots and Shoes,54,,0.1627,"8 Silver Ingot, 1 Silver Hobnails"
-Golem's Firm Boots,Smithing,Boots and Shoes,59,,0.1952,"12 Silver Ingot, 1 Silver Hobnails"
-Selkie's Calming Boots,Smithing,Boots and Shoes,59,,0.1952,"12 Silver Ingot, 1 Silver Hobnails"
-Golem's Stout Boots,Smithing,Boots and Shoes,64,,0.237,"6 Pyrrite Ingot, 1 Pyrrite Hobnails"
-Sellkie's Soothing Boots,Smithing,Boots and Shoes,64,,0.237,"6 Pyrrite Ingot, 1 Pyrrite Hobnails"
-Golem's Staunch Boots,Smithing,Boots and Shoes,69,,0.2691,"12 Pyrrite Ingot, 1 Pyrrite Hobnails"
-Selkie's Tranquil Boots,Smithing,Boots and Shoes,69,,0.2691,"12 Pyrrite Ingot, 1 Pyrrite Hobnails"
-Golem's Adamant Boots,Smithing,Boots and Shoes,74,,0.3105,"18 Pyrrite Ingot, 1 Pyrrite Hobnails"
-Selkie's Serene Boots,Smithing,Boots and Shoes,74,,0.3105,"18 Pyrrite Ingot, 1 Pyrrite Hobnails"
-Giant's Boots,Smithing,Boots and Shoes,79,,0.3548,"8 Mithril Ingot, 1 Mithril Hobnails"
-Leviathan's Boots,Smithing,Boots and Shoes,79,,0.3548,"8 Mithril Ingot, 1 Mithril Hobnails"
-Giant's Firm Boots,Smithing,Boots and Shoes,84,,0.3992,"16 Mithril Ingot, 1 Mithril Hobnails"
-Leviathan's Calming Boots,Smithing,Boots and Shoes,84,,0.3992,"16 Mithril Ingot, 1 Mithril Hobnails"
-Giant's Stout Boots,Smithing,Boots and Shoes,89,,0.4436,"24 Mithril Ingot, 1 Mithril Hobnails"
-Leviathan's Soothing Boots,Smithing,Boots and Shoes,89,,0.4436,"24 Mithril Ingot, 1 Mithril Hobnails"
-Swamp-touched Terrasteel Boots,Smithing,Boots and Shoes,90,,0.4879,"2 Earthentine, 1 Living Fossil, 30 Koldcore Ingot, 1 Koldcore Hobnails"
-Swamp-touched Surgesteel Boots,Smithing,Boots and Shoes,90,,0.4879,"2 Aquatear, 1 Living Fossil, 30 Koldcore Ingot, 1 Koldcore Hobnails"
-Giant's Staunch Boots,Smithing,Boots and Shoes,94,,0.4879,"10 Koldcore Ingot, 1 Koldcore Hobnails"
-Leviathan's Tranquil Boots,Smithing,Boots and Shoes,94,,0.4879,"10 Koldcore Ingot, 1 Koldcore Hobnails"
-Ash-Blighted Earth Boots,Smithing,Boots and Shoes,95,,0.5411,"1 Mote of Ash, 12 Koldcore Ingot, 1 Koldcore Hobnails"
-Ash-Blighted Water Boots,Smithing,Boots and Shoes,95,,0.5411,"1 Mote of Ash, 12 Koldcore Ingot, 1 Koldcore Hobnails"
-Mythic Ash-Blighted Earth Boots,Smithing,Boots and Shoes,95,,2.7055,"1 Primal Ash, 18 Koldcore Ingot, 1 Koldcore Hobnails"
-Mythic Ash-Blighted Water Boots,Smithing,Boots and Shoes,95,,2.7055,"1 Primal Ash, 18 Koldcore Ingot, 1 Koldcore Hobnails"
-Kobold's Firm Helm,Smithing,Hats and Helms,10,,0.0135,"9 Copper Ingot, 1 Stately Helm Clasp"
-Merrow's Calming Helm,Smithing,Hats and Helms,10,,0.0135,"9 Copper Ingot, 1 Stately Helm Clasp"
-Kobold's Stout Helm,Smithing,Hats and Helms,15,,0.0269,"3 Tin Ingot, 1 Opulent Helm Clasp"
-Merrow's Soothing Helm,Smithing,Hats and Helms,15,,0.0269,"3 Tin Ingot, 1 Opulent Helm Clasp"
-Kobold's Staunch Helm,Smithing,Hats and Helms,20,,0.0448,"6 Tin Ingot, 1 Opulent Helm Clasp"
-Merrow's Tranquil Helm,Smithing,Hats and Helms,20,,0.0448,"6 Tin Ingot, 1 Opulent Helm Clasp"
-Kobold's Adamant Helm,Smithing,Hats and Helms,25,,0.0672,"9 Tin Ingot, 1 Opulent Helm Clasp"
-Merrow's Serene Helm,Smithing,Hats and Helms,25,,0.0672,"9 Tin Ingot, 1 Opulent Helm Clasp"
-Oread's Helm,Smithing,Hats and Helms,30,,0.0941,"3 Iron Ingot, 1 Gallant Helm Clasp"
-Naiad's Helm,Smithing,Hats and Helms,30,,0.0941,"3 Iron Ingot, 1 Gallant Helm Clasp"
-Oread's Firm Helm,Smithing,Hats and Helms,35,,0.1255,"6 Iron Ingot, 1 Gallant Helm Clasp"
-Naiad's Calming Helm,Smithing,Hats and Helms,35,,0.1255,"6 Iron Ingot, 1 Gallant Helm Clasp"
-Oread's Stout Helm,Smithing,Hats and Helms,40,,0.1613,"9 Iron Ingot, 1 Gallant Helm Clasp"
-Naiad's Soothing Helm,Smithing,Hats and Helms,40,,0.1613,"9 Iron Ingot, 1 Gallant Helm Clasp"
-Oread's Staunch Helm,Smithing,Hats and Helms,45,,0.2016,"6 Silver Ingot, 1 Regal Helm Clasp"
-Naiad's Tranquil Helm,Smithing,Hats and Helms,45,,0.2016,"6 Silver Ingot, 1 Regal Helm Clasp"
-Oread's Adamant Helm,Smithing,Hats and Helms,50,,0.2464,"12 Silver Ingot, 1 Regal Helm Clasp"
-Naiad's Serene Helm,Smithing,Hats and Helms,50,,0.2464,"12 Silver Ingot, 1 Regal Helm Clasp"
-Golem's Helm,Smithing,Hats and Helms,55,,0.2957,"18 Silver Ingot, 1 Regal Helm Clasp"
-Selkie's Helm,Smithing,Hats and Helms,55,,0.2957,"18 Silver Ingot, 1 Regal Helm Clasp"
-Golem's Firm Helm,Smithing,Hats and Helms,60,,0.3495,"9 Pyrrite Ingot, 1 Imperial Helm Clasp"
-Selkie's Calming Helm,Smithing,Hats and Helms,60,,0.3495,"9 Pyrrite Ingot, 1 Imperial Helm Clasp"
-Golem's Stout Helm,Smithing,Hats and Helms,65,,0.4077,"18 Pyrrite Ingot, 1 Imperial Helm Clasp"
-Sellkie's Soothing Helm,Smithing,Hats and Helms,65,,0.4077,"18 Pyrrite Ingot, 1 Imperial Helm Clasp"
-Golem's Staunch Helm,Smithing,Hats and Helms,70,,0.4704,"27 Pyrrite Ingot, 1 Imperial Helm Clasp"
-Selkie's Tranquil Helm,Smithing,Hats and Helms,70,,0.4704,"27 Pyrrite Ingot, 1 Imperial Helm Clasp"
-Golem's Adamant Helm,Smithing,Hats and Helms,75,,0.5376,"12 Mithril Ingot, 1 Baronial Helm Clasp"
-Selkie's Serene Helm,Smithing,Hats and Helms,75,,0.5376,"12 Mithril Ingot, 1 Baronial Helm Clasp"
-Giant's Helm,Smithing,Hats and Helms,80,,0.6048,"24 Mithril Ingot, 1 Baronial Helm Clasp"
-Leviathan's Helm,Smithing,Hats and Helms,80,,0.6048,"24 Mithril Ingot, 1 Baronial Helm Clasp"
-Giant's Firm Helm,Smithing,Hats and Helms,85,,0.672,"36 Mithril Ingot, 1 Baronial Helm Clasp"
-Leviathan's Calming Helm,Smithing,Hats and Helms,85,,0.672,"36 Mithril Ingot, 1 Baronial Helm Clasp"
-Giant's Stout Helm,Smithing,Hats and Helms,90,,0.7392,"15 Koldcore Ingot, 1 Lordly Helm Clasp"
-Leviathan's Soothing Helm,Smithing,Hats and Helms,90,,0.7392,"15 Koldcore Ingot, 1 Lordly Helm Clasp"
-Giant's Staunch Helm,Smithing,Hats and Helms,95,,0.8736,"30 Koldcore Ingot, 1 Lordly Helm Clasp"
-Leviathan's Tranquil Helm,Smithing,Hats and Helms,95,,0.8736,"30 Koldcore Ingot, 1 Lordly Helm Clasp"
-Mind Shielding Earth Helm,Smithing,Hats and Helms,95,,0.9632,"1 Mote of Ash, 1 Mote of Shade, 30 Koldcore Ingot, 1 Lordly Helm Clasp"
-Mind Shielding Water Helm,Smithing,Hats and Helms,95,,0.9632,"1 Mote of Blood, 1 Mote of Death, 30 Koldcore Ingot, 1 Lordly Helm Clasp"
-Mythic Mind Shielding Earth Helm,Smithing,Hats and Helms,95,,4.816,"1 Primal Ash, 1 Primal Shade, 45 Koldcore Ingot, 1 Lordly Helm Clasp"
-Mythic Mind Shielding Water Helm,Smithing,Hats and Helms,95,,4.816,"1 Primal Blood, 1 Primal Death, 45 Koldcore Ingot, 1 Lordly Helm Clasp"
-Kobold's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",2,,0.0001,2 Pine Timber
-Merrow's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",2,,0.0001,2 Pine Timber
-Kobold's Firm Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",7,,0.0012,4 Pine Timber
-Merrow's Calming Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",7,,0.0012,4 Pine Timber
-Kobold's Stout Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",12,,0.0068,6 Pine Timber
-Merrow's Soothing Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",12,,0.0068,6 Pine Timber
-Kobold's Staunch Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",17,,0.0135,2 Oak Timber
-Merrow's Tranquil Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",17,,0.0135,2 Oak Timber
-Kobold's Adamant Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",22,,0.0224,4 Oak Timber
-Merrow's Serene Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",22,,0.0224,4 Oak Timber
-Oread's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",27,,0.0336,6 Oak Timber
-Naiad's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",27,,0.0336,6 Oak Timber
-Oread's Firm Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",32,,0.0471,2 Ash Timber
-Naiad's Calming Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",32,,0.0471,2 Ash Timber
-Oread's Stout Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",37,,0.0628,4 Ash Timber
-Naiad's Soothing Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",37,,0.0628,4 Ash Timber
-Oread's Staunch Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",42,,0.0807,6 Ash Timber
-Naiad's Tranquil Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",42,,0.0807,6 Ash Timber
-Oread's Adamant Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",47,,0.1008,4 Birch Timber
-Naiad's Serene Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",47,,0.1008,4 Birch Timber
-Golem's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",52,,0.1232,8 Birch Timber
-Selkie's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",52,,0.1232,8 Birch Timber
-Golem's Firm Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",57,,0.1479,12 Birch Timber
-Selkie's Calming Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",57,,0.1479,12 Birch Timber
-Golem's Stout Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",62,,0.1748,6 Mahogany Timber
-Sellkie's Soothing Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",62,,0.1748,6 Mahogany Timber
-Golem's Staunch Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",67,,0.2039,12 Mahogany Timber
-Selkie's Tranquil Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",67,,0.2039,12 Mahogany Timber
-Golem's Adamant Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",72,,0.2352,18 Mahogany Timber
-Selkie's Serene Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",72,,0.2352,18 Mahogany Timber
-Giant's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",77,,0.2688,8 Cedar Timber
-Leviathan's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",77,,0.2688,8 Cedar Timber
-Giant's Firm Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",82,,0.3024,16 Cedar Timber
-Leviathan's Calming Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",82,,0.3024,16 Cedar Timber
-Giant's Stout Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",87,,0.336,24 Cedar Timber
-Leviathan's Soothing Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",87,,0.336,24 Cedar Timber
-Swamp-touched Dvergr's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",90,,0.3696,"1 Living Fossil, 30 Teak Timber"
-Swamp-touched Leviathan's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",90,,0.3696,"1 Living Fossil, 30 Teak Timber"
-Giant's Staunch Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",92,,0.3696,10 Teak Timber
-Leviathan's Tranquil Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",92,,0.3696,10 Teak Timber
-Blighted Golem's Solid Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",95,,0.4368,"1 Mote of Ash, 1 Mote of Death, 15 Teak Timber"
-Blighted Hydra's Agile Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",95,,0.4368,"1 Mote of Blood, 1 Mote of Death, 15 Teak Timber"
-Wooden Wolf Carving,Woodcrafting,Carved Trinkets,28,,0.0672,15 Oak Timber
-Wooden Raven Carving,Woodcrafting,Carved Trinkets,33,,0.0941,5 Ash Timber
-Wooden Crab Carving,Woodcrafting,Carved Trinkets,38,,0.1255,10 Ash Timber
-Wooden Octopus Carving,Woodcrafting,Carved Trinkets,43,,0.1613,15 Ash Timber
-Wooden Seashell Carving,Woodcrafting,Carved Trinkets,48,,0.2016,10 Birch Timber
-Wooden Schooner Carving,Woodcrafting,Carved Trinkets,53,,0.2464,20 Birch Timber
-Wooden Bullfrog Carving,Woodcrafting,Carved Trinkets,58,,0.2957,30 Birch Timber
-Wooden Scarab Carving,Woodcrafting,Carved Trinkets,63,,0.3495,15 Mahogany Timber
-Wooden Batwing Carving,Woodcrafting,Carved Trinkets,68,,0.4077,30 Mahogany Timber
-Wooden Serpent Carving,Woodcrafting,Carved Trinkets,73,,0.4704,45 Mahogany Timber
-Wooden Elk Carving,Woodcrafting,Carved Trinkets,78,,0.5376,20 Cedar Timber
-Wooden Ram Carving,Woodcrafting,Carved Trinkets,83,,0.6048,40 Cedar Timber
-Wooden Lion Carving,Woodcrafting,Carved Trinkets,88,,0.672,60 Cedar Timber
-Swamp-touched Serpent Carving,Woodcrafting,Carved Trinkets,90,,0.7392,"1 Living Fossil, 75 Teak Timber"
-Wooden Boar Carving,Woodcrafting,Carved Trinkets,93,,0.7392,25 Teak Timber
-Blighted Scaldrum Carving,Woodcrafting,Carved Trinkets,95,,1.4562,"1 Mote of Ash, 1 Mote of Blood, 1 Mote of Death, 1 Mote of Shade, 75 Teak Timber"
-Purpond Dram of Mastery,Cooking,Drams,14,,0.005,"2 Purpond Oil, 2 Admirable Bolete"
-Tigris Dram of Mastery,Cooking,Drams,19,,0.01,"2 Tigris Oil, 2 Chantarelle"
-Greater Tigris Dram of Mastery,Cooking,Drams,24,,0.0175,"3 Tigris Oil, 3 Chantarelle"
-Mighty Tigris Dram of Mastery,Cooking,Drams,29,,0.0275,"4 Tigris Oil, 4 Chantarelle"
-Fangfin Dram of Mastery,Cooking,Drams,34,,0.04,"2 Fangfin Oil, 2 Bright Caps"
-Greater Fangfin Dram of Mastery,Cooking,Drams,39,,0.055,"3 Fangfin Oil, 3 Bright Caps"
-Mighty Fangfin Dram of Mastery,Cooking,Drams,44,,0.0725,"4 Fangfin Oil, 4 Bright Caps"
-Scaline Dram of Mastery,Cooking,Drams,49,,0.0925,"2 Scaline Oil, 2 Faerie's Parasol"
-Greater Scaline Dram of Mastery,Cooking,Drams,54,,0.115,"3 Scaline Oil, 3 Faerie's Parasol"
-Mighty Scaline Dram of Mastery,Cooking,Drams,59,,0.14,"4 Scaline Oil, 4 Faerie's Parasol"
-Specter Dram of Mastery,Cooking,Drams,64,,0.1675,"2 Specter Oil, 2 Lady's Lashes"
-Greater Specter Dram of Mastery,Cooking,Drams,69,,0.1975,"3 Specter Oil, 3 Lady's Lashes"
-Mighty Specter Dram of Mastery,Cooking,Drams,74,,0.23,"4 Specter Oil, 4 Lady's Lashes"
-Starlight Dram of Mastery,Cooking,Drams,79,,0.265,"2 Starlight Oil, 2 Dawn's Smile"
-Greater Starlight Dram of Mastery,Cooking,Drams,84,,0.285,"3 Starlight Oil, 3 Dawn's Smile"
-Mighty Starlight Dram of Mastery,Cooking,Drams,89,,0.3,"4 Starlight Oil, 4 Dawn's Smile"
-Turgid Dram of Mastery,Cooking,Drams,94,,0.325,"2 Turgid Oil, 2 Fuzzy Sandozi"
-Blighted Dram of Mastery,Cooking,Drams,95,,1.75,"1 Mote of Ash, 3 Turgid Oil, 3 Fuzzy Sandozi"
+﻿name,skill,type,level,experience,cost,ingredients,class_
+Copper Ingot,Smithing,Refined Ingredients,1,,0,2 Copper Ore,
+Footman's Sword,Smithing,Warrior Swords,1,,0.0003,"2 Copper Ingot, 1 Wildpaw Handgrip",Warrior
+Silver Ingot,Smithing,Refined Ingredients,45,,0,2 Silver Ore,
+Tin Ingot,Smithing,Refined Ingredients,15,,0,2 Tin Ore,
+Iron Ingot,Smithing,Refined Ingredients,30,,0,2 Iron Ore,
+Pyrrite Ingot,Smithing,Refined Ingredients,60,,0,2 Pyrrite Ore,
+Mithril Ingot,Smithing,Refined Ingredients,75,,0,2 Mithril Ore,
+Koldcore Ingot,Smithing,Refined Ingredients,90,,0,2 Koldcore Ore,
+Copper Powder,Smithing,Metal Powder and Mineral Oil,4,,0.0025,5 Copper Ingot,
+Copper Admix Powder,Smithing,Metal Powder and Mineral Oil,9,,0.0095,10 Copper Ingot,
+Copper Alloy Powder,Smithing,Metal Powder and Mineral Oil,14,,0.065,15 Copper Ingot,
+Tin Powder,Smithing,Metal Powder and Mineral Oil,19,,0.13,5 Tin Ingot,
+Tin Admix Powder,Smithing,Metal Powder and Mineral Oil,24,,0.19,10 Tin Ingot,
+Tin Alloy Powder,Smithing,Metal Powder and Mineral Oil,29,,0.228,15 Tin Ingot,
+Iron Powder,Smithing,Metal Powder and Mineral Oil,34,,0.266,5 Iron Ingot,
+Iron Admix Powder,Smithing,Metal Powder and Mineral Oil,39,,0.304,10 Iron Ingot,
+Iron Alloy Powder,Smithing,Metal Powder and Mineral Oil,44,,0.342,15 Iron Ingot,
+Silver Powder,Smithing,Metal Powder and Mineral Oil,49,,0.38,5 Silver Ingot,
+Silver Admix Powder,Smithing,Metal Powder and Mineral Oil,54,,0.418,10 Silver Ingot,
+Silver Alloy Powder,Smithing,Metal Powder and Mineral Oil,59,,0.456,15 Silver Ingot,
+Pyrrite Powder,Smithing,Metal Powder and Mineral Oil,64,,0.57,5 Pyrrite Ingot,
+Pyrrite Admix Powder,Smithing,Metal Powder and Mineral Oil,69,,0.665,10 Pyrrite Ingot,
+Pyrrite Alloy Powder,Smithing,Metal Powder and Mineral Oil,74,,0.95,15 Pyrrite Ingot,
+Mithril Powder,Smithing,Metal Powder and Mineral Oil,79,,1.425,5 Mithril Ingot,
+Mithril Admix Powder,Smithing,Metal Powder and Mineral Oil,84,,1.9,10 Mithril Ingot,
+Mithril Alloy Powder,Smithing,Metal Powder and Mineral Oil,89,,2.375,15 Mithril Ingot,
+Koldcore Powder,Smithing,Metal Powder and Mineral Oil,94,,2.85,5 Koldcore Ingot,
+Copper Mineral Extract,Smithing,Metal Powder and Mineral Oil,4,,0.0025,5 Copper Ingot,
+Copper Mineral Spirits,Smithing,Metal Powder and Mineral Oil,9,,0.0095,10 Copper Ingot,
+Copper Mineral Distillate,Smithing,Metal Powder and Mineral Oil,14,,0.065,15 Copper Ingot,
+Tin Mineral Extract,Smithing,Metal Powder and Mineral Oil,19,,0.13,5 Tin Ingot,
+Tin Mineral Spirits,Smithing,Metal Powder and Mineral Oil,24,,0.19,10 Tin Ingot,
+Tin Mineral Distillate,Smithing,Metal Powder and Mineral Oil,29,,0.228,15 Tin Ingot,
+Iron Mineral Extract,Smithing,Metal Powder and Mineral Oil,34,,0.266,5 Iron Ingot,
+Iron Mineral Spirits,Smithing,Metal Powder and Mineral Oil,39,,0.304,10 Iron Ingot,
+Iron Mineral Distillate,Smithing,Metal Powder and Mineral Oil,44,,0.342,15 Iron Ingot,
+Silver Mineral Extract,Smithing,Metal Powder and Mineral Oil,49,,0.38,5 Silver Ingot,
+Silver Mineral Spirits,Smithing,Metal Powder and Mineral Oil,54,,0.418,10 Silver Ingot,
+Silver Mineral Distillate,Smithing,Metal Powder and Mineral Oil,59,,0.456,15 Silver Ingot,
+Pyrrite Mineral Extract,Smithing,Metal Powder and Mineral Oil,64,,0.57,5 Pyrrite Ingot,
+Pyrrite Mineral Spirits,Smithing,Metal Powder and Mineral Oil,69,,0.665,10 Pyrrite Ingot,
+Pyrrite Mineral Distillate,Smithing,Metal Powder and Mineral Oil,74,,0.95,15 Pyrrite Ingot,
+Mithril Mineral Extract,Smithing,Metal Powder and Mineral Oil,79,,1.425,5 Mithril Ingot,
+Mithril Mineral Spirits,Smithing,Metal Powder and Mineral Oil,84,,1.9,10 Mithril Ingot,
+Mithril Mineral Distillate,Smithing,Metal Powder and Mineral Oil,89,,2.375,15 Mithril Ingot,
+Koldcore Mineral Extract,Smithing,Metal Powder and Mineral Oil,94,,2.85,5 Koldcore Ingot,
+Blighted Koldcore Mineral Spirits,Smithing,Metal Powder and Mineral Oil,95,,9.975,"20 Koldcore Ingot, 1 Mote of Shade",
+Blight Koldcore Powder,Smithing,Metal Powder and Mineral Oil,95,,9.975,"20 Koldcore Ingot, 1 Mote of Death",
+Copper Belt Buckle,Smithing,Crafting Components,1,,0.0125,5 Copper Ingot,
+Copper Hobnails,Smithing,Crafting Components,1,,0.0125,5 Copper Ingot,
+Tin Belt Buckle,Smithing,Crafting Components,15,,0.135,5 Tin Ingot,
+Tin Hobnails,Smithing,Crafting Components,15,,0.135,5 Tin Ingot,
+Iron Belt Buckle,Smithing,Crafting Components,30,,0.35,5 Iron Ingot,
+Iron Hobnails,Smithing,Crafting Components,30,,0.35,5 Iron Ingot,
+Silver Belt Buckle,Smithing,Crafting Components,45,,0.578,5 Silver Ingot,
+Silver Hobnails,Smithing,Crafting Components,45,,0.578,5 Silver Ingot,
+Pyrrite Belt Buckle,Smithing,Crafting Components,60,,0.879,5 Pyrrite Ingot,
+Pyrrite Hobnails,Smithing,Crafting Components,60,,0.879,5 Pyrrite Ingot,
+Mithril Belt Buckle,Smithing,Crafting Components,75,,1.013,5 Mithril Ingot,
+Mithril Hobnails,Smithing,Crafting Components,75,,1.013,5 Mithril Ingot,
+Koldcore Belt Buckle,Smithing,Crafting Components,90,,1.325,5 Koldcore Ingot,
+Koldcore Hobnails,Smithing,Crafting Components,90,,1.325,5 Koldcore Ingot,
+Dustspun Cloth,Tailoring,Refined Ingredients,1,,0,2 Mudbelly Silkworm or Featherweight Fleece,
+Wildpaw Leather,Tailoring,Refined Ingredients,1,,0,2 Wildpaw Pelt,
+Gossburg Cloth,Tailoring,Refined Ingredients,15,,0,2 Greenburg Silkworm or Gauzygoss Fleece,
+Bristlefur Leather,Tailoring,Refined Ingredients,15,,0,2 Bristlefur Pelt,
+Eventwill Cloth,Tailoring,Refined Ingredients,30,,0,2 Sunset Silkworm or Duskdown Fleece,
+Gildmane Leather,Tailoring,Refined Ingredients,30,,0,2 Gildmane Pelt,
+Beachweave Cloth,Tailoring,Refined Ingredients,45,,0,2 Saltwater Silkworm or Shoresheer Fleece,
+Saltskin Leather,Tailoring,Refined Ingredients,45,,0,2 Saltskin Pelt,
+Cragcord Cloth,Tailoring,Refined Ingredients,60,,0,2 Pyrrick Silkworm or Cragtweed Fleece,
+Stonehide Leather,Tailoring,Refined Ingredients,60,,0,2 Stonehide Pelt,
+Twigtwine Cloth,Tailoring,Refined Ingredients,75,,0,2 Trunktail Silkworm or Twiltree Fleece,
+Fellfur Leather,Tailoring,Refined Ingredients,75,,0,2 Fellfur Pelt,
+Lavenmeer Cloth,Tailoring,Refined Ingredients,90,,0,2 Lavender Silkworm or Momeer Fleece,
+Thornskin Leather,Tailoring,Refined Ingredients,90,,0,2 Thornskin Pelt,
+Dustspun Thread,Tailoring,Crafting Components,1,,0.0125,5 Dustspun Cloth,
+Wildpaw Handgrip,Tailoring,Crafting Components,1,,0.0125,5 Wildpaw Leather,
+Gossburg Thread,Tailoring,Crafting Components,15,,0.135,5 Gossburg Cloth,
+Bristlefur Handgrip,Tailoring,Crafting Components,15,,0.135,5 Bristlefur Leather,
+Eventwill Thread,Tailoring,Crafting Components,30,,0.35,5 Eventwill Cloth,
+Gildmane Handgrip,Tailoring,Crafting Components,30,,0.35,5 Gildmane Leather,
+Beachweave Thread,Tailoring,Crafting Components,45,,0.578,5 Beachweave Cloth,
+Saltskin Handgrip,Tailoring,Crafting Components,45,,0.578,5 Saltskin Leather,
+Cragcord Thread,Tailoring,Crafting Components,60,,0.879,5 Cragcord Cloth,
+Stonehide Handgrip,Tailoring,Crafting Components,60,,0.879,5 Stonehide Leather,
+Twigtwine Thread,Tailoring,Crafting Components,75,,1.013,5 Twigtwine Cloth,
+Fellfur Handgrip,Tailoring,Crafting Components,75,,1.013,5 Fellfur Leather,
+Lavenmeer Thread,Tailoring,Crafting Components,90,,1.325,5 Lavenmeer Cloth,
+Thornskin Handgrip,Tailoring,Crafting Components,90,,1.325,5 Thornskin Leather,
+Purpond Oil,Cooking,Refined Ingredients,1,,0,"2 Pond Loach, 1 Water",
+Tigris Oil,Cooking,Refined Ingredients,15,,0,"2 Tiger Eel, 1 Water",
+Fangfin Oil,Cooking,Refined Ingredients,30,,0,"2 Greenfang Shark, 1 Water",
+Scaline Oil,Cooking,Refined Ingredients,45,,0,"2 Saltscale Terrelli, 1 Water",
+Specter Oil,Cooking,Refined Ingredients,60,,0,"2 Ghosteyed Trout, 1 Water",
+Starlight Oil,Cooking,Refined Ingredients,75,,0,"2 Spotted Galaxias, 1 Water",
+Turgid Oil,Cooking,Refined Ingredients,90,,0,"2 Bigbelly Hamachi, 1 Water",
+Pine Timber,Woodcrafting,Refined Ingredients,1,,0,2 Pine,
+Oak Timber,Woodcrafting,Refined Ingredients,15,,0,2 Oak,
+Ash Timber,Woodcrafting,Refined Ingredients,30,,0,2 Ash,
+Birch Timber,Woodcrafting,Refined Ingredients,45,,0,2 Birch,
+Mahogany Timber,Woodcrafting,Refined Ingredients,60,,0,2 Mahogany,
+Cedar Timber,Woodcrafting,Refined Ingredients,75,,0,2 Cedar,
+Teak Timber,Woodcrafting,Refined Ingredients,90,,0,2 Teak,
+Stately Helm Clasp,Woodcrafting,Crafting Components,10,,0.0315,"2 Copper Ingot, 2 Dustspun Cloth, 2 Pine Timber, 2 Wildpaw Leather",
+Opulent Helm Clasp,Woodcrafting,Crafting Components,15,,0.337,"2 Tin Ingot, 2 Gossburg Cloth, 2 Oak Timber, 2 Bristlefur Leather",
+Gallant Helm Clasp,Woodcrafting,Crafting Components,30,,0.875,"2 Iron Ingot, 2 Eventwill Cloth, 2 Ash Timber, 2 Gildmane Leather",
+Regal Helm Clasp,Woodcrafting,Crafting Components,45,,1.445,"2 Silver Ingot, 2 Beachweave Cloth, 2 Birch Timber, 2 Saltskin Leather",
+Imperial Helm Clasp,Woodcrafting,Crafting Components,60,,2.197,"2 Pyrrite Ingot, 2 Cragcord Cloth, 2 Mahogany Timber, 2 Stonehide Leather",
+Baronial Helm Clasp,Woodcrafting,Crafting Components,75,,2.532,"2 Mithril Ingot, 2 Twigtwine Cloth, 2 Cedar Timber, 2 Fellfur Leather",
+Lordly Helm Clasp,Woodcrafting,Crafting Components,90,,3.312,"2 Koldcore Ingot, 2 Lavenmeer Cloth, 2 Teak Timber, 2 Thornskin Leather",
+Dustspun Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,4,,0.0025,5 Dustspun Cloth,
+Thin Wildpaw Stitching,Tailoring,Cloth Embroidery and Leather Stitching,4,,0.0025,5 Wildpaw Leather,
+Fine Dustspun Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,9,,0.0095,10 Dustspun Cloth,
+Light Wildpaw Stitching,Tailoring,Cloth Embroidery and Leather Stitching,9,,0.0095,5 Wildpaw Leather,
+Exquisite Dustspun Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,14,,0.065,15 Dustspun Cloth,
+Heavy Wildpaw Stitching,Tailoring,Cloth Embroidery and Leather Stitching,14,,0.065,5 Wildpaw Leather,
+Gossburg Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,19,,0.13,5 Gossburg Cloth,
+Thin Bristlefur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,19,,0.13,5 Bristlefur Leather,
+Fine Gossburg Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,24,,0.19,10 Gossburg Cloth,
+Light Bristlefur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,24,,0.19,5 Bristlefur Leather,
+Exquisite Gossburg Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,29,,0.228,15 Gossburg Cloth,
+Heavy Bristlefur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,29,,0.228,5 Bristlefur Leather,
+Eventwill Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,34,,0.266,5 Eventwill Cloth,
+Thin Gildmane Stitching,Tailoring,Cloth Embroidery and Leather Stitching,34,,0.266,5 Gildmane Leather,
+Fine Eventwill Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,39,,0.304,10 Eventwill Cloth,
+Light Gildmane Stitching,Tailoring,Cloth Embroidery and Leather Stitching,39,,0.304,5 Gildmane Leather,
+Exquisite Eventwill Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,44,,0.342,15 Eventwill Cloth,
+Heavy Gildmane Stitching,Tailoring,Cloth Embroidery and Leather Stitching,44,,0.342,5 Gildmane Leather,
+Beachweave Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,49,,0.38,5 Beachweave Cloth,
+Thin Saltskin Stitching,Tailoring,Cloth Embroidery and Leather Stitching,49,,0.38,5 Saltskin Leather,
+Fine Beachweave Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,54,,0.418,10 Beachweave Cloth,
+Light Saltskin Stitching,Tailoring,Cloth Embroidery and Leather Stitching,54,,0.418,5 Saltskin Leather,
+Exquisite Beachweave Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,59,,0.456,15 Beachweave Cloth,
+Heavy Saltskin Stitching,Tailoring,Cloth Embroidery and Leather Stitching,59,,0.456,5 Saltskin Leather,
+Cragcord Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,64,,0.57,5 Cragcord Cloth,
+Thin Stonehide Stitching,Tailoring,Cloth Embroidery and Leather Stitching,64,,0.57,5 Stonehide Leather,
+Fine Cragcord Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,69,,0.665,10 Cragcord Cloth,
+Light Stonehide Stitching,Tailoring,Cloth Embroidery and Leather Stitching,69,,0.665,5 Stonehide Leather,
+Exquisite Cragcord Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,74,,0.95,15 Cragcord Cloth,
+Heavy Stonehide Stitching,Tailoring,Cloth Embroidery and Leather Stitching,74,,0.95,5 Stonehide Leather,
+Twigtwine Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,79,,1.425,5 Twigtwine Cloth,
+Thin Fellfur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,79,,1.425,5 Fellfur Leather,
+Fine Twigtwine Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,84,,1.9,10 Twigtwine Cloth,
+Light Fellfur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,84,,1.9,5 Fellfur Leather,
+Exquisite Twigtwine Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,89,,2.375,15 Twigtwine Cloth,
+Heavy Fellfur Stitching,Tailoring,Cloth Embroidery and Leather Stitching,89,,2.375,5 Fellfur Leather,
+Lavenmeer Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,94,,2.85,5 Lavenmeer Cloth,
+Thin Thornskin Stitching,Tailoring,Cloth Embroidery and Leather Stitching,94,,2.85,5 Thornskin Leather,
+Blighted Lavenmeer Embroidery,Tailoring,Cloth Embroidery and Leather Stitching,95,,9.975,"20 Lavenmeer Cloth, 1 Mote of Death",
+Blighted Thornskin Stitching,Tailoring,Cloth Embroidery and Leather Stitching,95,,9.975,"10 Thornskin Leather, 1 Mote of Ash",
+Pine Resin,Woodcrafting,Wood Resins and Pitch,4,,0.0025,5 Pine Timber,
+Pine Pitch,Woodcrafting,Wood Resins and Pitch,4,,0.0025,5 Pine Timber,
+Refined Pine Resin,Woodcrafting,Wood Resins and Pitch,9,,0.0095,10 Pine Timber,
+Sticky Pine Pitch,Woodcrafting,Wood Resins and Pitch,9,,0.0095,10 Pine Timber,
+Pure Pine Resin,Woodcrafting,Wood Resins and Pitch,14,,0.065,15 Pine Timber,
+Viscid Pine Pitch,Woodcrafting,Wood Resins and Pitch,14,,0.065,15 Pine Timber,
+Oak Resin,Woodcrafting,Wood Resins and Pitch,19,,0.13,5 Oak Timber,
+Oak Pitch,Woodcrafting,Wood Resins and Pitch,19,,0.13,5 Oak Timber,
+Refined Oak Resin,Woodcrafting,Wood Resins and Pitch,24,,0.19,10 Oak Timber,
+Sticky Oak Pitch,Woodcrafting,Wood Resins and Pitch,24,,0.19,10 Oak Timber,
+Pure Oak Resin,Woodcrafting,Wood Resins and Pitch,29,,0.228,15 Oak Timber,
+Viscid Oak Pitch,Woodcrafting,Wood Resins and Pitch,29,,0.228,15 Oak Timber,
+Ash Resin,Woodcrafting,Wood Resins and Pitch,34,,0.266,5 Ash Timber,
+Ash Pitch,Woodcrafting,Wood Resins and Pitch,34,,0.266,5 Ash Timber,
+Refined Ash Resin,Woodcrafting,Wood Resins and Pitch,39,,0.304,10 Ash Timber,
+Sticky Ash Pitch,Woodcrafting,Wood Resins and Pitch,39,,0.304,10 Ash Timber,
+Pure Ash Resin,Woodcrafting,Wood Resins and Pitch,44,,0.342,15 Ash Timber,
+Viscid Ash Pitch,Woodcrafting,Wood Resins and Pitch,44,,0.342,15 Ash Timber,
+Birch Resin,Woodcrafting,Wood Resins and Pitch,49,,0.38,5 Birch Timber,
+Birch Pitch,Woodcrafting,Wood Resins and Pitch,49,,0.38,5 Birch Timber,
+Refined Birch Resin,Woodcrafting,Wood Resins and Pitch,54,,0.418,10 Birch Timber,
+Sticky Birch Pitch,Woodcrafting,Wood Resins and Pitch,54,,0.418,10 Birch Timber,
+Pure Birch Resin,Woodcrafting,Wood Resins and Pitch,59,,0.456,15 Birch Timber,
+Viscid Birch Pitch,Woodcrafting,Wood Resins and Pitch,59,,0.456,15 Birch Timber,
+Mahogany Resin,Woodcrafting,Wood Resins and Pitch,64,,0.57,5 Mahogany Timber,
+Mahogany Pitch,Woodcrafting,Wood Resins and Pitch,64,,0.57,5 Mahogany Timber,
+Refined Mahogany Resin,Woodcrafting,Wood Resins and Pitch,69,,0.665,10 Mahogany Timber,
+Sticky Mahogany Pitch,Woodcrafting,Wood Resins and Pitch,69,,0.665,10 Mahogany Timber,
+Pure Mahogany Resin,Woodcrafting,Wood Resins and Pitch,74,,0.95,15 Mahogany Timber,
+Viscid Mahogany Pitch,Woodcrafting,Wood Resins and Pitch,74,,0.95,15 Mahogany Timber,
+Cedar Resin,Woodcrafting,Wood Resins and Pitch,79,,1.425,5 Cedar Timber,
+Cedar Pitch,Woodcrafting,Wood Resins and Pitch,79,,1.425,5 Cedar Timber,
+Refined Cedar Resin,Woodcrafting,Wood Resins and Pitch,84,,1.9,10 Cedar Timber,
+Sticky Cedar Pitch,Woodcrafting,Wood Resins and Pitch,84,,1.9,10 Cedar Timber,
+Pure Cedar Resin,Woodcrafting,Wood Resins and Pitch,89,,2.375,15 Cedar Timber,
+Viscid Cedar Pitch,Woodcrafting,Wood Resins and Pitch,89,,2.375,15 Cedar Timber,
+Teak Resin,Woodcrafting,Wood Resins and Pitch,94,,2.85,5 Teak Timber,
+Teak Pitch,Woodcrafting,Wood Resins and Pitch,94,,2.85,5 Teak Timber,
+Blighted Teak Resin,Woodcrafting,Wood Resins and Pitch,95,,9.975,"20 Teak Timber, 1 Mote of Ash",
+Blighted Teak Pitch,Woodcrafting,Wood Resins and Pitch,95,,9.975,"20 Teak Timber, 1 Mote of Blood",
+Kobold's Axe,Woodcrafting,Shaman Axes,1,,0.0003,"2 Pine Timber, 1 Wildpaw Handgrip",Shaman
+Merrow's Axe,Woodcrafting,Shaman Axes,1,,0.0003,"2 Pine Timber, 1 Wildpaw Handgrip",Shaman
+Kobold's Firm Axe,Woodcrafting,Shaman Axes,6,,0.0034,"4 Pine Timber, 1 Wildpaw Handgrip",Shaman
+Merrow's Calming Axe,Woodcrafting,Shaman Axes,6,,0.0034,"4 Pine Timber, 1 Wildpaw Handgrip",Shaman
+Kobold's Stout Axe,Woodcrafting,Shaman Axes,11,,0.0202,"6 Pine Timber, 1 Wildpaw Handgrip",Shaman
+Merrow's Soothing Axe,Woodcrafting,Shaman Axes,11,,0.0202,"6 Pine Timber, 1 Wildpaw Handgrip",Shaman
+Kobold's Staunch Axe,Woodcrafting,Shaman Axes,16,,0.0404,"2 Oak Timber, 1 Bristlefur Handgrip",Shaman
+Merrow's Tranquil Axe,Woodcrafting,Shaman Axes,16,,0.0404,"2 Oak Timber, 1 Bristlefur Handgrip",Shaman
+Kobold's Adamant Axe,Woodcrafting,Shaman Axes,21,,0.0672,"4 Oak Timber, 1 Bristlefur Handgrip",Shaman
+Merrow's Serene Axe,Woodcrafting,Shaman Axes,21,,0.0672,"4 Oak Timber, 1 Bristlefur Handgrip",Shaman
+Oread's Axe,Woodcrafting,Shaman Axes,26,,0.1008,"6 Oak Timber, 1 Bristlefur Handgrip",Shaman
+Naiad's Axe,Woodcrafting,Shaman Axes,26,,0.1008,"6 Oak Timber, 1 Bristlefur Handgrip",Shaman
+Oread's Firm Axe,Woodcrafting,Shaman Axes,31,,0.1412,"2 Ash Timber, 1 Gildmane Handgrip",Shaman
+Naiad's Calming Axe,Woodcrafting,Shaman Axes,31,,0.1412,"2 Ash Timber, 1 Gildmane Handgrip",Shaman
+Oread's Stout Axe,Woodcrafting,Shaman Axes,36,,0.1882,"4 Ash Timber, 1 Gildmane Handgrip",Shaman
+Naiad's Soothing Axe,Woodcrafting,Shaman Axes,36,,0.1882,"4 Ash Timber, 1 Gildmane Handgrip",Shaman
+Oread's Staunch Axe,Woodcrafting,Shaman Axes,41,,0.242,"6 Ash Timber, 1 Gildmane Handgrip",Shaman
+Naiad's Tranquil Axe,Woodcrafting,Shaman Axes,41,,0.242,"6 Ash Timber, 1 Gildmane Handgrip",Shaman
+Oread's Adamant Axe,Woodcrafting,Shaman Axes,46,,0.3024,"4 Birch Timber, 1 Saltskin Handgrip",Shaman
+Naiad's Serene Axe,Woodcrafting,Shaman Axes,46,,0.3024,"4 Birch Timber, 1 Saltskin Handgrip",Shaman
+Golem's Axe,Woodcrafting,Shaman Axes,51,,0.3696,"8 Birch Timber, 1 Saltskin Handgrip",Shaman
+Selkie's Axe,Woodcrafting,Shaman Axes,51,,0.3696,"8 Birch Timber, 1 Saltskin Handgrip",Shaman
+Golem's Firm Axe,Woodcrafting,Shaman Axes,56,,0.4436,"12 Birch Timber, 1 Saltskin Handgrip",Shaman
+Selkie's Calming Axe,Woodcrafting,Shaman Axes,56,,0.4436,"12 Birch Timber, 1 Saltskin Handgrip",Shaman
+Golem's Stout Axe,Woodcrafting,Shaman Axes,61,,0.5242,"6 Mahogany Timber, 1 Stonehide Handgrip",Shaman
+Sellkie's Soothing Axe,Woodcrafting,Shaman Axes,61,,0.5242,"6 Mahogany Timber, 1 Stonehide Handgrip",Shaman
+Golem's Staunch Axe,Woodcrafting,Shaman Axes,66,,0.6116,"12 Mahogany Timber, 1 Stonehide Handgrip",Shaman
+Selkie's Tranquil Axe,Woodcrafting,Shaman Axes,66,,0.6116,"12 Mahogany Timber, 1 Stonehide Handgrip",Shaman
+Golem's Adamant Axe,Woodcrafting,Shaman Axes,71,,0.7056,"18 Mahogany Timber, 1 Stonehide Handgrip",Shaman
+Selkie's Serene Axe,Woodcrafting,Shaman Axes,71,,0.7056,"18 Mahogany Timber, 1 Stonehide Handgrip",Shaman
+Giant's Axe,Woodcrafting,Shaman Axes,76,,0.8064,"8 Cedar Timber, 1 Fellfur Handgrip",Shaman
+Leviathan's Axe,Woodcrafting,Shaman Axes,76,,0.8064,"8 Cedar Timber, 1 Fellfur Handgrip",Shaman
+Giant's Firm Axe,Woodcrafting,Shaman Axes,81,,0.9072,"16 Cedar Timber, 1 Fellfur Handgrip",Shaman
+Leviathan's Calming Axe,Woodcrafting,Shaman Axes,81,,0.9072,"16 Cedar Timber, 1 Fellfur Handgrip",Shaman
+Giant's Stout Axe,Woodcrafting,Shaman Axes,86,,1.008,"24 Cedar Timber, 1 Fellfur Handgrip",Shaman
+Leviathan's Soothing Axe,Woodcrafting,Shaman Axes,86,,1.008,"24 Cedar Timber, 1 Fellfur Handgrip",Shaman
+Swamp-touched Earthweald Axe,Woodcrafting,Shaman Axes,90,,1.1088,"6 Earthentine, 1 Living Fossil, 30 Teak Timber, 1 Thornskin Handgrip",Shaman
+Swamp-touched Waterweald Axe,Woodcrafting,Shaman Axes,90,,1.1088,"6 Aquatear, 1 Living Fossil, 30 Teak Timber, 1 Thornskin Handgrip",Shaman
+Giant's Staunch Axe,Woodcrafting,Shaman Axes,91,,1.1088,"10 Teak Timber, 1 Thornskin Handgrip",Shaman
+Leviathan's Tranquil Axe,Woodcrafting,Shaman Axes,91,,1.1088,"10 Teak Timber, 1 Thornskin Handgrip",Shaman
+Ash-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Ash, 35 Teak Timber, 1 Thornskin Handgrip",Shaman
+Ash-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Ash, 35 Teak Timber, 1 Thornskin Handgrip",Shaman
+Blood-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Blood, 35 Teak Timber, 1 Thornskin Handgrip",Shaman
+Blood-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Blood, 35 Teak Timber, 1 Thornskin Handgrip",Shaman
+Death-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Death, 35 Teak Timber, 1 Thornskin Handgrip",Shaman
+Death-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Death, 35 Teak Timber, 1 Thornskin Handgrip",Shaman
+Shade-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Shade, 35 Teak Timber, 1 Thornskin Handgrip",Shaman
+Shade-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,1.3104,"4 Mote of Shade, 35 Teak Timber, 1 Thornskin Handgrip",Shaman
+Mythic Ash-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Ash, 75 Teak Timber, 1 Thornskin Handgrip",Shaman
+Mythic Ash-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Ash, 75 Teak Timber, 1 Thornskin Handgrip",Shaman
+Mythic Blood-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Blood, 75 Teak Timber, 1 Thornskin Handgrip",Shaman
+Mythic Blood-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Blood, 75 Teak Timber, 1 Thornskin Handgrip",Shaman
+Mythic Death-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Death, 75 Teak Timber, 1 Thornskin Handgrip",Shaman
+Mythic Death-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Death, 75 Teak Timber, 1 Thornskin Handgrip",Shaman
+Mythic Shade-Blighted Earth Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Shade, 75 Teak Timber, 1 Thornskin Handgrip",Shaman
+Mythic Shade-Blighted Water Axe,Woodcrafting,Shaman Axes,95,,8.736,"2 Primal Shade, 75 Teak Timber, 1 Thornskin Handgrip",Shaman
+Kobold's Armor,Smithing,Armor and Outfits,1,,0.0004,"4 Copper Ingot, 1 Dustspun Thread",Shaman
+Merrow's Armor,Smithing,Armor and Outfits,1,,0.0004,"4 Copper Ingot, 1 Dustspun Thread",Shaman
+Kobold's Firm Armor,Smithing,Armor and Outfits,6,,0.0045,"8 Copper Ingot, 1 Dustspun Thread",Shaman
+Merrow's Calming Armor,Smithing,Armor and Outfits,6,,0.0045,"8 Copper Ingot, 1 Dustspun Thread",Shaman
+Kobold's Stout Armor,Smithing,Armor and Outfits,11,,0.0269,"12 Copper Ingot, 1 Dustspun Thread",Shaman
+Merrow's Soothing Armor,Smithing,Armor and Outfits,11,,0.0269,"12 Copper Ingot, 1 Dustspun Thread",Shaman
+Kobold's Staunch Armor,Smithing,Armor and Outfits,16,,0.0538,"4 Tin Ingot, 1 Gossburg Thread",Shaman
+Merrow's Tranquil Armor,Smithing,Armor and Outfits,16,,0.0538,"4 Tin Ingot, 1 Gossburg Thread",Shaman
+Kobold's Adamant Armor,Smithing,Armor and Outfits,21,,0.0896,"8 Tin Ingot, 1 Gossburg Thread",Shaman
+Merrow's Serene Armor,Smithing,Armor and Outfits,21,,0.0896,"8 Tin Ingot, 1 Gossburg Thread",Shaman
+Oread's Armor,Smithing,Armor and Outfits,26,,0.1344,"12 Tin Ingot, 1 Gossburg Thread",Shaman
+Naiad's Armor,Smithing,Armor and Outfits,26,,0.1344,"12 Tin Ingot, 1 Gossburg Thread",Shaman
+Oread's Firm Armor,Smithing,Armor and Outfits,31,,0.1882,"4 Iron Ingot, 1 Eventwill Thread",Shaman
+Naiad's Calming Armor,Smithing,Armor and Outfits,31,,0.1882,"4 Iron Ingot, 1 Eventwill Thread",Shaman
+Oread's Stout Armor,Smithing,Armor and Outfits,36,,0.259,"8 Iron Ingot, 1 Eventwill Thread",Shaman
+Naiad's Soothing Armor,Smithing,Armor and Outfits,36,,0.259,"8 Iron Ingot, 1 Eventwill Thread",Shaman
+Oread's Staunch Armor,Smithing,Armor and Outfits,41,,0.3226,"12 Iron Ingot, 1 Eventwill Thread",Shaman
+Naiad's Tranquil Armor,Smithing,Armor and Outfits,41,,0.3226,"12 Iron Ingot, 1 Eventwill Thread",Shaman
+Oread's Adamant Armor,Smithing,Armor and Outfits,46,,0.4032,"8 Silver Ingot, 1 Beachweave Thread",Shaman
+Naiad's Serene Armor,Smithing,Armor and Outfits,46,,0.4032,"8 Silver Ingot, 1 Beachweave Thread",Shaman
+Golem's Armor,Smithing,Armor and Outfits,51,,0.4928,"16 Silver Ingot, 1 Beachweave Thread",Shaman
+Selkie's Armor,Smithing,Armor and Outfits,51,,0.4928,"16 Silver Ingot, 1 Beachweave Thread",Shaman
+Golem's Firm Armor,Smithing,Armor and Outfits,56,,0.5914,"24 Silver Ingot, 1 Beachweave Thread",Shaman
+Selkie's Calming Armor,Smithing,Armor and Outfits,56,,0.5914,"24 Silver Ingot, 1 Beachweave Thread",Shaman
+Golem's Stout Armor,Smithing,Armor and Outfits,61,,0.6989,"12 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Sellkie's Soothing Armor,Smithing,Armor and Outfits,61,,0.6989,"12 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Golem's Staunch Armor,Smithing,Armor and Outfits,66,,0.8154,"24 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Selkie's Tranquil Armor,Smithing,Armor and Outfits,66,,0.8154,"24 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Golem's Adamant Armor,Smithing,Armor and Outfits,71,,0.9408,"36 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Selkie's Serene Armor,Smithing,Armor and Outfits,71,,0.9408,"36 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Giant's Armor,Smithing,Armor and Outfits,76,,1.0752,"16 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Leviathan's Armor,Smithing,Armor and Outfits,76,,1.0752,"16 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Giant's Firm Armor,Smithing,Armor and Outfits,81,,1.2096,"32 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Leviathan's Calming Armor,Smithing,Armor and Outfits,81,,1.2096,"32 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Giant's Stout Armor,Smithing,Armor and Outfits,86,,1.344,"48 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Leviathan's Soothing Armor,Smithing,Armor and Outfits,86,,1.344,"48 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Swamp-touched Terrasteel Armor,Smithing,Armor and Outfits,90,,1.4784,"4 Earthentine, 1 Living Fossil, 60 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Swamp-touched Surgesteel Armor,Smithing,Armor and Outfits,90,,1.4784,"4 Aquatear, 1 Living Fossil, 60 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Giant's Staunch Armor,Smithing,Armor and Outfits,91,,1.4784,"20 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Leviathan's Tranquil Armor,Smithing,Armor and Outfits,91,,1.4784,"20 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Blood-Blighted Earth Armor,Smithing,Armor and Outfits,95,,1.6934,"1 Mote of Blood, 36 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Blood-Blighted Water Armor,Smithing,Armor and Outfits,95,,1.6934,"1 Mote of Blood, 36 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Mythic Blood-Blighted Earth Armor,Smithing,Armor and Outfits,95,,8.467,"1 Primal Blood, 54 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Mythic Blood-Blighted Water Armor,Smithing,Armor and Outfits,95,,8.467,"1 Primal Blood, 54 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Kobold's Belt,Smithing,Belts,2,,0.0001,"2 Copper Ingot, 1 Copper Belt Buckle",Shaman
+Merrow's Belt,Smithing,Belts,2,,0.0001,"2 Copper Ingot, 1 Copper Belt Buckle",Shaman
+Kobold's Firm Belt,Smithing,Belts,7,,0.0015,"4 Copper Ingot, 1 Copper Belt Buckle",Shaman
+Merrow's Calming Belt,Smithing,Belts,7,,0.0015,"4 Copper Ingot, 1 Copper Belt Buckle",Shaman
+Kobold's Stout Belt,Smithing,Belts,12,,0.0089,"6 Copper Ingot, 1 Copper Belt Buckle",Shaman
+Merrow's Soothing Belt,Smithing,Belts,12,,0.0089,"6 Copper Ingot, 1 Copper Belt Buckle",Shaman
+Kobold's Staunch Belt,Smithing,Belts,17,,0.0178,"2 Tin Ingot, 1 Tin Belt Buckle",Shaman
+Merrow's Tranquil Belt,Smithing,Belts,17,,0.0178,"2 Tin Ingot, 1 Tin Belt Buckle",Shaman
+Kobold's Adamant Belt,Smithing,Belts,22,,0.0296,"4 Tin Ingot, 1 Tin Belt Buckle",Shaman
+Merrow's Serene Belt,Smithing,Belts,22,,0.0296,"4 Tin Ingot, 1 Tin Belt Buckle",Shaman
+Oread's Belt,Smithing,Belts,27,,0.0444,"6 Tin Ingot, 1 Tin Belt Buckle",Shaman
+Naiad's Belt,Smithing,Belts,27,,0.0444,"6 Tin Ingot, 1 Tin Belt Buckle",Shaman
+Oread's Firm Belt,Smithing,Belts,32,,0.0621,"2 Iron Ingot, 1 Iron Belt Buckle",Shaman
+Naiad's Calming Belt,Smithing,Belts,32,,0.0621,"2 Iron Ingot, 1 Iron Belt Buckle",Shaman
+Oread's Stout Belt,Smithing,Belts,37,,0.0828,"4 Iron Ingot, 1 Iron Belt Buckle",Shaman
+Naiad's Soothing Belt,Smithing,Belts,37,,0.0828,"4 Iron Ingot, 1 Iron Belt Buckle",Shaman
+Oread's Staunch Belt,Smithing,Belts,42,,0.1065,"6 Iron Ingot, 1 Iron Belt Buckle",Shaman
+Naiad's Tranquil Belt,Smithing,Belts,42,,0.1065,"6 Iron Ingot, 1 Iron Belt Buckle",Shaman
+Oread's Adamant Belt,Smithing,Belts,47,,0.1331,"4 Silver Ingot, 1 Silver Belt Buckle",Shaman
+Naiad's Serene Belt,Smithing,Belts,47,,0.1331,"4 Silver Ingot, 1 Silver Belt Buckle",Shaman
+Golem's Belt,Smithing,Belts,52,,0.1627,"8 Silver Ingot, 1 Silver Belt Buckle",Shaman
+Selkie's Belt,Smithing,Belts,52,,0.1627,"8 Silver Ingot, 1 Silver Belt Buckle",Shaman
+Golem's Firm Belt,Smithing,Belts,57,,0.1952,"12 Silver Ingot, 1 Silver Belt Buckle",Shaman
+Selkie's Calming Belt,Smithing,Belts,57,,0.1952,"12 Silver Ingot, 1 Silver Belt Buckle",Shaman
+Golem's Stout Belt,Smithing,Belts,62,,0.237,"6 Pyrrite Ingot, 1 Pyrrite Belt Buckle",Shaman
+Sellkie's Soothing Belt,Smithing,Belts,62,,0.237,"6 Pyrrite Ingot, 1 Pyrrite Belt Buckle",Shaman
+Golem's Staunch Belt,Smithing,Belts,67,,0.2691,"12 Pyrrite Ingot, 1 Pyrrite Belt Buckle",Shaman
+Selkie's Tranquil Belt,Smithing,Belts,67,,0.2691,"12 Pyrrite Ingot, 1 Pyrrite Belt Buckle",Shaman
+Golem's Adamant Belt,Smithing,Belts,72,,0.3105,"18 Pyrrite Ingot, 1 Pyrrite Belt Buckle",Shaman
+Selkie's Serene Belt,Smithing,Belts,72,,0.3105,"18 Pyrrite Ingot, 1 Pyrrite Belt Buckle",Shaman
+Giant's Belt,Smithing,Belts,77,,0.3548,"8 Mithril Ingot, 1 Mithril Belt Buckle",Shaman
+Leviathan's Belt,Smithing,Belts,77,,0.3548,"8 Mithril Ingot, 1 Mithril Belt Buckle",Shaman
+Giant's Firm Belt,Smithing,Belts,82,,0.3992,"16 Mithril Ingot, 1 Mithril Belt Buckle",Shaman
+Leviathan's Calming Belt,Smithing,Belts,82,,0.3992,"16 Mithril Ingot, 1 Mithril Belt Buckle",Shaman
+Giant's Stout Belt,Smithing,Belts,87,,0.4436,"24 Mithril Ingot, 1 Mithril Belt Buckle",Shaman
+Leviathan's Soothing Belt,Smithing,Belts,87,,0.4436,"24 Mithril Ingot, 1 Mithril Belt Buckle",Shaman
+Swamp-touched Terrasteel Belt,Smithing,Belts,90,,0.4879,"2 Earthentine, 1 Living Fossil, 30 Koldcore Ingot, 1 Koldcore Belt Buckle",Shaman
+Swamp-touched Surgesteel Belt,Smithing,Belts,90,,0.4879,"2 Aquatear, 1 Living Fossil, 30 Koldcore Ingot, 1 Koldcore Belt Buckle",Shaman
+Giant's Staunch Belt,Smithing,Belts,92,,0.4879,"10 Koldcore Ingot, 1 Koldcore Belt Buckle",Shaman
+Leviathan's Tranquil Belt,Smithing,Belts,92,,0.4879,"10 Koldcore Ingot, 1 Koldcore Belt Buckle",Shaman
+Shade-Blighted Earth Belt,Smithing,Belts,95,,0.5411,"1 Mote of Shade, 16 Koldcore Ingot, 1 Koldcore Belt Buckle",Shaman
+Shade-Blighted Water Belt,Smithing,Belts,95,,0.5411,"1 Mote of Shade, 16 Koldcore Ingot, 1 Koldcore Belt Buckle",Shaman
+Mythic Shade-Blighted Earth Belt,Smithing,Belts,95,,2.7055,"1 Primal Shade, 24 Koldcore Ingot, 1 Koldcore Belt Buckle",Shaman
+Mythic Shade-Blighted Water Belt,Smithing,Belts,95,,2.7055,"1 Primal Shade, 24 Koldcore Ingot, 1 Koldcore Belt Buckle",Shaman
+Kobold's Gauntlets,Smithing,Gloves,3,,0.0001,"2 Copper Ingot, 1 Dustspun Thread",Shaman
+Merrow's Gloves,Smithing,Gloves,3,,0.0001,"2 Copper Ingot, 1 Dustspun Thread",Shaman
+Kobold's Firm Gauntlets,Smithing,Gloves,8,,0.0015,"4 Copper Ingot, 1 Dustspun Thread",Shaman
+Merrow's Calming Gloves,Smithing,Gloves,8,,0.0015,"4 Copper Ingot, 1 Dustspun Thread",Shaman
+Kobold's Stout Gauntlets,Smithing,Gloves,13,,0.0089,"6 Copper Ingot, 1 Dustspun Thread",Shaman
+Merrow's Soothing Gloves,Smithing,Gloves,13,,0.0089,"6 Copper Ingot, 1 Dustspun Thread",Shaman
+Kobold's Staunch Gauntlets,Smithing,Gloves,18,,0.0178,"2 Tin Ingot, 1 Gossburg Thread",Shaman
+Merrow's Tranquil Gloves,Smithing,Gloves,18,,0.0178,"2 Tin Ingot, 1 Gossburg Thread",Shaman
+Kobold's Adamant Gauntlets,Smithing,Gloves,23,,0.0296,"4 Tin Ingot, 1 Gossburg Thread",Shaman
+Merrow's Serene Gloves,Smithing,Gloves,23,,0.0296,"4 Tin Ingot, 1 Gossburg Thread",Shaman
+Oread's Gauntlets,Smithing,Gloves,28,,0.0444,"6 Tin Ingot, 1 Gossburg Thread",Shaman
+Naiad's Gloves,Smithing,Gloves,28,,0.0444,"6 Tin Ingot, 1 Gossburg Thread",Shaman
+Oread's Firm Gauntlets,Smithing,Gloves,33,,0.0621,"2 Iron Ingot, 1 Eventwill Thread",Shaman
+Naiad's Calming Gloves,Smithing,Gloves,33,,0.0621,"2 Iron Ingot, 1 Eventwill Thread",Shaman
+Oread's Stout Gauntlets,Smithing,Gloves,38,,0.0828,"4 Iron Ingot, 1 Eventwill Thread",Shaman
+Naiad's Soothing Gloves,Smithing,Gloves,38,,0.0828,"4 Iron Ingot, 1 Eventwill Thread",Shaman
+Oread's Staunch Gauntlets,Smithing,Gloves,43,,0.1065,"6 Iron Ingot, 1 Eventwill Thread",Shaman
+Naiad's Tranquil Gloves,Smithing,Gloves,43,,0.1065,"6 Iron Ingot, 1 Eventwill Thread",Shaman
+Oread's Adamant Gauntlets,Smithing,Gloves,48,,0.1331,"4 Silver Ingot, 1 Beachweave Thread",Shaman
+Naiad's Serene Gloves,Smithing,Gloves,48,,0.1331,"4 Silver Ingot, 1 Beachweave Thread",Shaman
+Golem's Gauntlets,Smithing,Gloves,53,,0.1627,"8 Silver Ingot, 1 Beachweave Thread",Shaman
+Selkie's Gloves,Smithing,Gloves,53,,0.1627,"8 Silver Ingot, 1 Beachweave Thread",Shaman
+Golem's Firm Gauntlets,Smithing,Gloves,58,,0.1952,"12 Silver Ingot, 1 Beachweave Thread",Shaman
+Selkie's Calming Gloves,Smithing,Gloves,58,,0.1952,"12 Silver Ingot, 1 Beachweave Thread",Shaman
+Golem's Stout Gauntlets,Smithing,Gloves,63,,0.237,"6 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Sellkie's Soothing Gloves,Smithing,Gloves,63,,0.237,"6 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Golem's Staunch Gauntlets,Smithing,Gloves,68,,0.2691,"12 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Selkie's Tranquil Gloves,Smithing,Gloves,68,,0.2691,"12 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Golem's Adamant Gauntlets,Smithing,Gloves,73,,0.3105,"18 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Selkie's Serene Gloves,Smithing,Gloves,73,,0.3105,"18 Pyrrite Ingot, 1 Cragcord Thread",Shaman
+Giant's Gauntlets,Smithing,Gloves,78,,0.3548,"8 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Leviathan's Gloves,Smithing,Gloves,78,,0.3548,"8 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Giant's Firm Gauntlets,Smithing,Gloves,83,,0.3992,"16 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Leviathan's Calming Gloves,Smithing,Gloves,83,,0.3992,"16 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Giant's Stout Gauntlets,Smithing,Gloves,88,,0.4436,"24 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Leviathan's Soothing Gloves,Smithing,Gloves,88,,0.4436,"24 Mithril Ingot, 1 Twigtwine Thread",Shaman
+Swamp-touched Terrasteel Gloves,Smithing,Gloves,90,,0.4879,"2 Earthentine, 1 Living Fossil, 30 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Swamp-touched Surgesteel Gloves,Smithing,Gloves,90,,0.4879,"2 Aquatear, 1 Living Fossil, 30 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Giant's Staunch Gauntlets,Smithing,Gloves,93,,0.4879,"10 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Leviathan's Tranquil Gloves,Smithing,Gloves,93,,0.4879,"10 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Death-Blighted Earth Gloves,Smithing,Gloves,95,,0.5411,"1 Mote of Death, 14 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Death-Blighted Water Gloves,Smithing,Gloves,95,,0.5411,"1 Mote of Death, 14 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Mythic Death-Blighted Earth Gloves,Smithing,Gloves,95,,2.7055,"1 Primal Death, 21 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Mythic Death-Blighted Water Gloves,Smithing,Gloves,95,,2.7055,"1 Primal Death, 21 Koldcore Ingot, 1 Lavenmeer Thread",Shaman
+Kobold's Boots,Smithing,Boots and Shoes,4,,0.0001,"2 Copper Ingot, 1 Copper Hobnails",Shaman
+Merrow's Boots,Smithing,Boots and Shoes,4,,0.0001,"2 Copper Ingot, 1 Copper Hobnails",Shaman
+Kobold's Firm Boots,Smithing,Boots and Shoes,9,,0.0015,"4 Copper Ingot, 1 Copper Hobnails",Shaman
+Merrow's Calming Boots,Smithing,Boots and Shoes,9,,0.0015,"4 Copper Ingot, 1 Copper Hobnails",Shaman
+Kobold's Stout Boots,Smithing,Boots and Shoes,14,,0.0089,"6 Copper Ingot, 1 Copper Hobnails",Shaman
+Merrow's Soothing Boots,Smithing,Boots and Shoes,14,,0.0089,"6 Copper Ingot, 1 Copper Hobnails",Shaman
+Kobold's Staunch Boots,Smithing,Boots and Shoes,19,,0.0178,"2 Tin Ingot, 1 Tin Hobnails",Shaman
+Merrow's Tranquil Boots,Smithing,Boots and Shoes,19,,0.0178,"2 Tin Ingot, 1 Tin Hobnails",Shaman
+Kobold's Adamant Boots,Smithing,Boots and Shoes,24,,0.0296,"4 Tin Ingot, 1 Tin Hobnails",Shaman
+Merrow's Serene Boots,Smithing,Boots and Shoes,24,,0.0296,"4 Tin Ingot, 1 Tin Hobnails",Shaman
+Oread's Boots,Smithing,Boots and Shoes,29,,0.0444,"6 Tin Ingot, 1 Tin Hobnails",Shaman
+Naiad's Boots,Smithing,Boots and Shoes,29,,0.0444,"6 Tin Ingot, 1 Tin Hobnails",Shaman
+Oread's Firm Boots,Smithing,Boots and Shoes,34,,0.0621,"2 Iron Ingot, 1 Iron Hobnails",Shaman
+Naiad's Calming Boots,Smithing,Boots and Shoes,34,,0.0621,"2 Iron Ingot, 1 Iron Hobnails",Shaman
+Oread's Stout Boots,Smithing,Boots and Shoes,39,,0.0828,"4 Iron Ingot, 1 Iron Hobnails",Shaman
+Naiad's Soothing Boots,Smithing,Boots and Shoes,39,,0.0828,"4 Iron Ingot, 1 Iron Hobnails",Shaman
+Oread's Staunch Boots,Smithing,Boots and Shoes,44,,0.1065,"6 Iron Ingot, 1 Iron Hobnails",Shaman
+Naiad's Tranquil Boots,Smithing,Boots and Shoes,44,,0.1065,"6 Iron Ingot, 1 Iron Hobnails",Shaman
+Oread's Adamant Boots,Smithing,Boots and Shoes,49,,0.1331,"4 Silver Ingot, 1 Silver Hobnails",Shaman
+Naiad's Serene Boots,Smithing,Boots and Shoes,49,,0.1331,"4 Silver Ingot, 1 Silver Hobnails",Shaman
+Golem's Boots,Smithing,Boots and Shoes,54,,0.1627,"8 Silver Ingot, 1 Silver Hobnails",Shaman
+Selkie's Boots,Smithing,Boots and Shoes,54,,0.1627,"8 Silver Ingot, 1 Silver Hobnails",Shaman
+Golem's Firm Boots,Smithing,Boots and Shoes,59,,0.1952,"12 Silver Ingot, 1 Silver Hobnails",Shaman
+Selkie's Calming Boots,Smithing,Boots and Shoes,59,,0.1952,"12 Silver Ingot, 1 Silver Hobnails",Shaman
+Golem's Stout Boots,Smithing,Boots and Shoes,64,,0.237,"6 Pyrrite Ingot, 1 Pyrrite Hobnails",Shaman
+Sellkie's Soothing Boots,Smithing,Boots and Shoes,64,,0.237,"6 Pyrrite Ingot, 1 Pyrrite Hobnails",Shaman
+Golem's Staunch Boots,Smithing,Boots and Shoes,69,,0.2691,"12 Pyrrite Ingot, 1 Pyrrite Hobnails",Shaman
+Selkie's Tranquil Boots,Smithing,Boots and Shoes,69,,0.2691,"12 Pyrrite Ingot, 1 Pyrrite Hobnails",Shaman
+Golem's Adamant Boots,Smithing,Boots and Shoes,74,,0.3105,"18 Pyrrite Ingot, 1 Pyrrite Hobnails",Shaman
+Selkie's Serene Boots,Smithing,Boots and Shoes,74,,0.3105,"18 Pyrrite Ingot, 1 Pyrrite Hobnails",Shaman
+Giant's Boots,Smithing,Boots and Shoes,79,,0.3548,"8 Mithril Ingot, 1 Mithril Hobnails",Shaman
+Leviathan's Boots,Smithing,Boots and Shoes,79,,0.3548,"8 Mithril Ingot, 1 Mithril Hobnails",Shaman
+Giant's Firm Boots,Smithing,Boots and Shoes,84,,0.3992,"16 Mithril Ingot, 1 Mithril Hobnails",Shaman
+Leviathan's Calming Boots,Smithing,Boots and Shoes,84,,0.3992,"16 Mithril Ingot, 1 Mithril Hobnails",Shaman
+Giant's Stout Boots,Smithing,Boots and Shoes,89,,0.4436,"24 Mithril Ingot, 1 Mithril Hobnails",Shaman
+Leviathan's Soothing Boots,Smithing,Boots and Shoes,89,,0.4436,"24 Mithril Ingot, 1 Mithril Hobnails",Shaman
+Swamp-touched Terrasteel Boots,Smithing,Boots and Shoes,90,,0.4879,"2 Earthentine, 1 Living Fossil, 30 Koldcore Ingot, 1 Koldcore Hobnails",Shaman
+Swamp-touched Surgesteel Boots,Smithing,Boots and Shoes,90,,0.4879,"2 Aquatear, 1 Living Fossil, 30 Koldcore Ingot, 1 Koldcore Hobnails",Shaman
+Giant's Staunch Boots,Smithing,Boots and Shoes,94,,0.4879,"10 Koldcore Ingot, 1 Koldcore Hobnails",Shaman
+Leviathan's Tranquil Boots,Smithing,Boots and Shoes,94,,0.4879,"10 Koldcore Ingot, 1 Koldcore Hobnails",Shaman
+Ash-Blighted Earth Boots,Smithing,Boots and Shoes,95,,0.5411,"1 Mote of Ash, 12 Koldcore Ingot, 1 Koldcore Hobnails",Shaman
+Ash-Blighted Water Boots,Smithing,Boots and Shoes,95,,0.5411,"1 Mote of Ash, 12 Koldcore Ingot, 1 Koldcore Hobnails",Shaman
+Mythic Ash-Blighted Earth Boots,Smithing,Boots and Shoes,95,,2.7055,"1 Primal Ash, 18 Koldcore Ingot, 1 Koldcore Hobnails",Shaman
+Mythic Ash-Blighted Water Boots,Smithing,Boots and Shoes,95,,2.7055,"1 Primal Ash, 18 Koldcore Ingot, 1 Koldcore Hobnails",Shaman
+Kobold's Firm Helm,Smithing,Hats and Helms,10,,0.0135,"9 Copper Ingot, 1 Stately Helm Clasp",Shaman
+Merrow's Calming Helm,Smithing,Hats and Helms,10,,0.0135,"9 Copper Ingot, 1 Stately Helm Clasp",Shaman
+Kobold's Stout Helm,Smithing,Hats and Helms,15,,0.0269,"3 Tin Ingot, 1 Opulent Helm Clasp",Shaman
+Merrow's Soothing Helm,Smithing,Hats and Helms,15,,0.0269,"3 Tin Ingot, 1 Opulent Helm Clasp",Shaman
+Kobold's Staunch Helm,Smithing,Hats and Helms,20,,0.0448,"6 Tin Ingot, 1 Opulent Helm Clasp",Shaman
+Merrow's Tranquil Helm,Smithing,Hats and Helms,20,,0.0448,"6 Tin Ingot, 1 Opulent Helm Clasp",Shaman
+Kobold's Adamant Helm,Smithing,Hats and Helms,25,,0.0672,"9 Tin Ingot, 1 Opulent Helm Clasp",Shaman
+Merrow's Serene Helm,Smithing,Hats and Helms,25,,0.0672,"9 Tin Ingot, 1 Opulent Helm Clasp",Shaman
+Oread's Helm,Smithing,Hats and Helms,30,,0.0941,"3 Iron Ingot, 1 Gallant Helm Clasp",Shaman
+Naiad's Helm,Smithing,Hats and Helms,30,,0.0941,"3 Iron Ingot, 1 Gallant Helm Clasp",Shaman
+Oread's Firm Helm,Smithing,Hats and Helms,35,,0.1255,"6 Iron Ingot, 1 Gallant Helm Clasp",Shaman
+Naiad's Calming Helm,Smithing,Hats and Helms,35,,0.1255,"6 Iron Ingot, 1 Gallant Helm Clasp",Shaman
+Oread's Stout Helm,Smithing,Hats and Helms,40,,0.1613,"9 Iron Ingot, 1 Gallant Helm Clasp",Shaman
+Naiad's Soothing Helm,Smithing,Hats and Helms,40,,0.1613,"9 Iron Ingot, 1 Gallant Helm Clasp",Shaman
+Oread's Staunch Helm,Smithing,Hats and Helms,45,,0.2016,"6 Silver Ingot, 1 Regal Helm Clasp",Shaman
+Naiad's Tranquil Helm,Smithing,Hats and Helms,45,,0.2016,"6 Silver Ingot, 1 Regal Helm Clasp",Shaman
+Oread's Adamant Helm,Smithing,Hats and Helms,50,,0.2464,"12 Silver Ingot, 1 Regal Helm Clasp",Shaman
+Naiad's Serene Helm,Smithing,Hats and Helms,50,,0.2464,"12 Silver Ingot, 1 Regal Helm Clasp",Shaman
+Golem's Helm,Smithing,Hats and Helms,55,,0.2957,"18 Silver Ingot, 1 Regal Helm Clasp",Shaman
+Selkie's Helm,Smithing,Hats and Helms,55,,0.2957,"18 Silver Ingot, 1 Regal Helm Clasp",Shaman
+Golem's Firm Helm,Smithing,Hats and Helms,60,,0.3495,"9 Pyrrite Ingot, 1 Imperial Helm Clasp",Shaman
+Selkie's Calming Helm,Smithing,Hats and Helms,60,,0.3495,"9 Pyrrite Ingot, 1 Imperial Helm Clasp",Shaman
+Golem's Stout Helm,Smithing,Hats and Helms,65,,0.4077,"18 Pyrrite Ingot, 1 Imperial Helm Clasp",Shaman
+Sellkie's Soothing Helm,Smithing,Hats and Helms,65,,0.4077,"18 Pyrrite Ingot, 1 Imperial Helm Clasp",Shaman
+Golem's Staunch Helm,Smithing,Hats and Helms,70,,0.4704,"27 Pyrrite Ingot, 1 Imperial Helm Clasp",Shaman
+Selkie's Tranquil Helm,Smithing,Hats and Helms,70,,0.4704,"27 Pyrrite Ingot, 1 Imperial Helm Clasp",Shaman
+Golem's Adamant Helm,Smithing,Hats and Helms,75,,0.5376,"12 Mithril Ingot, 1 Baronial Helm Clasp",Shaman
+Selkie's Serene Helm,Smithing,Hats and Helms,75,,0.5376,"12 Mithril Ingot, 1 Baronial Helm Clasp",Shaman
+Giant's Helm,Smithing,Hats and Helms,80,,0.6048,"24 Mithril Ingot, 1 Baronial Helm Clasp",Shaman
+Leviathan's Helm,Smithing,Hats and Helms,80,,0.6048,"24 Mithril Ingot, 1 Baronial Helm Clasp",Shaman
+Giant's Firm Helm,Smithing,Hats and Helms,85,,0.672,"36 Mithril Ingot, 1 Baronial Helm Clasp",Shaman
+Leviathan's Calming Helm,Smithing,Hats and Helms,85,,0.672,"36 Mithril Ingot, 1 Baronial Helm Clasp",Shaman
+Giant's Stout Helm,Smithing,Hats and Helms,90,,0.7392,"15 Koldcore Ingot, 1 Lordly Helm Clasp",Shaman
+Leviathan's Soothing Helm,Smithing,Hats and Helms,90,,0.7392,"15 Koldcore Ingot, 1 Lordly Helm Clasp",Shaman
+Giant's Staunch Helm,Smithing,Hats and Helms,95,,0.8736,"30 Koldcore Ingot, 1 Lordly Helm Clasp",Shaman
+Leviathan's Tranquil Helm,Smithing,Hats and Helms,95,,0.8736,"30 Koldcore Ingot, 1 Lordly Helm Clasp",Shaman
+Mind Shielding Earth Helm,Smithing,Hats and Helms,95,,0.9632,"1 Mote of Ash, 1 Mote of Shade, 30 Koldcore Ingot, 1 Lordly Helm Clasp",Shaman
+Mind Shielding Water Helm,Smithing,Hats and Helms,95,,0.9632,"1 Mote of Blood, 1 Mote of Death, 30 Koldcore Ingot, 1 Lordly Helm Clasp",Shaman
+Mythic Mind Shielding Earth Helm,Smithing,Hats and Helms,95,,4.816,"1 Primal Ash, 1 Primal Shade, 45 Koldcore Ingot, 1 Lordly Helm Clasp",Shaman
+Mythic Mind Shielding Water Helm,Smithing,Hats and Helms,95,,4.816,"1 Primal Blood, 1 Primal Death, 45 Koldcore Ingot, 1 Lordly Helm Clasp",Shaman
+Kobold's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",2,,0.0001,2 Pine Timber,Shaman
+Merrow's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",2,,0.0001,2 Pine Timber,Shaman
+Kobold's Firm Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",7,,0.0012,4 Pine Timber,Shaman
+Merrow's Calming Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",7,,0.0012,4 Pine Timber,Shaman
+Kobold's Stout Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",12,,0.0068,6 Pine Timber,Shaman
+Merrow's Soothing Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",12,,0.0068,6 Pine Timber,Shaman
+Kobold's Staunch Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",17,,0.0135,2 Oak Timber,Shaman
+Merrow's Tranquil Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",17,,0.0135,2 Oak Timber,Shaman
+Kobold's Adamant Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",22,,0.0224,4 Oak Timber,Shaman
+Merrow's Serene Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",22,,0.0224,4 Oak Timber,Shaman
+Oread's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",27,,0.0336,6 Oak Timber,Shaman
+Naiad's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",27,,0.0336,6 Oak Timber,Shaman
+Oread's Firm Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",32,,0.0471,2 Ash Timber,Shaman
+Naiad's Calming Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",32,,0.0471,2 Ash Timber,Shaman
+Oread's Stout Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",37,,0.0628,4 Ash Timber,Shaman
+Naiad's Soothing Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",37,,0.0628,4 Ash Timber,Shaman
+Oread's Staunch Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",42,,0.0807,6 Ash Timber,Shaman
+Naiad's Tranquil Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",42,,0.0807,6 Ash Timber,Shaman
+Oread's Adamant Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",47,,0.1008,4 Birch Timber,Shaman
+Naiad's Serene Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",47,,0.1008,4 Birch Timber,Shaman
+Golem's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",52,,0.1232,8 Birch Timber,Shaman
+Selkie's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",52,,0.1232,8 Birch Timber,Shaman
+Golem's Firm Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",57,,0.1479,12 Birch Timber,Shaman
+Selkie's Calming Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",57,,0.1479,12 Birch Timber,Shaman
+Golem's Stout Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",62,,0.1748,6 Mahogany Timber,Shaman
+Sellkie's Soothing Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",62,,0.1748,6 Mahogany Timber,Shaman
+Golem's Staunch Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",67,,0.2039,12 Mahogany Timber,Shaman
+Selkie's Tranquil Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",67,,0.2039,12 Mahogany Timber,Shaman
+Golem's Adamant Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",72,,0.2352,18 Mahogany Timber,Shaman
+Selkie's Serene Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",72,,0.2352,18 Mahogany Timber,Shaman
+Giant's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",77,,0.2688,8 Cedar Timber,Shaman
+Leviathan's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",77,,0.2688,8 Cedar Timber,Shaman
+Giant's Firm Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",82,,0.3024,16 Cedar Timber,Shaman
+Leviathan's Calming Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",82,,0.3024,16 Cedar Timber,Shaman
+Giant's Stout Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",87,,0.336,24 Cedar Timber,Shaman
+Leviathan's Soothing Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",87,,0.336,24 Cedar Timber,Shaman
+Swamp-touched Dvergr's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",90,,0.3696,"1 Living Fossil, 30 Teak Timber",Shaman
+Swamp-touched Leviathan's Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",90,,0.3696,"1 Living Fossil, 30 Teak Timber",Shaman
+Giant's Staunch Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",92,,0.3696,10 Teak Timber,Shaman
+Leviathan's Tranquil Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",92,,0.3696,10 Teak Timber,Shaman
+Blighted Golem's Solid Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",95,,0.4368,"1 Mote of Ash, 1 Mote of Death, 15 Teak Timber",Shaman
+Blighted Hydra's Agile Shield,Woodcrafting,"Priest, Shaman, and Warrior Shields",95,,0.4368,"1 Mote of Blood, 1 Mote of Death, 15 Teak Timber",Shaman
+Wooden Wolf Carving,Woodcrafting,Carved Trinkets,28,,0.0672,15 Oak Timber,
+Wooden Raven Carving,Woodcrafting,Carved Trinkets,33,,0.0941,5 Ash Timber,
+Wooden Crab Carving,Woodcrafting,Carved Trinkets,38,,0.1255,10 Ash Timber,
+Wooden Octopus Carving,Woodcrafting,Carved Trinkets,43,,0.1613,15 Ash Timber,
+Wooden Seashell Carving,Woodcrafting,Carved Trinkets,48,,0.2016,10 Birch Timber,
+Wooden Schooner Carving,Woodcrafting,Carved Trinkets,53,,0.2464,20 Birch Timber,
+Wooden Bullfrog Carving,Woodcrafting,Carved Trinkets,58,,0.2957,30 Birch Timber,
+Wooden Scarab Carving,Woodcrafting,Carved Trinkets,63,,0.3495,15 Mahogany Timber,
+Wooden Batwing Carving,Woodcrafting,Carved Trinkets,68,,0.4077,30 Mahogany Timber,
+Wooden Serpent Carving,Woodcrafting,Carved Trinkets,73,,0.4704,45 Mahogany Timber,
+Wooden Elk Carving,Woodcrafting,Carved Trinkets,78,,0.5376,20 Cedar Timber,
+Wooden Ram Carving,Woodcrafting,Carved Trinkets,83,,0.6048,40 Cedar Timber,
+Wooden Lion Carving,Woodcrafting,Carved Trinkets,88,,0.672,60 Cedar Timber,
+Swamp-touched Serpent Carving,Woodcrafting,Carved Trinkets,90,,0.7392,"1 Living Fossil, 75 Teak Timber",
+Wooden Boar Carving,Woodcrafting,Carved Trinkets,93,,0.7392,25 Teak Timber,
+Blighted Scaldrum Carving,Woodcrafting,Carved Trinkets,95,,1.4562,"1 Mote of Ash, 1 Mote of Blood, 1 Mote of Death, 1 Mote of Shade, 75 Teak Timber",
+Purpond Dram of Mastery,Cooking,Drams,14,,0.005,"2 Purpond Oil, 2 Admirable Bolete",
+Tigris Dram of Mastery,Cooking,Drams,19,,0.01,"2 Tigris Oil, 2 Chantarelle",
+Greater Tigris Dram of Mastery,Cooking,Drams,24,,0.0175,"3 Tigris Oil, 3 Chantarelle",
+Mighty Tigris Dram of Mastery,Cooking,Drams,29,,0.0275,"4 Tigris Oil, 4 Chantarelle",
+Fangfin Dram of Mastery,Cooking,Drams,34,,0.04,"2 Fangfin Oil, 2 Bright Caps",
+Greater Fangfin Dram of Mastery,Cooking,Drams,39,,0.055,"3 Fangfin Oil, 3 Bright Caps",
+Mighty Fangfin Dram of Mastery,Cooking,Drams,44,,0.0725,"4 Fangfin Oil, 4 Bright Caps",
+Scaline Dram of Mastery,Cooking,Drams,49,,0.0925,"2 Scaline Oil, 2 Faerie's Parasol",
+Greater Scaline Dram of Mastery,Cooking,Drams,54,,0.115,"3 Scaline Oil, 3 Faerie's Parasol",
+Mighty Scaline Dram of Mastery,Cooking,Drams,59,,0.14,"4 Scaline Oil, 4 Faerie's Parasol",
+Specter Dram of Mastery,Cooking,Drams,64,,0.1675,"2 Specter Oil, 2 Lady's Lashes",
+Greater Specter Dram of Mastery,Cooking,Drams,69,,0.1975,"3 Specter Oil, 3 Lady's Lashes",
+Mighty Specter Dram of Mastery,Cooking,Drams,74,,0.23,"4 Specter Oil, 4 Lady's Lashes",
+Starlight Dram of Mastery,Cooking,Drams,79,,0.265,"2 Starlight Oil, 2 Dawn's Smile",
+Greater Starlight Dram of Mastery,Cooking,Drams,84,,0.285,"3 Starlight Oil, 3 Dawn's Smile",
+Mighty Starlight Dram of Mastery,Cooking,Drams,89,,0.3,"4 Starlight Oil, 4 Dawn's Smile",
+Turgid Dram of Mastery,Cooking,Drams,94,,0.325,"2 Turgid Oil, 2 Fuzzy Sandozi",
+Blighted Dram of Mastery,Cooking,Drams,95,,1.75,"1 Mote of Ash, 3 Turgid Oil, 3 Fuzzy Sandozi",
