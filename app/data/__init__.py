@@ -77,7 +77,7 @@ class Data:
                 try:
                     table.drop(bind=engine)
                 except ProgrammingError as e:
-                    if '(psycopg2.errors.UndefinedTable)' in e:
+                    if '(psycopg2.errors.UndefinedTable)' in str(e):
                         pass
                     else:
                         raise e
