@@ -1,9 +1,9 @@
 from flask import render_template
 
 from . import main
-from .. import data
-from ..crafting_calculator import CraftingCalculator, CraftingOptions
-from ..models.crafting_list import CraftingList
+from app.crafting_calculator import calculate, CraftingOptions
+from app.models.crafting_list import CraftingList
+from app.models.recipe import Recipe
 
 
 @main.route('/')
@@ -18,7 +18,7 @@ def equipment():
 
 @main.route('/recipes')
 def recipes():
-    return render_template('recipes.html', recipes=data.all_recipes())
+    return render_template('recipes.html', recipes=Recipe.query.all())
 
 
 @main.route('/crafting')
@@ -27,9 +27,8 @@ def crafting():
 
     list_ = CraftingList()
     for recipe_name, quantity in _40:
-        list_.add(data.get_recipe(recipe_name), quantity)
+        list_.add(Recipe.query.filter_by(name=recipe_name).first(), quantity)
 
-    calculator = CraftingCalculator(data)
-    calculator.calculate(list_, CraftingOptions(salvaging=True))
+    calculate(list_, CraftingOptions(salvaging=True))
 
     return render_template('crafting.html', crafting_list=list_)

@@ -1,5 +1,6 @@
 dacite
 flask
 flask-bootstrap
-flask-wtf
+flask-sqlalchemy
 gunicorn
+python-dotenv

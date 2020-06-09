@@ -1,20 +1,25 @@
 from math import trunc
 from typing import Dict
 
-from .object import Object
-from .object_quantity import ObjectQuantity
-from .recipe import Recipe
+from app.models.quantity import QuantityMixin
+from app.models.recipe import Recipe
 
 
-class CraftingList(Object):
-    list: Dict[str, ObjectQuantity] = {}
-    components: Dict[str, ObjectQuantity] = {}
-    refined: Dict[str, ObjectQuantity] = {}
-    items: Dict[str, ObjectQuantity] = {}
+class CraftingList:
+    list: Dict[str, Recipe] = {}
+    components: Dict[str, QuantityMixin] = {}
+    refined: Dict[str, QuantityMixin] = {}
+    items: Dict[str, QuantityMixin] = {}
     cost: int = 0
 
+    def __init__(self):
+        self.reset(list_=True)
+
     def add(self, recipe: Recipe, quantity: int):
-        self.list[recipe.name] = ObjectQuantity(recipe, quantity)
+        if recipe.name not in self.list:
+            self.list[recipe.name] = recipe
+
+        self.list[recipe.name].quantity += quantity
 
     def reset(self, list_=False):
         if list_:

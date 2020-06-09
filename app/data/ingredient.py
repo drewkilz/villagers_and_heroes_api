@@ -1,18 +1,16 @@
 from dataclasses import dataclass
 from re import match
-from typing import Any
 
-from .item import Item
-from .object import Object
+from app.data.object import Object
 
 
 @dataclass
 class Ingredient(Object):
-    item: Item
+    name: str
     quantity: int
 
     @classmethod
-    def parse(cls, value: str, data: Any):
+    def parse(cls, value: str):
         match_ = match('^([0-9]+)(.+)$', value)
 
         if match_:
@@ -21,9 +19,4 @@ class Ingredient(Object):
         else:
             raise ValueError('Unable to parse ingredient quantity and name from: "{}"'.format(value))
 
-        item = data.get_item(name)
-
-        if item is None:
-            raise ValueError('Unable to find item: "{}" from ingredient string: "{}"'.format(name, value))
-
-        return Ingredient(item, quantity)
+        return Ingredient(name, quantity)

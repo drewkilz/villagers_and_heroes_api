@@ -1,67 +1,66 @@
 """Contains classes and functionality pertaining to recipes for crafting items."""
 
-from dataclasses import dataclass
-from decimal import Decimal
-from typing import List, Dict, Any
-
-from .class_ import Class
-from .ingredient import Ingredient
-from .item import Item
-from .object import Object
-from .skill import CraftingSkill
-from .type import CraftingType
+from app import sql_alchemy
+from app.data import Recipe as DataRecipe
+from app.models.item import Item
+from app.models.load import LoadMixin
+from app.models.quantity import QuantityMixin
+from app.models.type import CategoryEnum
 
 
-@dataclass
-class Recipe(Object):
-    name: str
-    skill: CraftingSkill
-    type: CraftingType
-    level: int
-    ingredients: List[Ingredient]
-    experience: int = None
-    cost: Decimal = None
-    class_: Class = None
-    item: Item = None
+class Recipe(sql_alchemy.Model, QuantityMixin, LoadMixin):
+    __tablename__ = 'recipes'
+
+    id = sql_alchemy.Column(sql_alchemy.Integer, primary_key=True, nullable=False)
+    name = sql_alchemy.Column(sql_alchemy.Unicode(255), unique=True, index=True, nullable=False)
+    type_id = sql_alchemy.Column(sql_alchemy.Integer, sql_alchemy.ForeignKey('types.id'), nullable=False)
+    level = sql_alchemy.Column(sql_alchemy.SmallInteger, nullable=False)
+    cost = sql_alchemy.Column(sql_alchemy.Numeric(precision=3, scale=4), nullable=False)
+    item_id = sql_alchemy.Column(sql_alchemy.Integer, sql_alchemy.ForeignKey('items.id'), nullable=False)
+    skill_id = sql_alchemy.Column(sql_alchemy.Integer, sql_alchemy.ForeignKey('types.id'), nullable=False)
+
+    type = sql_alchemy.relationship('Type', foreign_keys=[type_id])
+    item = sql_alchemy.relationship('Item')
+    skill = sql_alchemy.relationship('Type', foreign_keys=[skill_id])
+
+    ingredients = sql_alchemy.relationship('Ingredient', backref='ingredients', lazy='dynamic')
+
+    def __repr__(self):
+        return 'Recipe(id={}, name={}, skill={}, type={}, level={}, cost={}, item={})'.format(
+            self.id, self.name, self.skill, self.type, self.level, self.cost, self.item)
 
     @classmethod
-    def from_dict(cls, dictionary: Dict, data: Any):
-        updated_dictionary = dictionary.copy()
+    def load(cls, data: DataRecipe):
+        recipe = Recipe(
+            name=data.name,
+            type=cls.get_type(data.type, CategoryEnum.CRAFTING_TYPE),
+            level=data.level,
+            cost=data.cost,
+            item=Item.query.filter_by(name=data.name).first(),
+            skill=cls.get_type(data.skill, CategoryEnum.SKILL))
 
-        if 'skill' in dictionary:
-            skill_string = dictionary['skill']
-            if isinstance(skill_string, str):
-                skill = CraftingSkill.find(skill_string)
-                if skill is None:
-                    raise ValueError('Unable to find CraftingSkill with name: "{}"'.format(skill_string))
-                updated_dictionary['skill'] = skill
+        recipe.ingredients = []
+        for ingredient_data in data.ingredients:
+            ingredient = Ingredient(
+                recipe=recipe,
+                item=Item.query.filter_by(name=ingredient_data.name).first(),
+                quantity=ingredient_data.quantity)
+            recipe.ingredients.append(ingredient)
 
-        if 'type' in dictionary:
-            type_string = dictionary['type']
-            if isinstance(type_string, str):
-                try:
-                    type_ = CraftingType(type_string)
-                except ValueError:
-                    raise ValueError('Unable to find CraftingType with name: "{}"'.format(type_string))
-                updated_dictionary['type'] = type_
+        sql_alchemy.session.add(recipe)
 
-        if 'ingredients' in dictionary:
-            ingredients_string = dictionary['ingredients']
-            if isinstance(ingredients_string, str):
-                ingredients = []
 
-                for ingredient_string in [i.strip() for i in ingredients_string.split(',')]:
-                    ingredients.append(Ingredient.parse(ingredient_string, data))
+class Ingredient(sql_alchemy.Model):
+    __tablename__ = 'ingredients'
 
-                updated_dictionary['ingredients'] = ingredients
+    recipe_id = sql_alchemy.Column(sql_alchemy.Integer, sql_alchemy.ForeignKey('recipes.id'), primary_key=True,
+                                   nullable=False)
+    item_id = sql_alchemy.Column(sql_alchemy.Integer, sql_alchemy.ForeignKey('items.id'), primary_key=True,
+                                 nullable=False)
+    quantity = sql_alchemy.Column(sql_alchemy.SmallInteger, nullable=False)
 
-        if 'class_' in dictionary:
-            class_string = dictionary['class_']
-            if isinstance(class_string, str) and class_string:
-                try:
-                    class_ = Class(class_string)
-                except ValueError:
-                    raise ValueError('Unable to find Class with name: "{}"'.format(class_string))
-                updated_dictionary['class_'] = class_
+    recipe = sql_alchemy.relationship('Recipe', foreign_keys=[recipe_id])
+    item = sql_alchemy.relationship('Item', foreign_keys=[item_id])
 
-        return super().from_dict(updated_dictionary, data)
+    def __repr__(self):
+        return 'Ingredient(quantity={}, item={}, recipe={})'.format(self.quantity, self.item, self.recipe)
