@@ -7,6 +7,8 @@ from typing import Type as Type_
 from dacite.exceptions import MissingValueError
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.schema import DropTable
+from sqlalchemy.ext.compiler import compiles
 
 from app.data.item import Item
 from app.data.object import Object
@@ -17,6 +19,12 @@ from app.models.recipe import Recipe as ModelRecipe
 from app.models.type import ItemType, CraftingType, Class, Rarity, Type, CategoryEnum, Category, SkillType, Skill, \
     SubClass
 from configuration import ENV_RELOAD_DATA
+
+
+@compiles(DropTable, "postgresql")
+def _compile_drop_table(element, compiler, **kwargs):
+    """Fixes an issue with PostgreSQL, allowing drop table statements to cascade, as otherwise errors are thrown."""
+    return compiler.visit_drop_table(element) + " CASCADE"
 
 
 class Data:
