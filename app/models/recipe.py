@@ -15,7 +15,7 @@ class Recipe(sql_alchemy.Model, QuantityMixin, LoadMixin):
     name = sql_alchemy.Column(sql_alchemy.Unicode(255), unique=True, index=True, nullable=False)
     type_id = sql_alchemy.Column(sql_alchemy.Integer, sql_alchemy.ForeignKey('types.id'), nullable=False)
     level = sql_alchemy.Column(sql_alchemy.SmallInteger, nullable=False)
-    cost = sql_alchemy.Column(sql_alchemy.Numeric(precision=3, scale=4), nullable=False)
+    cost = sql_alchemy.Column(sql_alchemy.Numeric(precision=7, scale=4), nullable=False)
     item_id = sql_alchemy.Column(sql_alchemy.Integer, sql_alchemy.ForeignKey('items.id'), nullable=False)
     skill_id = sql_alchemy.Column(sql_alchemy.Integer, sql_alchemy.ForeignKey('types.id'), nullable=False)
 
