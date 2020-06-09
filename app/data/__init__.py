@@ -60,7 +60,14 @@ class Data:
         with app.app_context():
             start = perf_counter()
 
-            sql_alchemy.drop_all()
+            # Cannot use sql_alchemy.drop_all() as it was throwing sqlalchemy.exc.ProgrammingError:
+            #  (psycopg2.errors.UndefinedTable) table "xxx" does not exist, while connected to the production PostgreSQL
+            #  instance
+            engine = sql_alchemy.get_engine(app=app)
+            for table in sql_alchemy.get_tables_for_bind():
+                if table.exists(bind=engine):
+                    table.drop(bind=engine)
+
             sql_alchemy.create_all()
 
             print('Loading types and categories...')
