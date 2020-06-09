@@ -14,7 +14,8 @@ ENV_SQLALCHEMY_TRACK_MODIFICATIONS = 'SQLALCHEMY_TRACK_MODIFICATIONS'
 
 class Configuration:
     RELOAD_DATA: bool = False
-    SQLALCHEMY_DATABASE_URI: str = os.environ.get(ENV_SQLALCHEMY_DATABASE_URI)
+    SQLALCHEMY_DATABASE_URI: str = os.environ.get(ENV_SQLALCHEMY_DATABASE_URI) or \
+        'sqlite:///' + os.path.join(basedir, 'data.sqlite')
     SQLALCHEMY_TRACK_MODIFICATIONS: str = os.environ.get(ENV_SQLALCHEMY_TRACK_MODIFICATIONS) or False
 
     def init_app(self, app):
@@ -32,7 +33,6 @@ class Configuration:
 
 class DevelopmentConfiguration(Configuration):
     DEBUG: bool = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 
 
 class TestingConfiguration(Configuration):
@@ -40,7 +40,7 @@ class TestingConfiguration(Configuration):
 
 
 class ProductionConfiguration(Configuration):
-    pass
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or Configuration.SQLALCHEMY_DATABASE_URI
 
 
 CONFIGURATION = {
