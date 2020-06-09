@@ -3,7 +3,8 @@ from app import create_app, sql_alchemy
 from app.data import Data
 from app.models.item import Item
 from app.models.recipe import Ingredient, Recipe
-from app.models.type import Type, Category, CategoryEnum, SkillType, VillageSkill, CraftingType, ItemType, Class, Rarity, CraftingSkill, GatheringSkill
+from app.models.type import Type, Category, CategoryEnum, SkillType, VillageSkill, CraftingType, ItemType, Class, \
+    Rarity, CraftingSkill, GatheringSkill
 from configuration import ENV_FLASK_CONFIGURATION, DEVELOPMENT_KEY
 
 app = create_app(os.getenv(ENV_FLASK_CONFIGURATION) or DEVELOPMENT_KEY)

@@ -3,4 +3,5 @@ flask
 flask-bootstrap
 flask-sqlalchemy
 gunicorn
+psycopg2
 python-dotenv
