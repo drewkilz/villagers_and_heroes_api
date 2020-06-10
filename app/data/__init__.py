@@ -102,12 +102,13 @@ class Data:
         # Cannot use sql_alchemy.create_all() as it was throwing sqlalchemy.exc.IntegrityError:
         #  (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint
         #  "pg_type_typname_nsp_index", while connected to the production PostgreSQL instance
+        # and sqlalchemy.exc.ProgrammingError: (psycopg2.errors.DuplicateTable) relation "xxx" already exists
         for table in sql_alchemy.get_tables_for_bind():
             try:
                 if not table.exists(bind=engine):
                     table.create(bind=engine)
-            except IntegrityError as e:
-                if '(psycopg2.errors.UniqueViolation)' in str(e):
+            except (IntegrityError, ProgrammingError) as e:
+                if '(psycopg2.errors.UniqueViolation)' in str(e) or '(psycopg2.errors.DuplicateTable)' in str(e):
                     pass
                 else:
                     raise e
