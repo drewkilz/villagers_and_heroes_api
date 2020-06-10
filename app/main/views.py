@@ -14,6 +14,11 @@ def index():
     return render_template('index.html')
 
 
+@main.route('/credits')
+def credits_():
+    return render_template('credits.html')
+
+
 @main.route('/equipment')
 def equipment():
     return render_template('equipment.html')
