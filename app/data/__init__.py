@@ -115,8 +115,12 @@ class Data:
         print('Loading types and categories...')
         self.__load_categories_and_types(sql_alchemy)
 
+        sql_alchemy.session.commit()
+
         print('Loading items...')
         self.__load_data(r'app/data/items.csv', Item, ModelItem)
+
+        sql_alchemy.session.commit()
 
         print('Loading recipes...')
         self.__load_data(r'app/data/recipes.csv', Recipe, ModelRecipe)
