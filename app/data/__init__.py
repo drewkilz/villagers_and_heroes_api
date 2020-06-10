@@ -43,7 +43,7 @@ class Data:
                     raise ValueError('Failed to retrieve data from file: "{}", line: {}. Error: {}'.format(
                         file_path, line_number + 1, e))
 
-                print('\rLoading {}:{} -> {}'.format(file_path, line_number + 1, data_object))
+                # print('\rLoading {}:{} -> {}'.format(file_path, line_number + 1, data_object))
                 model_class.load(data_object)
 
     @staticmethod
