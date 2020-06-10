@@ -8,9 +8,6 @@ from typing import Type as Type_
 from dacite.exceptions import MissingValueError
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.exc import ProgrammingError, IntegrityError
-from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.schema import DropTable
 
 
 from app import create_app, sql_alchemy
@@ -23,14 +20,6 @@ from app.models.recipe import Recipe as ModelRecipe
 from app.models.type import ItemType, CraftingType, Class, Rarity, Type, CategoryEnum, Category, SkillType, Skill, \
     SubClass
 from configuration import ENV_FLASK_CONFIGURATION, DEVELOPMENT_KEY
-
-POSTGRESQL = 'postgresql'
-
-
-@compiles(DropTable, POSTGRESQL)
-def _compile_drop_table(element, compiler, **kwargs):
-    """Fixes an issue with PostgreSQL, allowing drop table statements to cascade, as otherwise errors are thrown."""
-    return compiler.visit_drop_table(element) + " CASCADE"
 
 
 class Data:
@@ -89,32 +78,8 @@ class Data:
 
             print('Creating {} database...'.format(engine.name))
 
-            # Cannot use sql_alchemy.drop_all() as it was throwing sqlalchemy.exc.ProgrammingError:
-            #  (psycopg2.errors.UndefinedTable) table "xxx" does not exist, while connected to the production PostgreSQL
-            #  instance
-            for table in sql_alchemy_.get_tables_for_bind():
-                try:
-                    if table.exists(bind=engine):
-                        table.drop(bind=engine)
-                except ProgrammingError as e:
-                    if '(psycopg2.errors.UndefinedTable)' in str(e):
-                        pass
-                    else:
-                        raise e
-
-            # Cannot use sql_alchemy.create_all() as it was throwing sqlalchemy.exc.IntegrityError:
-            #  (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint
-            #  "pg_type_typname_nsp_index", while connected to the production PostgreSQL instance
-            # and sqlalchemy.exc.ProgrammingError: (psycopg2.errors.DuplicateTable) relation "xxx" already exists
-            for table in sql_alchemy_.get_tables_for_bind():
-                try:
-                    if not table.exists(bind=engine):
-                        table.create(bind=engine)
-                except (IntegrityError, ProgrammingError) as e:
-                    if '(psycopg2.errors.UniqueViolation)' in str(e) or '(psycopg2.errors.DuplicateTable)' in str(e):
-                        pass
-                    else:
-                        raise e
+            sql_alchemy.drop_all()
+            sql_alchemy.create_all()
 
             print('Loading data...')
 
@@ -131,20 +96,6 @@ class Data:
             stop = perf_counter()
 
             print('Data loaded in {} seconds.'.format(stop - start))
-
-    # def init_app(self, app: Flask, sql_alchemy: SQLAlchemy):
-    #     with app.app_context():
-    #         engine = sql_alchemy.get_engine(app=app)
-    #
-    #         # Locking is required to get around PostgreSQL Integrity errors that were occurring
-    #         #  sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique
-    #         #  constraint "pg_type_typname_nsp_index"
-    #         if engine.dialect.name == POSTGRESQL:
-    #             lock = Lock()
-    #             with lock:
-    #                 self._load_data(sql_alchemy, engine)
-    #         else:
-    #             self._load_data(sql_alchemy, engine)
 
 
 def create_database():
