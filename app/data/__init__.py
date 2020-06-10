@@ -1,9 +1,9 @@
 """Contains a methodology for preloading data related to Villagers and Heroes into the data source."""
 
 from csv import DictReader
-from threading import Lock
+import os
 from time import perf_counter
-from typing import Type as Type_, Any
+from typing import Type as Type_
 
 from dacite.exceptions import MissingValueError
 from flask import Flask
@@ -12,6 +12,8 @@ from sqlalchemy.exc import ProgrammingError, IntegrityError
 from sqlalchemy.ext.compiler import compiles
 from sqlalchemy.schema import DropTable
 
+
+from app import create_app, sql_alchemy
 from app.data.item import Item
 from app.data.object import Object
 from app.data.recipe import Recipe
@@ -20,7 +22,7 @@ from app.models.load import LoadMixin
 from app.models.recipe import Recipe as ModelRecipe
 from app.models.type import ItemType, CraftingType, Class, Rarity, Type, CategoryEnum, Category, SkillType, Skill, \
     SubClass
-from configuration import ENV_RELOAD_DATA
+from configuration import ENV_FLASK_CONFIGURATION, DEVELOPMENT_KEY
 
 POSTGRESQL = 'postgresql'
 
@@ -47,7 +49,7 @@ class Data:
                 model_class.load(data_object)
 
     @staticmethod
-    def __load_categories_and_types(sql_alchemy: SQLAlchemy):
+    def __load_categories_and_types(sql_alchemy_: SQLAlchemy):
         for category, values in [
             (CategoryEnum.CLASS, Class),
             (CategoryEnum.CRAFTING_TYPE, CraftingType),
@@ -58,70 +60,85 @@ class Data:
             (CategoryEnum.SUB_CLASS, SubClass),
         ]:
             category_ = Category(name=category.value)
-            sql_alchemy.session.add(category_)
+            sql_alchemy_.session.add(category_)
 
             for value in values:
                 type_ = Type(name=value.value, category=category_)
-                sql_alchemy.session.add(type_)
+                sql_alchemy_.session.add(type_)
 
-    def init_app(self, app: Flask, sql_alchemy: SQLAlchemy):
-        if not app.config[ENV_RELOAD_DATA]:
-            return
-
+    @staticmethod
+    def create_database(app: Flask, sql_alchemy_: SQLAlchemy):
         with app.app_context():
-            engine = sql_alchemy.get_engine(app=app)
+            engine = sql_alchemy_.get_engine(app=app)
 
-            # Locking is required to get around PostgreSQL Integrity errors that were occurring
-            #  sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique
-            #  constraint "pg_type_typname_nsp_index"
-            if engine.dialect.name == POSTGRESQL:
-                lock = Lock()
-                with lock:
-                    self._load_data(sql_alchemy, engine)
-            else:
-                self._load_data(sql_alchemy, engine)
+            # Cannot use sql_alchemy.drop_all() as it was throwing sqlalchemy.exc.ProgrammingError:
+            #  (psycopg2.errors.UndefinedTable) table "xxx" does not exist, while connected to the production PostgreSQL
+            #  instance
+            for table in sql_alchemy_.get_tables_for_bind():
+                try:
+                    if table.exists(bind=engine):
+                        table.drop(bind=engine)
+                except ProgrammingError as e:
+                    if '(psycopg2.errors.UndefinedTable)' in str(e):
+                        pass
+                    else:
+                        raise e
 
-    def _load_data(self, sql_alchemy: SQLAlchemy, engine: Any):
-        print('Loading data...')
+            # Cannot use sql_alchemy.create_all() as it was throwing sqlalchemy.exc.IntegrityError:
+            #  (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint
+            #  "pg_type_typname_nsp_index", while connected to the production PostgreSQL instance
+            # and sqlalchemy.exc.ProgrammingError: (psycopg2.errors.DuplicateTable) relation "xxx" already exists
+            for table in sql_alchemy_.get_tables_for_bind():
+                try:
+                    if not table.exists(bind=engine):
+                        table.create(bind=engine)
+                except (IntegrityError, ProgrammingError) as e:
+                    if '(psycopg2.errors.UniqueViolation)' in str(e) or '(psycopg2.errors.DuplicateTable)' in str(e):
+                        pass
+                    else:
+                        raise e
 
-        start = perf_counter()
+            print('Loading data...')
 
-        # Cannot use sql_alchemy.drop_all() as it was throwing sqlalchemy.exc.ProgrammingError:
-        #  (psycopg2.errors.UndefinedTable) table "xxx" does not exist, while connected to the production PostgreSQL
-        #  instance
-        for table in sql_alchemy.get_tables_for_bind():
-            try:
-                if table.exists(bind=engine):
-                    table.drop(bind=engine)
-            except ProgrammingError as e:
-                if '(psycopg2.errors.UndefinedTable)' in str(e):
-                    pass
-                else:
-                    raise e
+            start = perf_counter()
 
-        # Cannot use sql_alchemy.create_all() as it was throwing sqlalchemy.exc.IntegrityError:
-        #  (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint
-        #  "pg_type_typname_nsp_index", while connected to the production PostgreSQL instance
-        # and sqlalchemy.exc.ProgrammingError: (psycopg2.errors.DuplicateTable) relation "xxx" already exists
-        for table in sql_alchemy.get_tables_for_bind():
-            try:
-                if not table.exists(bind=engine):
-                    table.create(bind=engine)
-            except (IntegrityError, ProgrammingError) as e:
-                if '(psycopg2.errors.UniqueViolation)' in str(e) or '(psycopg2.errors.DuplicateTable)' in str(e):
-                    pass
-                else:
-                    raise e
+            print('Loading types and categories...')
+            Data.__load_categories_and_types(sql_alchemy_)
 
-        print('Loading types and categories...')
-        self.__load_categories_and_types(sql_alchemy)
+            print('Loading items...')
+            Data.__load_data(r'app/data/items.csv', Item, ModelItem)
 
-        print('Loading items...')
-        self.__load_data(r'app/data/items.csv', Item, ModelItem)
+            print('Loading recipes...')
+            Data.__load_data(r'app/data/recipes.csv', Recipe, ModelRecipe)
 
-        print('Loading recipes...')
-        self.__load_data(r'app/data/recipes.csv', Recipe, ModelRecipe)
+            stop = perf_counter()
 
-        stop = perf_counter()
+            print('Data loaded in {} seconds.'.format(stop - start))
 
-        print('Data loaded in {} seconds.'.format(stop - start))
+    # def init_app(self, app: Flask, sql_alchemy: SQLAlchemy):
+    #     with app.app_context():
+    #         engine = sql_alchemy.get_engine(app=app)
+    #
+    #         # Locking is required to get around PostgreSQL Integrity errors that were occurring
+    #         #  sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique
+    #         #  constraint "pg_type_typname_nsp_index"
+    #         if engine.dialect.name == POSTGRESQL:
+    #             lock = Lock()
+    #             with lock:
+    #                 self._load_data(sql_alchemy, engine)
+    #         else:
+    #             self._load_data(sql_alchemy, engine)
+
+
+def create_database():
+    """
+    Sets up the database and loads it with initial data.
+    """
+
+    app = create_app(os.getenv(ENV_FLASK_CONFIGURATION) or DEVELOPMENT_KEY)
+
+    Data.create_database(app, sql_alchemy)
+
+
+if __name__ == '__main__':
+    create_database()
