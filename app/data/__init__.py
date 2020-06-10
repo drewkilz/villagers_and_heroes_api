@@ -125,6 +125,8 @@ class Data:
             Data.__load_data(r'app/data/items.csv', Item, ModelItem, 'items')
 
             Data.__load_data(r'app/data/recipes.csv', Recipe, ModelRecipe, 'recipes')
+            
+            sql_alchemy.session.commit()
 
             stop = perf_counter()
 

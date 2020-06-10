@@ -1,5 +1,6 @@
-from distutils.util import strtobool
 import os
+from flask import Flask
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 DEVELOPMENT_KEY = 'development'
@@ -16,7 +17,7 @@ class Configuration:
         'sqlite:///' + os.path.join(basedir, 'data.sqlite')
     SQLALCHEMY_TRACK_MODIFICATIONS: str = os.environ.get(ENV_SQLALCHEMY_TRACK_MODIFICATIONS) or False
 
-    def init_app(self, app):
+    def init_app(self, app: Flask):
         if not self.SQLALCHEMY_DATABASE_URI:
             raise EnvironmentError('No {} configured in environment variables for Flask-SQLAlchemy'.format(
                 ENV_SQLALCHEMY_DATABASE_URI))
