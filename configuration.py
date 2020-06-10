@@ -18,8 +18,8 @@ class Configuration:
     SQLALCHEMY_DATABASE_URI: str = os.environ.get(ENV_SQLALCHEMY_DATABASE_URI) or \
         'sqlite:///' + os.path.join(basedir, 'data.sqlite')
     SQLALCHEMY_TRACK_MODIFICATIONS: str = os.environ.get(ENV_SQLALCHEMY_TRACK_MODIFICATIONS) or False
-    VNH_ITEMS_PER_PAGE = 100
-    VNH_RECIPES_PER_PAGE = 100
+    VNH_ITEMS_PER_PAGE = 20
+    VNH_RECIPES_PER_PAGE = 20
 
     def init_app(self, app: Flask):
         if not self.SQLALCHEMY_DATABASE_URI:
