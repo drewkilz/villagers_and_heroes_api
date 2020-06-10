@@ -1,14 +1,16 @@
 """Contains a methodology for preloading data related to Villagers and Heroes into the data source."""
 
 from csv import DictReader
+from threading import Lock
 from time import perf_counter
-from typing import Type as Type_
+from typing import Type as Type_, Any
 
 from dacite.exceptions import MissingValueError
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.schema import DropTable
+from sqlalchemy.exc import ProgrammingError
 from sqlalchemy.ext.compiler import compiles
+from sqlalchemy.schema import DropTable
 
 from app.data.item import Item
 from app.data.object import Object
@@ -20,8 +22,9 @@ from app.models.type import ItemType, CraftingType, Class, Rarity, Type, Categor
     SubClass
 from configuration import ENV_RELOAD_DATA
 
+POSTGRESQL = 'postgresql'
 
-@compiles(DropTable, "postgresql")
+@compiles(DropTable, POSTGRESQL)
 def _compile_drop_table(element, compiler, **kwargs):
     """Fixes an issue with PostgreSQL, allowing drop table statements to cascade, as otherwise errors are thrown."""
     return compiler.visit_drop_table(element) + " CASCADE"
@@ -39,6 +42,7 @@ class Data:
                     raise ValueError('Failed to retrieve data from file: "{}", line: {}. Error: {}'.format(
                         file_path, line_number + 1, e))
 
+                print('\rLoading {}:{} -> {}'.format(file_path, line_number + 1, data_object))
                 model_class.load(data_object)
 
     @staticmethod
@@ -66,35 +70,46 @@ class Data:
         print('Loading data...')
 
         with app.app_context():
-            start = perf_counter()
-
-            # Cannot use sql_alchemy.drop_all() as it was throwing sqlalchemy.exc.ProgrammingError:
-            #  (psycopg2.errors.UndefinedTable) table "xxx" does not exist, while connected to the production PostgreSQL
-            #  instance
             engine = sql_alchemy.get_engine(app=app)
-            from sqlalchemy.exc import ProgrammingError
-            for table in sql_alchemy.get_tables_for_bind():
-                try:
-                    table.drop(bind=engine)
-                except ProgrammingError as e:
-                    if '(psycopg2.errors.UndefinedTable)' in str(e):
-                        pass
-                    else:
-                        raise e
 
-            sql_alchemy.create_all()
+            # Locking is required to get around PostgreSQL Integrity errors that were occurring
+            #  sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique
+            #  constraint "pg_type_typname_nsp_index"
+            if engine.dialect.name == POSTGRESQL:
+                lock = Lock()
+                with lock:
+                    self._init_app(sql_alchemy, engine)
+            else:
+                self._init_app(sql_alchemy, engine)
 
-            print('Loading types and categories...')
-            self.__load_categories_and_types(sql_alchemy)
+    def _init_app(self, sql_alchemy: SQLAlchemy, engine: Any):
+        start = perf_counter()
 
-            print('Loading items...')
-            self.__load_data(r'app/data/items.csv', Item, ModelItem)
+        # Cannot use sql_alchemy.drop_all() as it was throwing sqlalchemy.exc.ProgrammingError:
+        #  (psycopg2.errors.UndefinedTable) table "xxx" does not exist, while connected to the production PostgreSQL
+        #  instance
+        for table in sql_alchemy.get_tables_for_bind():
+            try:
+                table.drop(bind=engine)
+            except ProgrammingError as e:
+                if '(psycopg2.errors.UndefinedTable)' in str(e):
+                    pass
+                else:
+                    raise e
 
-            print('Loading recipes...')
-            self.__load_data(r'app/data/recipes.csv', Recipe, ModelRecipe)
+        sql_alchemy.create_all()
 
-            sql_alchemy.session.commit()
+        print('Loading types and categories...')
+        self.__load_categories_and_types(sql_alchemy)
 
-            stop = perf_counter()
+        print('Loading items...')
+        self.__load_data(r'app/data/items.csv', Item, ModelItem)
 
-            print('Data loaded in {} seconds.'.format(stop - start))
+        print('Loading recipes...')
+        self.__load_data(r'app/data/recipes.csv', Recipe, ModelRecipe)
+
+        sql_alchemy.session.commit()
+
+        stop = perf_counter()
+
+        print('Data loaded in {} seconds.'.format(stop - start))
