@@ -4,7 +4,7 @@ from math import ceil
 from app.models.crafting_list import CraftingList
 from app.models.item import SALVAGE_KIT, Item
 from app.models.recipe import Recipe
-from app.models.type import CraftingType
+from app.models.type import CraftingType, ItemType
 
 
 @dataclass
@@ -31,9 +31,9 @@ def _calculate(list_: CraftingList, recipe: Recipe, quantity: int, options: Craf
     for ingredient in recipe.ingredients:
         # Modify the quantity needed based on salvaged materials
         if options.salvaging and recipe.item.salvageable:
-            if ingredient.item.type == 'Crafting Component':
+            if ingredient.item.type.name == ItemType.COMPONENT.value:
                 quantity_ = ceil(quantity * (1 - options.component_salvage_percent))
-            elif ingredient.item.type == 'Crafting Ingredient':
+            elif ingredient.item.type.name == ItemType.INGREDIENT.value:
                 quantity_ = ceil(quantity * (1 - options.ingredient_salvage_percent))
 
         sub_recipe = Recipe.query.filter_by(name=ingredient.item.name).first()
