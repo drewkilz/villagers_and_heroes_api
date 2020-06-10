@@ -35,7 +35,6 @@ Heroku (www.heroku.com) is used for hosting the application.
             $ git push heroku master
 
 - Configuration variables
-
     - Variables can be set on the heroku application that will then be available as environment variables. To list the
     current configuration:
     
@@ -45,7 +44,15 @@ Heroku (www.heroku.com) is used for hosting the application.
     
             $ heroku config:set TIMES=2
 
+- Bash
+    - Connects to the bash prompt on the Heroku server for running commands
+        
+            $ heroku run bash
+        
 - Database
+    - I set up a PostgreSQL instance to be utilized via the Heroku UI - the connection string can be found in the
+    DATABASE_URL configuration variable
+    
+    - Additionally, I created a script that can be run that will populate the database
 
-    - Not in use yet
-    - https://devcenter.heroku.com/articles/getting-started-with-python#provision-a-database
+            $ heroku run ./create_database.sh
