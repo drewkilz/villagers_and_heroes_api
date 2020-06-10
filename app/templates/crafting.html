@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
+{% macro render_heading(value) %}
+    <thead class="thead-light">
+        <tr>
+            <th colspan="11">{{ value }}</th>
+        </tr>
+    </thead>
+{% endmacro %}
+
 {% block title %}
     {{ super() }}
     Crafting
@@ -11,10 +19,10 @@
             <tr>
                 <th></th>
                 <!--
-                <th colspan="2" class="text-center">Needed</th>
-                <th colspan="2" class="text-center">Obtained</th>
+                <th colspan="3" class="text-center">Needed</th>
+                <th colspan="3" class="text-center">Obtained</th>
                 -->
-                <th colspan="2" class="text-center">Total</th>
+                <th colspan="3" class="text-center">Total</th>
                 <!--
                 <th></th>
                 -->
@@ -24,21 +32,20 @@
                 <!--
                 <th class="text-center">Stacks</th>
                 <th class="text-center">Individual</th>
+                <th class="text-center">Total</th>
                 <th class="text-center">Stacks</th>
                 <th class="text-center">Individual</th>
+                <th class="text-center">Total</th>
                 -->
                 <th class="text-center">Stacks</th>
                 <th class="text-center">Individual</th>
+                <th class="text-center">Total</th>
                 <!--
                 <th>Source</th>
                 -->
             </tr>
         </thead>
-        <thead class="thead-light">
-            <tr>
-                <th colspan="8">Items</th>
-            </tr>
-        </thead>
+        {{ render_heading('Items') }}
         <tbody>
             {% for object_quantity in crafting_list.items.values() %}
                 {% with object_quantity=object_quantity %}
@@ -46,11 +53,7 @@
                 {% endwith %}
             {% endfor %}
         </tbody>
-        <thead class="thead-light">
-            <tr>
-                <th colspan="8">Refined Ingredients</th>
-            </tr>
-        </thead>
+        {{ render_heading('Refined Ingredients') }}
         <tbody>
             {% for object_quantity in crafting_list.refined.values() %}
                 {% with object_quantity=object_quantity %}
@@ -58,11 +61,7 @@
                 {% endwith %}
             {% endfor %}
         </tbody>
-        <thead>
-            <tr>
-                <th colspan="8">Crafting Components</th>
-            </tr>
-        </thead>
+        {{ render_heading('Crafting Components') }}
         <tbody>
             {% for object_quantity in crafting_list.components.values() %}
                 {% with object_quantity=object_quantity %}
@@ -70,20 +69,16 @@
                 {% endwith %}
             {% endfor %}
         </tbody>
-        <thead>
-            <tr>
-                <th colspan="8">Final Products</th>
-            </tr>
-        </thead>
+        {{ render_heading('Final Products') }}
         <tbody>
             {% for object_quantity in crafting_list.list.values() %}
                 {% with object_quantity=object_quantity %}
                     {% include 'crafting_item_row.html' %}
                 {% endwith %}
             {% endfor %}
-            <tr>
-                <th colspan="8">Crafting Cost: {{ crafting_list.gold_pieces }} gp, {{ crafting_list.silver_pieces }} sp, {{ crafting_list.copper_pieces }} cp</th>
-            </tr>
         </tbody>
+        {{
+                render_heading('Crafting Cost: %s gp, %s sp, %s cp'|format(crafting_list.gold_pieces, crafting_list.silver_pieces, crafting_list.copper_pieces))
+        }}
     </table>
 {% endblock %}
