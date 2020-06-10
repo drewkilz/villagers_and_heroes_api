@@ -2,9 +2,9 @@ from dataclasses import dataclass
 from math import ceil
 
 from app.models.crafting_list import CraftingList
+from app.models.enum import CraftingType, ItemType
 from app.models.item import SALVAGE_KIT, Item
 from app.models.recipe import Recipe
-from app.models.type import CraftingType, ItemType
 
 
 @dataclass

@@ -4,7 +4,7 @@ from typing import Dict, List
 
 from app.data.ingredient import Ingredient
 from app.data.object import Object
-from app.models.type import CraftingType, Class, CraftingSkill
+from app.models.enum import CraftingType, CraftingSkill
 
 
 @dataclass

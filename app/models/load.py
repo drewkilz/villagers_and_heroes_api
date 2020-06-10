@@ -1,7 +1,9 @@
 from dataclasses import dataclass
 from enum import Enum
 
-from app.models.type import Type, Category, CategoryEnum
+from app.models.category import Category
+from app.models.enum import CategoryEnum
+from app.models.type import Type
 
 
 class LoadMixin(object):

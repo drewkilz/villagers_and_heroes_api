@@ -14,11 +14,13 @@ from app import create_app, sql_alchemy
 from app.data.item import Item
 from app.data.object import Object
 from app.data.recipe import Recipe
+from app.models.category import Category
+from app.models.enum import ItemType, CraftingType, Class, Rarity, CategoryEnum, SkillType, Skill, \
+    SubClass
 from app.models.item import Item as ModelItem
 from app.models.load import LoadMixin
 from app.models.recipe import Recipe as ModelRecipe
-from app.models.type import ItemType, CraftingType, Class, Rarity, Type, CategoryEnum, Category, SkillType, Skill, \
-    SubClass
+from app.models.type import Type
 from configuration import ENV_FLASK_CONFIGURATION, DEVELOPMENT_KEY
 
 

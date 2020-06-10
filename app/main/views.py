@@ -1,9 +1,12 @@
-from flask import render_template
+from flask import render_template, abort
+from http import HTTPStatus
 
 from . import main
+from app import sql_alchemy
+from app.api.recipes import get_recipe, get_recipes
 from app.crafting_calculator import calculate, CraftingOptions
 from app.models.crafting_list import CraftingList
-from app.models.recipe import Recipe
+from app.models.schemas.recipe import RecipeSchema
 
 
 @main.route('/')
@@ -18,7 +21,15 @@ def equipment():
 
 @main.route('/recipes')
 def recipes():
-    return render_template('recipes.html', recipes=Recipe.query.all())
+    response = get_recipes()
+
+    if response.status_code == HTTPStatus.OK:
+        schema = RecipeSchema()
+        recipes_ = [schema.load(recipe, session=sql_alchemy.session) for recipe in response.json['recipes']]
+    else:
+        abort(HTTPStatus.INTERNAL_SERVER_ERROR)
+
+    return render_template('recipes.html', recipes=recipes_)
 
 
 @main.route('/crafting')
@@ -27,7 +38,8 @@ def crafting():
 
     list_ = CraftingList()
     for recipe_name, quantity in _40:
-        list_.add(Recipe.query.filter_by(name=recipe_name).first(), quantity)
+        recipe = RecipeSchema().load(get_recipe(recipe_name), session=sql_alchemy.session)
+        list_.add(recipe, quantity)
 
     calculate(list_, CraftingOptions(salvaging=True))
 

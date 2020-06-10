@@ -1,11 +1,10 @@
-"""Contains classes and functionality pertaining to recipes for crafting items."""
-
 from app import sql_alchemy
 from app.data import Recipe as DataRecipe
+from app.models.ingredient import Ingredient
 from app.models.item import Item
 from app.models.load import LoadMixin
 from app.models.quantity import QuantityMixin
-from app.models.type import CategoryEnum
+from app.models.enum import CategoryEnum
 
 
 class Recipe(sql_alchemy.Model, QuantityMixin, LoadMixin):
@@ -48,19 +47,3 @@ class Recipe(sql_alchemy.Model, QuantityMixin, LoadMixin):
             recipe.ingredients.append(ingredient)
 
         sql_alchemy.session.add(recipe)
-
-
-class Ingredient(sql_alchemy.Model):
-    __tablename__ = 'ingredients'
-
-    recipe_id = sql_alchemy.Column(sql_alchemy.Integer, sql_alchemy.ForeignKey('recipes.id'), primary_key=True,
-                                   nullable=False)
-    item_id = sql_alchemy.Column(sql_alchemy.Integer, sql_alchemy.ForeignKey('items.id'), primary_key=True,
-                                 nullable=False)
-    quantity = sql_alchemy.Column(sql_alchemy.SmallInteger, nullable=False)
-
-    recipe = sql_alchemy.relationship('Recipe', foreign_keys=[recipe_id])
-    item = sql_alchemy.relationship('Item', foreign_keys=[item_id])
-
-    def __repr__(self):
-        return 'Ingredient(quantity={}, item={}, recipe={})'.format(self.quantity, self.item, self.recipe)

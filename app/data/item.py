@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Dict
 
 from app.data.object import Object
-from app.models.type import ItemType, Class, Rarity, SubClass
+from app.models.enum import ItemType, Class, Rarity, SubClass
 
 
 @dataclass

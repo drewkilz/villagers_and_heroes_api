@@ -2,7 +2,7 @@ from app import sql_alchemy
 from app.data import Item as DataItem
 from app.models.load import LoadMixin
 from app.models.quantity import QuantityMixin
-from app.models.type import ItemType, CategoryEnum
+from app.models.enum import ItemType, CategoryEnum
 
 SALVAGE_KIT = 'Salvage Kit'
 WATER = 'Water'

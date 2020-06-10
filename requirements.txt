@@ -3,5 +3,7 @@ flask
 flask-bootstrap
 flask-sqlalchemy
 gunicorn
+marshmallow_sqlalchemy
 psycopg2-binary
 python-dotenv
+werkzeug
