@@ -1,6 +1,7 @@
 """Contains a methodology for preloading data related to Villagers and Heroes into the data source."""
 
 from csv import DictReader
+from threading import Lock
 from time import perf_counter
 from typing import Type as Type_, Any
 
@@ -70,47 +71,58 @@ class Data:
         with app.app_context():
             engine = sql_alchemy.get_engine(app=app)
 
-            print('Loading data...')
+            # Locking is required to get around PostgreSQL Integrity errors that were occurring
+            #  sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique
+            #  constraint "pg_type_typname_nsp_index"
+            if engine.dialect.name == POSTGRESQL:
+                lock = Lock()
+                with lock:
+                    self._load_data(sql_alchemy, engine)
+            else:
+                self._load_data(sql_alchemy, engine)
 
-            start = perf_counter()
+    def _load_data(self, sql_alchemy: SQLAlchemy, engine: Any):
+        print('Loading data...')
 
-            # Cannot use sql_alchemy.drop_all() as it was throwing sqlalchemy.exc.ProgrammingError:
-            #  (psycopg2.errors.UndefinedTable) table "xxx" does not exist, while connected to the production PostgreSQL
-            #  instance
-            for table in sql_alchemy.get_tables_for_bind():
-                try:
-                    if not table.exists(bind=engine):
-                        table.drop(bind=engine)
-                except ProgrammingError as e:
-                    if '(psycopg2.errors.UndefinedTable)' in str(e):
-                        pass
-                    else:
-                        raise e
+        start = perf_counter()
 
-            # Cannot use sql_alchemy.create_all() as it was throwing sqlalchemy.exc.IntegrityError:
-            #  (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint
-            #  "pg_type_typname_nsp_index", while connected to the production PostgreSQL instance
-            for table in sql_alchemy.get_tables_for_bind():
-                try:
-                    if not table.exists(bind=engine):
-                        table.create(bind=engine)
-                except IntegrityError as e:
-                    if '(psycopg2.errors.UniqueViolation)' in str(e):
-                        pass
-                    else:
-                        raise e
+        # Cannot use sql_alchemy.drop_all() as it was throwing sqlalchemy.exc.ProgrammingError:
+        #  (psycopg2.errors.UndefinedTable) table "xxx" does not exist, while connected to the production PostgreSQL
+        #  instance
+        for table in sql_alchemy.get_tables_for_bind():
+            try:
+                if not table.exists(bind=engine):
+                    table.drop(bind=engine)
+            except ProgrammingError as e:
+                if '(psycopg2.errors.UndefinedTable)' in str(e):
+                    pass
+                else:
+                    raise e
 
-            print('Loading types and categories...')
-            self.__load_categories_and_types(sql_alchemy)
+        # Cannot use sql_alchemy.create_all() as it was throwing sqlalchemy.exc.IntegrityError:
+        #  (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint
+        #  "pg_type_typname_nsp_index", while connected to the production PostgreSQL instance
+        for table in sql_alchemy.get_tables_for_bind():
+            try:
+                if not table.exists(bind=engine):
+                    table.create(bind=engine)
+            except IntegrityError as e:
+                if '(psycopg2.errors.UniqueViolation)' in str(e):
+                    pass
+                else:
+                    raise e
 
-            print('Loading items...')
-            self.__load_data(r'app/data/items.csv', Item, ModelItem)
+        print('Loading types and categories...')
+        self.__load_categories_and_types(sql_alchemy)
 
-            print('Loading recipes...')
-            self.__load_data(r'app/data/recipes.csv', Recipe, ModelRecipe)
+        print('Loading items...')
+        self.__load_data(r'app/data/items.csv', Item, ModelItem)
 
-            sql_alchemy.session.commit()
+        print('Loading recipes...')
+        self.__load_data(r'app/data/recipes.csv', Recipe, ModelRecipe)
 
-            stop = perf_counter()
+        sql_alchemy.session.commit()
 
-            print('Data loaded in {} seconds.'.format(stop - start))
+        stop = perf_counter()
+
+        print('Data loaded in {} seconds.'.format(stop - start))
