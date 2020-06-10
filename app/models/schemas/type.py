@@ -7,6 +7,7 @@ class TypeSchema(SQLAlchemySchema):
     class Meta:
         model = Type
         load_instance = True
+        transient = True
 
     id = auto_field()
     category = auto_field()

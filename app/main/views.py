@@ -25,7 +25,7 @@ def recipes():
 
     if response.status_code == HTTPStatus.OK:
         schema = RecipeSchema()
-        recipes_ = [schema.load(recipe, session=sql_alchemy.session) for recipe in response.json['recipes']]
+        recipes_ = [schema.load(recipe) for recipe in response.json['recipes']]
     else:
         abort(HTTPStatus.INTERNAL_SERVER_ERROR)
 
@@ -38,7 +38,7 @@ def crafting():
 
     list_ = CraftingList()
     for recipe_name, quantity in _40:
-        recipe = RecipeSchema().load(get_recipe(recipe_name), session=sql_alchemy.session)
+        recipe = RecipeSchema().load(get_recipe(recipe_name))
         list_.add(recipe, quantity)
 
     calculate(list_, CraftingOptions(salvaging=True))
