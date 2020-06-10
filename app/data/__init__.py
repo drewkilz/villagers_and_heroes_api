@@ -91,7 +91,7 @@ class Data:
         #  instance
         for table in sql_alchemy.get_tables_for_bind():
             try:
-                if not table.exists(bind=engine):
+                if table.exists(bind=engine):
                     table.drop(bind=engine)
             except ProgrammingError as e:
                 if '(psycopg2.errors.UndefinedTable)' in str(e):
@@ -115,17 +115,11 @@ class Data:
         print('Loading types and categories...')
         self.__load_categories_and_types(sql_alchemy)
 
-        sql_alchemy.session.commit()
-
         print('Loading items...')
         self.__load_data(r'app/data/items.csv', Item, ModelItem)
 
-        sql_alchemy.session.commit()
-
         print('Loading recipes...')
         self.__load_data(r'app/data/recipes.csv', Recipe, ModelRecipe)
-
-        sql_alchemy.session.commit()
 
         stop = perf_counter()
 
