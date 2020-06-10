@@ -56,3 +56,10 @@ Heroku (www.heroku.com) is used for hosting the application.
     - Additionally, I created a script that can be run that will populate the database
 
             $ heroku run ./create_database.sh
+
+Flask
+-----
+- Shell
+    - Run a flask shell to load the flask application and be able to utilize the objects for debugging, testing, etc.
+    
+            $ flask shell
