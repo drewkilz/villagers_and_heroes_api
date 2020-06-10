@@ -8,7 +8,7 @@ bootstrap = Bootstrap()
 sql_alchemy = SQLAlchemy()
 
 
-def create_app(config_name):
+def create_app(config_name: str):
     app = Flask(__name__)
     configuration = CONFIGURATION[config_name]()
     configuration.init_app(app)
