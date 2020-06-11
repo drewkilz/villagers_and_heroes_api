@@ -14,6 +14,8 @@ from app.models.schemas.recipe import RecipeSchema
 from app.models.schemas.type import TypeSchema
 from app.models.type import Type
 from configuration import ENV_FLASK_CONFIGURATION, DEVELOPMENT_KEY
+# Out of order to disable circular import errors
+from app.api.authentication import Authenticator
 
 app = create_app(os.getenv(ENV_FLASK_CONFIGURATION) or DEVELOPMENT_KEY)
 
@@ -30,7 +32,8 @@ def make_shell_context():
                 CategoryEnum=CategoryEnum, SkillType=SkillType, VillageSkill=VillageSkill, CraftingType=CraftingType,
                 ItemType=ItemType, Class=Class, Rarity=Rarity, CraftingSkill=CraftingSkill,
                 GatheringSkill=GatheringSkill, Data=Data, ItemSchema=ItemSchema, CategorySchema=CategorySchema,
-                TypeSchema=TypeSchema, RecipeSchema=RecipeSchema, IngredientSchema=IngredientSchema)
+                TypeSchema=TypeSchema, RecipeSchema=RecipeSchema, IngredientSchema=IngredientSchema,
+                Authenticator=Authenticator)
 
 
 if __name__ == '__main__':

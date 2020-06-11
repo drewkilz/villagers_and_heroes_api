@@ -1,8 +1,10 @@
 dacite
 flask
 flask-bootstrap
+flask-httpauth
 flask-sqlalchemy
 gunicorn
+itsdangerous
 marshmallow_sqlalchemy
 psycopg2-binary
 python-dotenv

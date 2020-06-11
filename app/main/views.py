@@ -2,7 +2,6 @@ from flask import render_template, abort
 from http import HTTPStatus
 
 from . import main
-from app import sql_alchemy
 from app.api.recipes import get_recipe, get_recipes
 from app.crafting_calculator import calculate, CraftingOptions
 from app.models.crafting_list import CraftingList
