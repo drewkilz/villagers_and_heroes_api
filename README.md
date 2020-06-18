@@ -1,5 +1,5 @@
-Heroes and Villagers
-====================
+Villagers and Heroes API
+========================
 
 Code related to the game Villagers &amp; Heroes
 
@@ -9,7 +9,7 @@ Heroku (www.heroku.com) is used for hosting the application.
 - Create the application in Heroku
 
         $ heroku login
-        $ heroku create villagers-and-heroes
+        $ heroku create vnh-api
         $ git push heroku master
         $ heroku ps:scale web=1
 
