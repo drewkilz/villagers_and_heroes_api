@@ -13,6 +13,7 @@ ENV_SQLALCHEMY_DATABASE_URI = 'SQLALCHEMY_DATABASE_URI'
 ENV_SQLALCHEMY_TRACK_MODIFICATIONS = 'SQLALCHEMY_TRACK_MODIFICATIONS'
 ENV_VNH_ITEMS_PER_PAGE = 'VNH_ITEMS_PER_PAGE'
 ENV_VNH_RECIPES_PER_PAGE = 'VNH_RECIPES_PER_PAGE'
+ENV_CORS_ORIGIN = 'CORS_ORIGIN'
 
 
 class Configuration:
@@ -20,8 +21,9 @@ class Configuration:
     SQLALCHEMY_DATABASE_URI: str = os.environ.get(ENV_SQLALCHEMY_DATABASE_URI) or \
         'sqlite:///' + os.path.join(basedir, 'data.sqlite')
     SQLALCHEMY_TRACK_MODIFICATIONS: str = os.environ.get(ENV_SQLALCHEMY_TRACK_MODIFICATIONS) or False
-    VNH_ITEMS_PER_PAGE = 20
-    VNH_RECIPES_PER_PAGE = 20
+    VNH_ITEMS_PER_PAGE: int = 20
+    VNH_RECIPES_PER_PAGE: int = 20
+    CORS_ORIGIN: str = os.environ.get(ENV_CORS_ORIGIN)
 
     def init_app(self, app: Flask):
         if not self.SECRET_KEY:

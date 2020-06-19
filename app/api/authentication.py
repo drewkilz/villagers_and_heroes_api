@@ -10,7 +10,7 @@ introduced.
 
 import sys
 
-from flask import current_app
+from flask import current_app, request
 from flask_httpauth import HTTPTokenAuth
 from itsdangerous import Serializer, BadSignature
 
@@ -28,6 +28,11 @@ def auth_error():
 @api.before_request
 @auth.login_required
 def before_request():
+    if request.method == 'OPTIONS':
+        # Disclude OPTIONS requests from authorization as it is just the browser seeing what headers, etc. can be sent
+        #  and does not allow authorization to be completed as the authorization header is not allowed by default, so
+        #  nothing to authorize with
+        return
     if not auth.current_user():
         return forbidden('Invalid user')
 

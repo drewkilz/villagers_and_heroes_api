@@ -1,6 +1,7 @@
 dacite
 flask
 flask-bootstrap
+flask-cors
 flask-httpauth
 flask-sqlalchemy
 gunicorn

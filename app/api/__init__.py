@@ -1,6 +1,19 @@
-from flask import Blueprint
+from flask import Blueprint, Flask
+from flask_cors import CORS
 
-api = Blueprint('api', __name__)
+from configuration import ENV_CORS_ORIGIN
+
+
+class ApiBlueprint(Blueprint):
+    def init_api(self, app: Flask):
+        cors_origin = app.config[ENV_CORS_ORIGIN]
+        if cors_origin:
+            # Enable CORS if specified
+            CORS(self, origins=cors_origin)
+
+
+api = ApiBlueprint('api', __name__)
+
 
 # Imported here to avoid circular dependencies
 from app.api import authentication, items, recipes
