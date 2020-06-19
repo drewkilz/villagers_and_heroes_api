@@ -17,7 +17,7 @@ class Item(Object):
     @classmethod
     def from_dict(cls, dictionary: Dict):
         cls.convert('type', dictionary, ItemType)
-        cls.convert('class', dictionary, Class, optional=True)
+        cls.convert('class', dictionary, Class, optional=True, output_key='class_')
         cls.convert('subclass', dictionary, SubClass, optional=True)
         cls.convert('rarity', dictionary, Rarity, optional=True, default=Rarity.COMMON)
 

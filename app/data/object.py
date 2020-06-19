@@ -20,7 +20,7 @@ class Object:
                                                         check_types=False))
 
     @staticmethod
-    def convert(key: str, dictionary: Dict, lookup: Callable[[str], Any], optional=False, default=None):
+    def convert(key: str, dictionary: Dict, lookup: Callable[[str], Any], optional=False, default=None, output_key=None):
         if key in dictionary:
             string_value = dictionary[key]
             if isinstance(string_value, str):
@@ -32,4 +32,7 @@ class Object:
                     else:
                         raise ValueError('Unable to find {} with name: "{}"'.format(lookup.__name__, string_value))
 
-                dictionary[key] = value
+                if not output_key:
+                    output_key = key
+
+                dictionary[output_key] = value
