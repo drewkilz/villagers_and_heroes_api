@@ -63,7 +63,7 @@ def _calculate(list_: CraftingList, recipe: Recipe, quantity: int, options: Craf
 
         current_list[key].quantity += quantity_ * ingredient.quantity
 
-    list_.cost += (recipe.cost * quantity)
+    list_.cost.total += (recipe.cost * quantity)
 
 
 def calculate(list_: CraftingList, options: CraftingOptions):
