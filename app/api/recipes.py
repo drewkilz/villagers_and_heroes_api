@@ -26,9 +26,7 @@ def get_recipes():
     page = request.args.get('page', 1, type=int)
     size = request.args.get('size', current_app.config[ENV_VNH_RECIPES_PER_PAGE], type=int)
 
-    pagination = Recipe.query.order_by(Recipe.name.asc()).paginate(
-        page, per_page=size,
-        error_out=False)
+    pagination = Recipe.query.order_by(Recipe.name.asc()).paginate(page, per_page=size, error_out=False)
 
     recipes = pagination.items
 
