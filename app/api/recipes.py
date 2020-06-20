@@ -1,5 +1,6 @@
 from flask import jsonify, request, current_app, url_for, abort
 from sqlalchemy import asc, desc, text
+from sqlalchemy_filters import apply_filters
 
 from app.api import api
 from app.models.item import Item
@@ -24,7 +25,7 @@ def get_recipe(id_or_name):
     return RecipeSchema().dump(recipe)
 
 
-@api.route('/recipes/')
+@api.route('/recipes/', methods=['GET', 'POST'])
 def get_recipes():
     page = request.args.get('page', 1, type=int)
     per_page = request.args.get('perPage', current_app.config[ENV_VNH_RECIPES_PER_PAGE], type=int)
@@ -32,10 +33,27 @@ def get_recipes():
     sort_order = request.args.get('sortOrder', 'asc', type=str)
     sort_order_function = asc if sort_order == 'asc' else desc
 
+    filter_ = None
+    if request.json and 'filter' in request.json:
+        filter_ = request.json['filter']
+
     query = Recipe.query
 
-    if sort_by in ('name', 'level'):
-        query = query.order_by(sort_order_function(text(sort_by)))
+    for current_filter in filter_:
+        # current_filter['model'] = 'Recipe'
+        field = current_filter['field']
+        if field in ('skill', 'type', 'class', 'subclass'):
+            current_filter['field'] = '{}_id'.format(current_filter['field'])
+            if field in ('class', 'subclass'):
+                current_filter['model'] = 'Item'
+
+    if filter_:
+        query = apply_filters(query, filter_)
+
+    if sort_by == 'name':
+        query = query.order_by(sort_order_function(Recipe.name))
+    elif sort_by == 'level':
+        query = query.order_by(sort_order_function(Recipe.level))
     elif sort_by == 'skill':
         query = query.join(Recipe.skill).order_by(sort_order_function(Type.name))
     elif sort_by == 'type':
