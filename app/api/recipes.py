@@ -42,6 +42,8 @@ def get_recipes():
         query = query.join(Recipe.type).order_by(sort_order_function(Type.name))
     elif sort_by == 'class':
         query = query.join(Recipe.item).join(Item.class_).order_by(sort_order_function(Type.name))
+    elif sort_by == 'subclass':
+        query = query.join(Recipe.item).join(Item.subclass).order_by(sort_order_function(Type.name))
 
     pagination = query.paginate(page, per_page=per_page, error_out=False)
 

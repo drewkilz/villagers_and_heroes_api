@@ -18,7 +18,7 @@ class Item(Object):
     def from_dict(cls, dictionary: Dict):
         cls.convert('type', dictionary, ItemType)
         cls.convert('class', dictionary, Class, optional=True, default=Class.ALL, output_key='class_')
-        cls.convert('subclass', dictionary, SubClass, optional=True)
+        cls.convert('subclass', dictionary, SubClass, optional=True, default=SubClass.ALL)
         cls.convert('rarity', dictionary, Rarity, optional=True, default=Rarity.COMMON)
 
         return super().from_dict(dictionary)

@@ -21,6 +21,7 @@ class Class(Enum):
 
 
 class SubClass(Enum):
+    ALL = 'All'
     LIGHTNING = 'Lightning'
     FURY = 'Fury'
     FIRE = 'Fire'
