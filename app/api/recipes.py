@@ -1,8 +1,11 @@
 from flask import jsonify, request, current_app, url_for, abort
+from sqlalchemy import asc, desc, text
 
 from app.api import api
+from app.models.item import Item
 from app.models.recipe import Recipe
 from app.models.schemas.recipe import RecipeSchema
+from app.models.type import Type
 from configuration import ENV_VNH_RECIPES_PER_PAGE
 
 
@@ -24,9 +27,23 @@ def get_recipe(id_or_name):
 @api.route('/recipes/')
 def get_recipes():
     page = request.args.get('page', 1, type=int)
-    size = request.args.get('size', current_app.config[ENV_VNH_RECIPES_PER_PAGE], type=int)
+    per_page = request.args.get('perPage', current_app.config[ENV_VNH_RECIPES_PER_PAGE], type=int)
+    sort_by = request.args.get('sortBy', 'name', type=str)
+    sort_order = request.args.get('sortOrder', 'asc', type=str)
+    sort_order_function = asc if sort_order == 'asc' else desc
 
-    pagination = Recipe.query.order_by(Recipe.name.asc()).paginate(page, per_page=size, error_out=False)
+    query = Recipe.query
+
+    if sort_by in ('name', 'level'):
+        query = query.order_by(sort_order_function(text(sort_by)))
+    elif sort_by == 'skill':
+        query = query.join(Recipe.skill).order_by(sort_order_function(Type.name))
+    elif sort_by == 'type':
+        query = query.join(Recipe.type).order_by(sort_order_function(Type.name))
+    elif sort_by == 'class':
+        query = query.join(Recipe.item).join(Item.class_).order_by(sort_order_function(Type.name))
+
+    pagination = query.paginate(page, per_page=per_page, error_out=False)
 
     recipes = pagination.items
 

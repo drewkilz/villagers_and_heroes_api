@@ -12,6 +12,7 @@ class CategoryEnum(Enum):
 
 
 class Class(Enum):
+    ALL = 'All'
     WARRIOR = 'Warrior'
     WIZARD = 'Wizard'
     HUNTER = 'Hunter'
