@@ -1,4 +1,4 @@
-from flask import Blueprint, Flask
+from flask import Blueprint, Flask, jsonify
 from flask_cors import CORS
 
 from configuration import ENV_CORS_ORIGIN
@@ -17,3 +17,10 @@ api = ApiBlueprint('api', __name__)
 
 # Imported here to avoid circular dependencies
 from app.api import authentication, items, recipes, crafting, categories
+
+
+@api.route('/')
+def get():
+    return jsonify({
+        'alive': True
+    })
