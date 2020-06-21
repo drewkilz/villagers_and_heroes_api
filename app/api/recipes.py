@@ -1,5 +1,5 @@
 from flask import jsonify, request, current_app, url_for, abort
-from sqlalchemy import asc, desc, text
+from sqlalchemy import asc, desc
 from sqlalchemy_filters import apply_filters
 
 from app.api import api
@@ -40,7 +40,6 @@ def get_recipes():
     query = Recipe.query
 
     for current_filter in filter_:
-        # current_filter['model'] = 'Recipe'
         field = current_filter['field']
         if field in ('skill', 'type', 'class', 'subclass'):
             current_filter['field'] = '{}_id'.format(current_filter['field'])

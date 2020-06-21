@@ -10,5 +10,6 @@ marshmallow
 marshmallow_sqlalchemy
 psycopg2-binary
 python-dotenv
+sqlalchemy
 sqlalchemy_filters
 werkzeug
