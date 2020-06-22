@@ -1,6 +1,6 @@
+from decimal import Decimal
 from typing import Dict
 
-from app.models.cost import Cost
 from app.models.item import Item
 from app.models.recipe import Recipe
 
@@ -10,7 +10,7 @@ class CraftingList:
     components: Dict[str, Recipe] = {}
     refined: Dict[str, Recipe] = {}
     items: Dict[str, Item] = {}
-    cost: Cost = Cost()
+    cost: Decimal = Decimal()
 
     def __init__(self):
         self.reset(list_=True)
@@ -28,4 +28,4 @@ class CraftingList:
         self.components = {}
         self.refined = {}
         self.items = {}
-        self.cost = Cost()
+        self.cost = Decimal()
