@@ -39,14 +39,14 @@ def get_recipes():
 
     query = Recipe.query
 
-    for current_filter in filter_:
-        field = current_filter['field']
-        if field in ('skill', 'type', 'class', 'subclass'):
-            current_filter['field'] = '{}_id'.format(current_filter['field'])
-            if field in ('class', 'subclass'):
-                current_filter['model'] = 'Item'
-
     if filter_:
+        for current_filter in filter_:
+            field = current_filter['field']
+            if field in ('skill', 'type', 'class', 'subclass'):
+                current_filter['field'] = '{}_id'.format(current_filter['field'])
+                if field in ('class', 'subclass'):
+                    current_filter['model'] = 'Item'
+
         query = apply_filters(query, filter_)
 
     if sort_by == 'name':
