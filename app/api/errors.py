@@ -1,6 +1,6 @@
 from http import HTTPStatus
 
-from flask import jsonify, request
+from flask import jsonify
 
 from app.api import api
 
@@ -17,8 +17,8 @@ def unauthorized(message):
     return response
 
 
-@api.app_errorhandler(404)
+@api.app_errorhandler(HTTPStatus.NOT_FOUND)
 def page_not_found(e):
     response = jsonify({'error': 'not found', 'description': e.description})
-    response.status_code = 404
+    response.status_code = HTTPStatus.NOT_FOUND
     return response
