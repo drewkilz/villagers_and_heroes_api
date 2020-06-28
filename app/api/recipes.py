@@ -1,4 +1,6 @@
-from flask import jsonify, request, current_app, url_for, abort
+from http import HTTPStatus
+
+from flask import jsonify, request, current_app, url_for
 from sqlalchemy import asc, desc
 from sqlalchemy_filters import apply_filters
 
@@ -20,7 +22,8 @@ def get_recipe(id_or_name):
     recipe = Recipe.query.filter_by(**filter_).first()
 
     if recipe is None:
-        abort(404)
+        # Returning no content as 404s are considered errors and cause logging on the UI side
+        return '', HTTPStatus.NO_CONTENT
 
     return RecipeSchema().dump(recipe)
 

@@ -1,4 +1,6 @@
-from flask import jsonify, request, current_app, url_for, abort
+from http import HTTPStatus
+
+from flask import jsonify, request, current_app, url_for
 
 from app.api import api
 from app.models.item import Item
@@ -16,7 +18,8 @@ def get_item(id_or_name):
     item = Item.query.filter_by(**filter_).first()
 
     if item is None:
-        abort(404)
+        # Returning no content as 404s are considered errors and cause logging on the UI side
+        return '', HTTPStatus.NO_CONTENT
 
     return ItemSchema().dump(item)
 

@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 from flask import jsonify, abort
 from sqlalchemy_filters import apply_filters
 
@@ -19,7 +21,8 @@ def get_category(id_or_name):
     category = Category.query.filter_by(**filter_).first()
 
     if category is None:
-        abort(404)
+        # Returning no content as 404s are considered errors and cause logging on the UI side
+        return '', HTTPStatus.NO_CONTENT
 
     return CategorySchema().dump(category)
 
@@ -43,7 +46,8 @@ def get_skills(name):
     elif name == 'Village':
         enum = VillageSkill
     else:
-        abort(404)
+        # Returning no content as 404s are considered errors and cause logging on the UI side
+        return '', HTTPStatus.NO_CONTENT
 
     skill_names = []
 
