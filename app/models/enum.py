@@ -53,14 +53,14 @@ class CraftingType(Enum):
     REFINED = 'Refined Ingredients'
     TOOL = 'Crafting Tools'
     SPECIAL = 'Special Recipes'
-    COMPONENTS = 'Crafting Components'
+    COMPONENT = 'Crafting Components'
     NECKLACE = "Crafter's Necklaces"
 
     POWDER = 'Metal Powder and Mineral Oil'
     EMBROIDERY = 'Cloth Embroidery and Leather Stitching'
     RESIN = 'Wood Resins and Pitch'
 
-    FOOD = 'Cooked Foods and Baked Goods'
+    FOOD = 'Cooked Food and Baked Goods'
     HEALTH = 'Health Potions'
     MANA = 'Mana Potions'
     DRAM = 'Drams'
@@ -93,6 +93,8 @@ class ItemType(Enum):
     ARMOR = 'Armor'
     TOOL = 'Tool'
     CONSUMABLE = 'Consumable'
+    HARVEST = 'Harvest'
+    QUEST = 'Quest Item'
 
 
 class Rarity(Enum):

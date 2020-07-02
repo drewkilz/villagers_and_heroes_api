@@ -8,7 +8,7 @@ from typing import Type as Type_
 from dacite.exceptions import MissingValueError
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
+from sqlalchemy.exc import IntegrityError
 
 from app import create_app, sql_alchemy
 from app.data.item import Item
@@ -29,11 +29,11 @@ class Data:
     def __load_data(file_path: str, data_class: Type_[Object], model_class: Type_[LoadMixin], name: str):
         with open(file_path, encoding='utf-8-sig') as file:
             reader = DictReader(file)
-            count = 0
+            total_count = 0
             for _ in reader:
-                count += 1
+                total_count += 1
             file.seek(0)
-            print('Loading {} {}...'.format(count, name))
+            print('Loading {} {}...'.format(total_count, name))
 
             count = 0
             reader = DictReader(file)
@@ -41,11 +41,17 @@ class Data:
                 try:
                     data_object = data_class.from_dict(row)
                 except (MissingValueError, ValueError) as e:
-                    raise ValueError('Failed to retrieve data from file: "{}", line: {}. Error: {}'.format(
-                        file_path, reader.line_num + 1, e))
+                    raise ValueError('Failed to retrieve data from file: "{}", line: {}, row: {}. Error: {}'.format(
+                        file_path, reader.line_num, row, e))
 
-                model_class.load(data_object)
+                try:
+                    model_class.load(data_object)
+                except IntegrityError as e:
+                    raise ValueError('Failed to load data from file: "{}", line: {}, data_object: {}. Error: {}'.format(
+                        file_path, reader.line_num, data_object, e))
                 count += 1
+
+                print('Loaded {} of {} {}: {}'.format(count, total_count, name, data_object.name))
 
             print('Loaded {} {}.'.format(count, name))
 

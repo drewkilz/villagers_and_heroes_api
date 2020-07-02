@@ -43,7 +43,7 @@ def _calculate(list_: CraftingList, recipe: Recipe, quantity: int, options: Craf
 
             if sub_recipe.type.name == CraftingType.REFINED.value:
                 current_list = list_.refined
-            elif sub_recipe.type.name == CraftingType.COMPONENTS.value:
+            elif sub_recipe.type.name == CraftingType.COMPONENT.value:
                 current_list = list_.components
             else:
                 raise ValueError(
