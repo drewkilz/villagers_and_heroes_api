@@ -53,6 +53,8 @@ class Item(sql_alchemy.Model, QuantityMixin, LoadMixin):
             return 50
         elif self.name == WATER:
             return 1000
+        elif self.name == SALVAGE_KIT:
+            return 30
         else:
             return None
 
