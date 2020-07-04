@@ -22,9 +22,6 @@ def create_app(config_name: str):
     app.url_map.converters['str_or_int'] = StringOrIntConverter
     app.json_encoder = Encoder
 
-    from app.main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
-
     from app.api import api as api_blueprint
     api_blueprint.init_api(app)
     app.register_blueprint(api_blueprint, url_prefix='/api/v1')
