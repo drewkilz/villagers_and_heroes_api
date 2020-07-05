@@ -63,3 +63,10 @@ Flask
     - Run a flask shell to load the flask application and be able to utilize the objects for debugging, testing, etc.
     
             $ flask shell
+
+Tesseract
+---------
+Tesseract is an open source text recognition (OCR) engine used for parsing screenshots from the game for the village
+tools.
+
+https://github.com/tesseract-ocr/tessdoc/blob/master/Home.md

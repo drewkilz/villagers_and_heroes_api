@@ -8,7 +8,10 @@ gunicorn
 itsdangerous
 marshmallow
 marshmallow_sqlalchemy
+numpy
+opencv-python
 psycopg2-binary
+pytesseract
 python-dotenv
 sqlalchemy
 sqlalchemy_filters
