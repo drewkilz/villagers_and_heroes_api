@@ -2,17 +2,21 @@ import os
 from app import create_app, sql_alchemy
 from app.data import Data
 from app.models.category import Category
+from app.models.character import Character
 from app.models.enum import CategoryEnum, SkillType, VillageSkill, CraftingType, ItemType, Class, Rarity, \
-    CraftingSkill, GatheringSkill
+    CraftingSkill, GatheringSkill, Server, VillageRank
 from app.models.ingredient import Ingredient
 from app.models.item import Item
 from app.models.recipe import Recipe
+from app.models.village import Village  # Out of order to disable circular import errors
+from app.models.roster import Roster as RosterData
 from app.models.schemas.category import CategorySchema
 from app.models.schemas.ingredient import IngredientSchema
 from app.models.schemas.item import ItemSchema
 from app.models.schemas.recipe import RecipeSchema
 from app.models.schemas.type import TypeSchema
 from app.models.type import Type
+from app.village.roster import Roster
 from configuration import ENV_FLASK_CONFIGURATION, DEVELOPMENT_KEY
 # Out of order to disable circular import errors
 from app.api.authentication import Authenticator
@@ -33,7 +37,8 @@ def make_shell_context():
                 ItemType=ItemType, Class=Class, Rarity=Rarity, CraftingSkill=CraftingSkill,
                 GatheringSkill=GatheringSkill, Data=Data, ItemSchema=ItemSchema, CategorySchema=CategorySchema,
                 TypeSchema=TypeSchema, RecipeSchema=RecipeSchema, IngredientSchema=IngredientSchema,
-                Authenticator=Authenticator)
+                Authenticator=Authenticator, Roster=Roster, Character=Character, Village=Village, RosterData=RosterData,
+                Server=Server, VillageRank=VillageRank)
 
 
 if __name__ == '__main__':

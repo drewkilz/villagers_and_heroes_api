@@ -1,4 +1,6 @@
 import copy
+import os
+import platform
 from typing import Union
 
 import cv2
@@ -6,6 +8,7 @@ import numpy as np
 import pytesseract
 
 DEFAULT_THRESHOLD = 0.01
+DEFAULT_WHITELIST = '"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 "'
 
 
 def find_image(small_image: Union[str, np.ndarray], large_image: Union[str, np.ndarray],
@@ -34,26 +37,41 @@ def find_image(small_image: Union[str, np.ndarray], large_image: Union[str, np.n
     return matches
 
 
-def get_data(row_dimensions, image, configuration=None):
+def get_data(row_dimensions, image, whitelist=None):
     data = []
 
-    if not configuration:
-        configuration = '-c load_system_dawg=false -c load_freq_dawg=false --psm 7'
-    else:
-        configuration += ' -c load_system_dawg=false -c load_freq_dawg=false --psm 7'
+    if not whitelist:
+        whitelist = DEFAULT_WHITELIST
 
-    for row_dimension in row_dimensions:
+    # Utilize the customized trained data file for Villagers & Heroes fonts
+    # Remove the dictionaries as we are trying to parse fantasy names
+    # Add a whitelist of characters
+    # Change the page segmentation mode to "7 - Treat the image as a single text line."
+    configuration = '-l vnh ' \
+                    '-c load_system_dawg=false ' \
+                    '-c load_freq_dawg=false ' \
+                    '-c tessedit_char_whitelist={} ' \
+                    '--psm 7'.format(whitelist)
+
+    # cv2.imwrite('app/village/roster/images/examples/1_subimage.png', image)
+
+    for index, row_dimension in enumerate(row_dimensions):
         text_image = image[row_dimension['top']:row_dimension['bottom'], 0:image.shape[:2][0]]
+
+        # cv2.imwrite('app/village/roster/images/examples/1_subimage_{}.png'.format(index), text_image)
 
         # Convert to greyscale, then grab the value
         text_image_gray = cv2.cvtColor(text_image, cv2.COLOR_BGR2GRAY)
         data.append(pytesseract.image_to_string(text_image_gray, config=configuration))
 
+        # import os
+        # os.rename('tessinput.tif', 'app/village/roster/images/examples/1_subimage_{}.tif'.format(index))
+
     return data
 
 
-def parse_and_add_data(data, row_dimensions, key, image, parse_function, configuration=None):
-    new_data = parse_function(row_dimensions, image, configuration=configuration)
+def parse_and_add_data(data, row_dimensions, key, image, parse_function, whitelist=None):
+    new_data = parse_function(row_dimensions, image, whitelist=whitelist)
     if not data:
         for i in range(0, len(new_data)):
             data.append({})
@@ -73,3 +91,22 @@ def show_image(image):
 
     # The image is only displayed if we call this
     cv2.waitKey(0)
+
+
+def creation_date(path_to_file):
+    """
+    Try to get the date that a file was created, falling back to when it was
+    last modified if that isn't possible.
+    See http://stackoverflow.com/a/39501288/1709587 for explanation.
+    """
+
+    if platform.system() == 'Windows':
+        return os.path.getctime(path_to_file)
+    else:
+        stat = os.stat(path_to_file)
+        try:
+            return stat.st_birthtime
+        except AttributeError:
+            # We're probably on Linux. No easy way to get creation dates here,
+            # so we'll settle for when its content was last modified.
+            return stat.st_mtime

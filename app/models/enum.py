@@ -9,6 +9,8 @@ class CategoryEnum(Enum):
     SKILL = 'Skill'
     SKILL_TYPE = 'Skill Type'
     SUB_CLASS = 'Sub Class'
+    SERVER = 'Server'
+    VILLAGE_RANK = 'Village Rank'
 
 
 class Class(Enum):
@@ -141,3 +143,19 @@ class GatheringSkill(Enum):
 class VillageSkill(Enum):
     GARDENING = Skill.GARDENING.value
     RANCHING = Skill.RANCHING.value
+
+
+class VillageRank(Enum):
+    CITIZEN = 'Citizen'
+    PEER = 'Peer'
+    LORD = 'Lord'
+    DEPUTY = 'Deputy'
+    MAYOR = 'Mayor'
+
+
+class Server(Enum):
+    US1 = 'America 1'
+    US2 = 'America 2'
+    US3 = 'America 3'
+    EUROPE = 'Europe'
+    GERMANY = 'Germany'

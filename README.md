@@ -70,3 +70,5 @@ Tesseract is an open source text recognition (OCR) engine used for parsing scree
 tools.
 
 https://github.com/tesseract-ocr/tessdoc/blob/master/Home.md
+
+See /tesseract for details on how I trained tesseract to recognize the V&H font for improved accuracy.

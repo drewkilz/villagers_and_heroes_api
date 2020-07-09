@@ -2,3 +2,10 @@ venv
 .idea
 __pycache__
 data.sqlite
+tesseract/langdata_lstm
+*.checkpoint
+vnh_checkpoint
+tesseract/tessdata_best
+tesseract/tesseract
+tesseract/train
+eng.lstm

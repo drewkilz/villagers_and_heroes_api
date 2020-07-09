@@ -15,12 +15,15 @@ from app.data.item import Item
 from app.data.object import Object
 from app.data.recipe import Recipe
 from app.models.category import Category
+from app.models.character import Character  # included for auto-creation in db
 from app.models.enum import ItemType, CraftingType, Class, Rarity, CategoryEnum, SkillType, Skill, \
-    SubClass
+    SubClass, Server, VillageRank
 from app.models.item import Item as ModelItem
 from app.models.load import LoadMixin
 from app.models.recipe import Recipe as ModelRecipe
+from app.models.roster import Roster  # included for auto-creation in db
 from app.models.type import Type
+from app.models.village import Village  # included for auto-creation in db
 from configuration import ENV_FLASK_CONFIGURATION, DEVELOPMENT_KEY
 
 
@@ -65,6 +68,8 @@ class Data:
             (CategoryEnum.SKILL_TYPE, SkillType),
             (CategoryEnum.SKILL, Skill),
             (CategoryEnum.SUB_CLASS, SubClass),
+            (CategoryEnum.SERVER, Server),
+            (CategoryEnum.VILLAGE_RANK, VillageRank),
         ]
 
         print('Loading types in {} categories...'.format(len(categories)))
