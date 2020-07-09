@@ -38,7 +38,6 @@ def get_categories():
 
 @api.route('/skills/<name>')
 def get_skills(name):
-    enum = None
     if name == 'Crafting':
         enum = CraftingSkill
     elif name == 'Gathering':
