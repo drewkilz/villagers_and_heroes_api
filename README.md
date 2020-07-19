@@ -3,60 +3,6 @@ Villagers and Heroes API
 
 Code related to the game Villagers &amp; Heroes
 
-Heroku
-------
-Heroku (www.heroku.com) is used for hosting the application.
-- Create the application in Heroku
-
-        $ heroku login
-        $ heroku create vnh-api
-        $ git push heroku master
-        $ heroku ps:scale web=1
-
-- Open the application in a browser (just a shortcut)
-        
-        $ heroku open
-
-- Viewing logs
-
-        $ heroku logs --tail
-
-- List information about the dynos used
-
-        $ heroku ps
-        
-- Run locally (CTRL+C to kill)
-
-        $ heroku local
-
-- Upload latest changes to Heroku
-    - NOTE: I have updated the configuration on Heroku to automatically deploy when changes are checked in to master, so no need to use the below command anymore
-
-            $ git push heroku master
-
-- Configuration variables
-    - Variables can be set on the heroku application that will then be available as environment variables. To list the
-    current configuration:
-    
-            $ heroku config
-    
-    - To set the configuration variable "TIMES" to "2":
-    
-            $ heroku config:set TIMES=2
-
-- Bash
-    - Connects to the bash prompt on the Heroku server for running commands
-        
-            $ heroku run bash
-        
-- Database
-    - I set up a PostgreSQL instance to be utilized via the Heroku UI - the connection string can be found in the
-    DATABASE_URL configuration variable
-    
-    - Additionally, I created a script that can be run that will populate the database
-
-            $ heroku run ./create_database.sh
-
 Flask
 -----
 - Shell
@@ -72,3 +18,151 @@ tools.
 https://github.com/tesseract-ocr/tessdoc/blob/master/Home.md
 
 See /tesseract for details on how I trained tesseract to recognize the V&H font for improved accuracy.
+
+Digital Ocean (Deployment)
+--------------------------
+The API is currently deployed on Digital Ocean.
+
+Original deployment was done via:
+    
+    # SSH into the droplet on Digital Ocean
+    ssh -i /Users/drewkilz/.ssh/id_rsa_do root@159.65.108.26
+    
+    # Add a user to run the applications
+    adduser vnh
+    
+    # Make the user a superuser
+    usermod -aG sudo vnh
+    
+    # Allow OpenSSH through the Firewall
+    ufw allow OpenSSH
+    ufw enable
+    
+    # Switch to the vnh user
+    su vnh
+    
+    # install nginx and python and npm - had to do one at a time as there were errors when trying to install all at once
+    sudo apt update
+    sudo apt install nodejs
+    sudo apt install nginx
+    sudo apt install npm
+    sudo apt install python3-pip
+    sudo apt install python3-dev
+    sudo apt install build-essential
+    sudo apt install libssl-dev
+    sudo apt install libffi-dev
+    sudo apt install python3-setuptools
+    sudo apt install python3-venv
+    sudo apt install libsm6 libxext6 libxrender-dev
+    sudo apt autoremove
+    
+    # Enable HTTPS and HTTPS traffic
+    sudo ufw allow 'Nginx Full'
+    
+    # Change to home directory
+    cd ~
+
+    # git clone our repo
+    git clone https://github.com/drewkilz/villagers_and_heroes_api.git
+    
+    # Create a virtual environment and activate it
+    python3.6 -m venv venv
+    source venv/bin/activate
+    
+    # Install requirements
+    pip install wheel
+    pip install -r requirements.txt
+    
+    # Create the database
+    ./create_database.sh
+    
+    # Create automatic startup of the API
+    sudo vi /etc/systemd/system/villagers_and_heroes_api.service
+    
+        [Unit]
+        Description=Gunicorn instance to serve Villagers and Heroes API
+        After=network.target
+    
+        [Service]
+        User=vnh
+        Group=www-data
+        WorkingDirectory=/home/vnh/villagers_and_heroes_api
+        Environment="PATH=/home/vnh/villagers_and_heroes_api/venv/bin"
+        Environment="CORS_ORIGIN=['http://159.65.108.26', 'https://159.65.108.26', 'http://vnh.thespottedlynx.com', 'https://vnh.thespottedlynx.com', 'http://www.vnh.thespottedlynx.com', 'https://www.vnh.thespottedlynx.com']"
+        Environment="FLASK_CONFIGURATION=production"
+        Environment="FLASK_ENV=production"
+        Environment="JSONIFY_PRETTYPRINT_REGULAR=True"
+        Environment="SECRET_KEY=..."    # Insert the secret key in ...
+        ExecStart=/home/vnh/villagers_and_heroes_api/venv/bin/gunicorn --workers 3 --bind unix:villagers_and_heroes_api.sock -m 007 villagers_and_heroes:app
+    
+        [Install]
+        WantedBy=multi-user.target
+    
+    # Start and enable the service, then check its status
+    sudo systemctl start villagers_and_heroes_api
+    sudo systemctl enable villagers_and_heroes_api
+    sudo systemctl status villagers_and_heroes_api
+    
+    # Configure nginx to proxy requests
+    sudo vi /etc/nginx/sites-available/villagers_and_heroes_api
+    
+        server {
+            listen 80;
+            server_name vnh.thespottedlynx.com www.vnh.thespottedlynx.com 159.65.108.26;
+    
+            location / {
+                include proxy_params;
+                proxy_pass http://unix:/home/vnh/villagers_and_heroes_api/villagers_and_heroes_api.sock;
+            }
+        }
+    
+    sudo ln -s /etc/nginx/sites-available/villagers_and_heroes_api /etc/nginx/sites-enabled
+    
+    # Since we added server names, uncomment server_names_hash_bucket_size directive to avoid collisions
+    sudo vi /etc/nginx/nginx.conf
+    
+    sudo nginx -t
+    sudo systemctl restart nginx
+    
+    # Add HTTPS
+    sudo add-apt-repository ppa:certbot/certbot
+    sudo apt install python-certbot-nginx
+    # TODO: Stopped here - this isn't working since the domain isn't working
+    sudo certbot --nginx -d vnh.thespottedlynx.com -d www.vnh.thespottedlynx.com
+
+Useful commands on the server:
+    
+    # Log files
+    sudo less /var/log/nginx/error.log: checks the Nginx error logs.
+    sudo less /var/log/nginx/access.log: checks the Nginx access logs.
+    sudo journalctl -f -u nginx: checks the Nginx process logs.
+    sudo journalctl -f -u villagers_and_heroes_api: checks your Flask app’s Gunicorn logs.
+    
+    # Reboot the machine
+    sudo reboot
+    
+    # systemd commands
+    sudo systemctl daemon-reload
+    sudo systemctl restart villagers_and_heroes_api
+
+    # nginx commands
+    sudo systemctl stop nginx
+    sudo systemctl start nginx
+    sudo systemctl restart nginx
+    sudo systemctl reload nginx  # Reloads without dropping connections - useful for configuration changes, for example
+    sudo systemctl disable nginx  # To disable automatic startup when server boots
+    sudo systemctl enable nginx  # Re-enable automatic startup
+    
+    # nginx files
+    /var/www/html: The actual web content, which by default only consists of the default Nginx page you saw earlier, is served out of the /var/www/html directory. This can be changed by altering Nginx configuration files.
+    /etc/nginx: The Nginx configuration directory. All of the Nginx configuration files reside here.
+    /etc/nginx/nginx.conf: The main Nginx configuration file. This can be modified to make changes to the Nginx global configuration.
+    /etc/nginx/sites-available/: The directory where per-site server blocks can be stored. Nginx will not use the configuration files found in this directory unless they are linked to the sites-enabled directory. Typically, all server block configuration is done in this directory, and then enabled by linking to the other directory.
+    /etc/nginx/sites-enabled/: The directory where enabled per-site server blocks are stored. Typically, these are created by linking to configuration files found in the sites-available directory.
+    /etc/nginx/snippets: This directory contains configuration fragments that can be included elsewhere in the Nginx configuration. Potentially repeatable configuration segments are good candidates for refactoring into snippets.
+    /var/log/nginx/access.log: Every request to your web server is recorded in this log file unless Nginx is configured to do otherwise.
+    /var/log/nginx/error.log: Any Nginx errors will be recorded in this log.
+
+When a change is made, to update the server:
+
+    ./bin/update.sh
