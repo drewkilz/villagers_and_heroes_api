@@ -16,3 +16,4 @@ python-dotenv
 sqlalchemy
 sqlalchemy_filters
 werkzeug
+wheel
