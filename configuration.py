@@ -51,7 +51,7 @@ class TestingConfiguration(Configuration):
 
 
 class ProductionConfiguration(Configuration):
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or Configuration.SQLALCHEMY_DATABASE_URI
+    pass
 
 
 CONFIGURATION = {
