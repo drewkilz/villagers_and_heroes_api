@@ -1,15 +1,10 @@
 from flask import Blueprint, Flask, jsonify
 from flask_cors import CORS
 
-from configuration import ENV_CORS_ORIGIN
-
 
 class ApiBlueprint(Blueprint):
     def init_api(self, app: Flask):
-        cors_origin = app.config[ENV_CORS_ORIGIN]
-        if cors_origin:
-            # Enable CORS if specified
-            CORS(self, origins=cors_origin)
+        CORS(self)
 
 
 api = ApiBlueprint('api', __name__)
