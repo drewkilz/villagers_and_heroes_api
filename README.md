@@ -41,11 +41,9 @@ Original deployment was done via:
     # Switch to the vnh user
     su vnh
     
-    # install nginx and python and npm - had to do one at a time as there were errors when trying to install all at once
+    # install nginx and python - had to do one at a time as there were errors when trying to install all at once
     sudo apt update
-    sudo apt install nodejs
     sudo apt install nginx
-    sudo apt install npm
     sudo apt install python3-pip
     sudo apt install python3-dev
     sudo apt install build-essential
@@ -88,7 +86,6 @@ Original deployment was done via:
         Group=www-data
         WorkingDirectory=/home/vnh/villagers_and_heroes_api
         Environment="PATH=/home/vnh/villagers_and_heroes_api/venv/bin"
-        Environment="CORS_ORIGIN=['http://159.65.108.26', 'https://159.65.108.26', 'http://vnh.thespottedlynx.com', 'https://vnh.thespottedlynx.com', 'http://www.vnh.thespottedlynx.com', 'https://www.vnh.thespottedlynx.com']"
         Environment="FLASK_CONFIGURATION=production"
         Environment="FLASK_ENV=production"
         Environment="JSONIFY_PRETTYPRINT_REGULAR=True"
@@ -104,19 +101,37 @@ Original deployment was done via:
     sudo systemctl status villagers_and_heroes_api
     
     # Configure nginx to proxy requests
-    sudo vi /etc/nginx/sites-available/villagers_and_heroes_api
-    
+    sudo vi /etc/nginx/sites-available/villagers_and_heroes
+        map $http_origin $cors_origin_header {
+            default "";
+            "http://159.65.108.26" "$http_origin";
+            "http://vnh.thespottedlynx.com" "$http_origin";
+            "http://www.vnh.thespottedlynx.com" "$http_origin";
+        }
+        
+        map $http_origin $cors_cred {
+            default "";
+            "http://159.65.108.26" "true";
+            "http://vnh.thespottedlynx.com" "true";
+            "http://www.vnh.thespottedlynx.com" "true";
+        }
+
         server {
             listen 80;
             server_name vnh.thespottedlynx.com www.vnh.thespottedlynx.com 159.65.108.26;
+        
+            add_header Access-Control-Allow-Origin $cors_origin_header always;
+            add_header Access-Control-Allow-Credentials $cors_cred;
+            add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
+            add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
     
-            location / {
+            location /api {
                 include proxy_params;
                 proxy_pass http://unix:/home/vnh/villagers_and_heroes_api/villagers_and_heroes_api.sock;
             }
         }
     
-    sudo ln -s /etc/nginx/sites-available/villagers_and_heroes_api /etc/nginx/sites-enabled
+    sudo ln -s /etc/nginx/sites-available/villagers_and_heroes /etc/nginx/sites-enabled
     
     # Since we added server names, uncomment server_names_hash_bucket_size directive to avoid collisions
     sudo vi /etc/nginx/nginx.conf
@@ -127,8 +142,58 @@ Original deployment was done via:
     # Add HTTPS
     sudo add-apt-repository ppa:certbot/certbot
     sudo apt install python-certbot-nginx
-    # TODO: Stopped here - this isn't working since the domain isn't working
     sudo certbot --nginx -d vnh.thespottedlynx.com -d www.vnh.thespottedlynx.com
+        # option 2 - redirect
+    
+    # nginx will have been updated to redirect traffic over SSL, but need to add CORS info in
+    sudo vi /etc/nginx/sites-available/villagers_and_heroes
+        map $http_origin $cors_origin_header {
+            default "";
+            "https://vnh.thespottedlynx.com" "$http_origin";
+            "https://www.vnh.thespottedlynx.com" "$http_origin";
+        }
+        
+        map $http_origin $cors_cred {
+            default "";
+            "https://vnh.thespottedlynx.com" "true";
+            "https://www.vnh.thespottedlynx.com" "true";
+        }
+        
+        server {
+            server_name vnh.thespottedlynx.com www.vnh.thespottedlynx.com;
+        
+            add_header Access-Control-Allow-Origin $cors_origin_header always;
+            add_header Access-Control-Allow-Credentials $cors_cred;
+            add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
+            add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
+        
+            location /api {
+                include proxy_params;
+                proxy_pass http://unix:/home/vnh/villagers_and_heroes_api/villagers_and_heroes_api.sock;
+            }
+        
+            listen 443 ssl; # managed by Certbot
+            ssl_certificate /etc/letsencrypt/live/vnh.thespottedlynx.com/fullchain.pem; # managed by Certbot
+            ssl_certificate_key /etc/letsencrypt/live/vnh.thespottedlynx.com/privkey.pem; # managed by Certbot
+            include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+            ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+        }
+    
+        server {
+            if ($host = www.vnh.thespottedlynx.com) {
+                return 301 https://$host$request_uri;
+            } # managed by Certbot
+        
+        
+            if ($host = vnh.thespottedlynx.com) {
+                return 301 https://$host$request_uri;
+            } # managed by Certbot
+        
+        
+            listen 80;
+            server_name vnh.thespottedlynx.com www.vnh.thespottedlynx.com;
+            return 404; # managed by Certbot
+        }
 
 Useful commands on the server:
     
@@ -162,6 +227,21 @@ Useful commands on the server:
     /etc/nginx/snippets: This directory contains configuration fragments that can be included elsewhere in the Nginx configuration. Potentially repeatable configuration segments are good candidates for refactoring into snippets.
     /var/log/nginx/access.log: Every request to your web server is recorded in this log file unless Nginx is configured to do otherwise.
     /var/log/nginx/error.log: Any Nginx errors will be recorded in this log.
+
+    # Certificate information
+    - Congratulations! Your certificate and chain have been saved at:
+    /etc/letsencrypt/live/vnh.thespottedlynx.com/fullchain.pem
+    
+    Your key file has been saved at:
+    /etc/letsencrypt/live/vnh.thespottedlynx.com/privkey.pem
+    
+    Your cert will expire on 2020-10-19. To obtain a new or tweaked
+    version of this certificate in the future, simply run certbot again
+    with the "certonly" option. To non-interactively renew *all* of
+    your certificates, run "certbot renew"
+    
+    # Delete a certificate
+    $ sudo certbot delete
 
 When a change is made, to update the server:
 
