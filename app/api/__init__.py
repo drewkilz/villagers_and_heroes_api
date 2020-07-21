@@ -17,10 +17,3 @@ api = ApiBlueprint('api', __name__)
 
 # Imported here to avoid circular dependencies
 from app.api import authentication, items, recipes, categories, roster
-
-
-@api.route('/')
-def get():
-    return jsonify({
-        'alive': True
-    })
