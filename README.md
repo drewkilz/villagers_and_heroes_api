@@ -194,6 +194,10 @@ Original deployment was done via:
             server_name vnh.thespottedlynx.com www.vnh.thespottedlynx.com;
             return 404; # managed by Certbot
         }
+       
+       # Set up git to not ask for password when updating
+       git config --global credential.helper store
+       git pull origin master
 
 Useful commands on the server:
     
