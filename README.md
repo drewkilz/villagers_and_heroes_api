@@ -90,6 +90,7 @@ Original deployment was done via:
         Environment="FLASK_ENV=production"
         Environment="JSONIFY_PRETTYPRINT_REGULAR=True"
         Environment="SECRET_KEY=..."    # Insert the secret key in ...
+        Environment="CORS_ORIGIN=['https://www.vnh.thespottedlynx.com', 'https://vnh.thespottedlynx.com']"
         ExecStart=/home/vnh/villagers_and_heroes_api/venv/bin/gunicorn --workers 3 --bind unix:villagers_and_heroes_api.sock -m 007 villagers_and_heroes:app
     
         [Install]
