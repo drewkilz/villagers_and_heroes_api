@@ -11,6 +11,7 @@ class CategoryEnum(Enum):
     SUB_CLASS = 'Sub Class'
     SERVER = 'Server'
     VILLAGE_RANK = 'Village Rank'
+    VILLAGE_PROJECT = 'Village Project'
 
 
 class Class(Enum):
@@ -159,3 +160,25 @@ class Server(Enum):
     US3 = 'America 3'
     EUROPE = 'Europe'
     GERMANY = 'Germany'
+
+
+class VillageProject(Enum):
+    KITCHEN = 'Kitchen'
+    SMITHY = 'Smithy'
+    TAILORY = 'Tailory'
+    WOODSHOP = 'Woodshop'
+    VAULT = 'Vault'
+    EMPYREAN_MACHINE = 'Empyrean Machine'
+    TRAINING_GROUNDS = 'Training Grounds'
+    COG_DEPO = 'COG Depo'
+    YORICK = 'Statue of Yorick'
+    ANABELLE = 'Statue of Anabelle'
+    FREDERICH = 'Statue of Frederich'
+    KINGS = 'Guardian Kings Statue'
+    SOILWORKS = 'Soilworks'
+    ARBORETUM = 'Arboretum'
+    FISH_HATCHERY = 'Fish Hatchery'
+    SUGAR_MILL = 'Sugar Mill'
+    SEEDLING_NURSERY = 'Seedling Nursery'
+    GEOLOGY_LAB = 'Geology Lab'
+    WELLSPRING = 'Wellspring'

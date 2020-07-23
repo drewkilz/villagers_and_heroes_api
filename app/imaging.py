@@ -40,6 +40,15 @@ def find_image(small_image: Union[str, np.ndarray], large_image: Union[str, np.n
 def get_data(row_dimensions, image, whitelist=None):
     data = []
 
+    for index, row_dimension in enumerate(row_dimensions):
+        text_image = image[row_dimension['top']:row_dimension['bottom'], 0:image.shape[:2][0]]
+
+        data.append(get_line(text_image, whitelist=whitelist))
+
+    return data
+
+
+def get_line(text_image, whitelist=None):
     if not whitelist:
         whitelist = DEFAULT_WHITELIST
 
@@ -53,21 +62,10 @@ def get_data(row_dimensions, image, whitelist=None):
                     '-c tessedit_char_whitelist={} ' \
                     '--psm 7'.format(whitelist)
 
-    # cv2.imwrite('app/village/roster/images/examples/1_subimage.png', image)
+    # Convert to greyscale, then grab the value
+    text_image_gray = cv2.cvtColor(text_image, cv2.COLOR_BGR2GRAY)
 
-    for index, row_dimension in enumerate(row_dimensions):
-        text_image = image[row_dimension['top']:row_dimension['bottom'], 0:image.shape[:2][0]]
-
-        # cv2.imwrite('app/village/roster/images/examples/1_subimage_{}.png'.format(index), text_image)
-
-        # Convert to greyscale, then grab the value
-        text_image_gray = cv2.cvtColor(text_image, cv2.COLOR_BGR2GRAY)
-        data.append(pytesseract.image_to_string(text_image_gray, config=configuration))
-
-        # import os
-        # os.rename('tessinput.tif', 'app/village/roster/images/examples/1_subimage_{}.tif'.format(index))
-
-    return data
+    return pytesseract.image_to_string(text_image_gray, config=configuration)
 
 
 def parse_and_add_data(data, row_dimensions, key, image, parse_function, whitelist=None):

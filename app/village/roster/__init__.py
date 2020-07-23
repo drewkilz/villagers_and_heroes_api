@@ -1,4 +1,3 @@
-import os.path
 from datetime import datetime
 from time import perf_counter
 from typing import Dict, List
@@ -7,16 +6,31 @@ import cv2
 import numpy as np
 
 from app import sql_alchemy
-from app.imaging import find_image, parse_and_add_data, get_data, creation_date
+from app.imaging import find_image, parse_and_add_data, get_data, creation_date, get_line
+from app.models.character import Character
+from app.models.enum import Server
+from app.models.roster import Roster as RosterModel
+from app.models.type import Type
+from app.models.village import Village
 from app.village.roster.rank import Rank
 from app.village.roster.entry import Entry  # Out of order due to circular references
 
 
 class Roster:
-    def __init__(self):
+    def __init__(self, server_name):
         self._data = {}
         self._image_paths = []
         self._time = 0
+        self._village_name = None
+        self._server_name = server_name
+
+    @classmethod
+    def is_valid(cls, image_path):
+        image = cv2.imread(image_path)
+
+        header_village_roster_location = find_image('app/village/roster/images/Header-Village-Roster.png', image)[0]
+
+        return True if header_village_roster_location else False
 
     def add_image(self, image_path):
         self._image_paths.append(image_path)
@@ -30,7 +44,7 @@ class Roster:
         self._data = {}
 
         for image_path in self._image_paths:
-            data = self._get_roster_data(image_path)
+            self._village_name, data = self._get_roster_data(image_path)
 
             for row in data:
                 if row['name'] not in self._data:
@@ -54,14 +68,26 @@ class Roster:
     def processing_time(self):
         return self._time
 
+    @property
+    def village(self):
+        return self._village_name
+
+    @property
+    def server(self):
+        return self._server_name
+
     def _get_roster_data(self, image_path):
         data = []
         row_dimensions = []
 
         image = cv2.imread(image_path)
 
-        if not find_image('app/village/roster/images/Header-Village-Roster.png', image):
-            return data
+        header_village_roster_location = find_image('app/village/roster/images/Header-Village-Roster.png', image)[0]
+
+        village_name_image = image[header_village_roster_location[1] - 72:header_village_roster_location[1] - 48,
+                                   header_village_roster_location[0] - 18:header_village_roster_location[0] + 140]
+
+        village_name = get_line(village_name_image)
 
         level_header_image = cv2.imread('app/village/roster/images/Header-Level.png')
 
@@ -81,8 +107,6 @@ class Roster:
         parse_and_add_data(
             data, row_dimensions, 'name', image[data_start_y:data_end_y, name_location[0]:level_location[0] - 1],
             get_data)
-            # load_system_dawg=false load_freq_dawg=false
-            # tessedit_char_whitelist=0123456789,tessedit_write_images=true
 
         # Pull a sub-image of just the levels and parse
         parse_and_add_data(
@@ -90,7 +114,7 @@ class Roster:
             image[data_start_y:data_end_y, level_location[0]:level_location[0] + level_header_image.shape[:2][1]],
             get_data, whitelist='0123456789')
 
-        return data
+        return village_name, data
 
     @staticmethod
     def _get_rank_data(row_dimensions: List[Dict], image: np.ndarray, whitelist=None):
@@ -127,45 +151,39 @@ class Roster:
 
         return ranks_found
 
-    def test(self):
-        from app.models.character import Character
-        from app.models.enum import Server
-        from app.models.roster import Roster as RosterData
-        from app.models.type import Type
-        from app.models.village import Village
-        from app.models.category import Category
+    def save(self):
+        try:
+            # Set up the village
+            village = Village.query.filter_by(name=self._village_name).first()
+            if village is None:
+                village = Village(name=self._village_name, server=Type.query.filter_by(name=self._server_name).first())
+                sql_alchemy.session.add(village)
 
-        for filename in ('1', '2', '3', '4', '5'):
-            self.add_image('app/village/roster/images/examples/{}.png'.format(filename))
-        self.process()
+            for entry_ in sorted(self.entries.values(), key=lambda entry__: entry__.rank.order):
+                print(entry_)
 
-        print('Processing time: {} seconds'.format(self.processing_time))
+                # Set up or fetch the character
+                character = Character.query.filter_by(
+                    name=entry_.name, server=Type.query.filter_by(name=Server.US2.value).first()).first()
+                if character is None:
+                    character = Character(name=entry_.name,
+                                          server=Type.query.filter_by(name=Server.US2.value).first())
+                    sql_alchemy.session.add(character)
 
-        print('Found {} roster entries.'.format(self.count))
+                # Set up or fetch the roster entry
+                roster = RosterModel.query.filter_by(
+                    village=village, character=character, timestamp=entry_.timestamp).first()
+                if not roster:
+                    roster = RosterModel(village=village, character=character, level=entry_.level,
+                                         rank=Type.query.filter_by(name=entry_.rank.name.value).first(),
+                                         custom_rank_name=entry_.rank.custom_name, timestamp=entry_.timestamp)
+                else:
+                    roster.level = entry_.level
+                    roster.rank = Type.query.filter_by(name=entry_.rank.name.value).first()
+                    roster.custom_rank_name = entry_.rank.custom_name
 
-        # Set up the village
-        village = Village.query.filter_by(name='Alternatives').first()
-        if village is None:
-            village = Village(name='Alternatives', server=Type.query.filter_by(name=Server.US2.value).first())
-            sql_alchemy.session.add(village)
+                sql_alchemy.session.add(roster)
 
-        for entry_ in sorted(self.entries.values(), key=lambda entry__: entry__.rank.order):
-            print(entry_)
-
-            # Set up or fetch the character
-            character = Character.query.filter_by(name=entry_.name,
-                                                  server=Type.query.filter_by(name=Server.US2.value).first()).first()
-            if character is None:
-                character = Character(name=entry_.name, server=Type.query.filter_by(name=Server.US2.value).first())
-                sql_alchemy.session.add(character)
-
-            roster = RosterData(village=village, character=character, level=entry_.level,
-                                rank=Type.query.filter_by(name=entry_.rank.name.value).first(),
-                                custom_rank_name=entry_.rank.custom_name, timestamp=entry_.timestamp)
-            sql_alchemy.session.add(roster)
-
-        sql_alchemy.session.commit()
-
-
-if __name__ == '__main__':
-    Roster().test()
+            sql_alchemy.session.commit()
+        finally:
+            sql_alchemy.session.remove()

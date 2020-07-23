@@ -17,7 +17,7 @@ from app.data.recipe import Recipe
 from app.models.category import Category
 from app.models.character import Character  # included for auto-creation in db
 from app.models.enum import ItemType, CraftingType, Class, Rarity, CategoryEnum, SkillType, Skill, \
-    SubClass, Server, VillageRank
+    SubClass, Server, VillageRank, VillageProject
 from app.models.item import Item as ModelItem
 from app.models.load import LoadMixin
 from app.models.recipe import Recipe as ModelRecipe
@@ -70,6 +70,7 @@ class Data:
             (CategoryEnum.SUB_CLASS, SubClass),
             (CategoryEnum.SERVER, Server),
             (CategoryEnum.VILLAGE_RANK, VillageRank),
+            (CategoryEnum.VILLAGE_PROJECT, VillageProject)
         ]
 
         print('Loading types in {} categories...'.format(len(categories)))

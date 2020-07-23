@@ -14,6 +14,7 @@ ENV_SQLALCHEMY_TRACK_MODIFICATIONS = 'SQLALCHEMY_TRACK_MODIFICATIONS'
 ENV_VNH_ITEMS_PER_PAGE = 'VNH_ITEMS_PER_PAGE'
 ENV_VNH_RECIPES_PER_PAGE = 'VNH_RECIPES_PER_PAGE'
 ENV_CORS_ORIGIN = 'CORS_ORIGIN'
+ENV_VNH_UPLOAD_FOLDER = 'VNH_UPLOAD_FOLDER'
 
 
 class Configuration:
@@ -23,6 +24,7 @@ class Configuration:
     SQLALCHEMY_TRACK_MODIFICATIONS: str = os.environ.get(ENV_SQLALCHEMY_TRACK_MODIFICATIONS) or False
     VNH_ITEMS_PER_PAGE: int = 20
     VNH_RECIPES_PER_PAGE: int = 20
+    VNH_UPLOAD_FOLDER = os.environ.get(ENV_VNH_UPLOAD_FOLDER) or 'uploads'
     CORS_ORIGIN: list = []
 
     def init_app(self, app: Flask):
@@ -40,6 +42,9 @@ class Configuration:
                 self.CORS_ORIGIN = eval(cors_origin)
             except SyntaxError as e:
                 raise EnvironmentError('Error in configuration of {}: {}'.format(ENV_CORS_ORIGIN, e))
+
+        # Create the upload folder, if needed
+        os.makedirs(self.VNH_UPLOAD_FOLDER, exist_ok=True)
 
 
 class DevelopmentConfiguration(Configuration):
