@@ -244,3 +244,8 @@ Useful commands on the server:
 When a change is made, to update the server:
 
     ./bin/update.sh
+
+Server Maintenance:
+    
+    # Every now and again you'll need to update the server packages to remove security vulnerabilities
+    apt full-upgrade  # may require sudo access, depending on the upgrade
