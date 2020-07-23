@@ -35,8 +35,6 @@ class UploadJob(Thread):
 
         parser = VillageImageParser(self.server)
 
-        saved_image_paths = []
-
         try:
             for image_path, date in zip(self.image_paths, self.dates):
                 timestamp = datetime.fromtimestamp(int(date) / 1000.0, tz=timezone.utc)
@@ -50,7 +48,7 @@ class UploadJob(Thread):
             parser.save()
         finally:
             # Clean up temporary uploaded files
-            for path in saved_image_paths:
+            for path in self.image_paths:
                 if os.path.exists(path):
                     os.remove(path)
 
@@ -71,7 +69,7 @@ class UploadJob(Thread):
 def upload_images():
     # TODO: Need to accommodate for the dates - i.e. if 10 files provided from different dates, don't group together
     #  just by name, but also by date
-    # TODO: The July 5th data imported as July 6th ... and the times aren't respecting AM/PC - all wonky!
+    # TODO: The July 5th data imported as July 6th ... and the times aren't respecting AM/PM - all wonky!
     if 'images' not in request.files:
         return jsonify({'error': 'No "images" in provided files.'}), HTTPStatus.BAD_REQUEST
 
