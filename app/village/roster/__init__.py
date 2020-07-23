@@ -154,7 +154,8 @@ class Roster:
     def save(self):
         try:
             # Set up the village
-            village = Village.query.filter_by(name=self._village_name).first()
+            village = Village.query.filter_by(name=self._village_name,
+                                              server=Type.query.filter_by(name=self._server_name).first()).first()
             if village is None:
                 village = Village(name=self._village_name, server=Type.query.filter_by(name=self._server_name).first())
                 sql_alchemy.session.add(village)
