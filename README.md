@@ -105,14 +105,12 @@ Original deployment was done via:
     sudo vi /etc/nginx/sites-available/villagers_and_heroes
         map $http_origin $cors_origin_header {
             default "";
-            "http://159.65.108.26" "$http_origin";
             "http://vnh.thespottedlynx.com" "$http_origin";
             "http://www.vnh.thespottedlynx.com" "$http_origin";
         }
         
         map $http_origin $cors_cred {
             default "";
-            "http://159.65.108.26" "true";
             "http://vnh.thespottedlynx.com" "true";
             "http://www.vnh.thespottedlynx.com" "true";
         }
@@ -120,12 +118,7 @@ Original deployment was done via:
         server {
             listen 80;
             server_name vnh.thespottedlynx.com www.vnh.thespottedlynx.com 159.65.108.26;
-        
-            add_header Access-Control-Allow-Origin $cors_origin_header always;
-            add_header Access-Control-Allow-Credentials $cors_cred;
-            add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
-            add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
-    
+
             location /api {
                 include proxy_params;
                 proxy_pass http://unix:/home/vnh/villagers_and_heroes_api/villagers_and_heroes_api.sock;
