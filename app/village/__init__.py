@@ -6,13 +6,15 @@ from app.village.roster import Roster
 
 class VillageImageParser:
     def __init__(self, server_name):
+        self._original_images = []
         self._image_paths = []
         self._time = 0
         self._server_name = server_name
         self.roster = None
         self.projects = None
 
-    def add_image(self, image_path):
+    def add_image(self, original_image, image_path):
+        self._original_images.append(original_image)
         self._image_paths.append(image_path)
 
     def process(self):
@@ -24,15 +26,15 @@ class VillageImageParser:
         self.roster = None
         self.projects = None
 
-        for image_path in self._image_paths:
+        for original_image, image_path in zip(self._original_images, self._image_paths):
             if Roster.is_valid(image_path):
                 if self.roster is None:
                     self.roster = Roster(self._server_name)
-                self.roster.add_image(image_path)
+                self.roster.add_image(original_image, image_path)
             elif Projects.is_valid(image_path):
                 if self.projects is None:
                     self.projects = Projects(self._server_name)
-                self.projects.add_image(image_path)
+                self.projects.add_image(original_image, image_path)
 
         if self.roster:
             self.roster.process()

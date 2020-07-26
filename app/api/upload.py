@@ -12,6 +12,7 @@ from werkzeug.utils import secure_filename
 from app import create_app
 from app.api import api
 from app.village import VillageImageParser
+from app.village.roster.snapshot import SnapshotSchema
 from configuration import ENV_VNH_UPLOAD_FOLDER, ENV_FLASK_CONFIGURATION, DEVELOPMENT_KEY
 
 _jobs = {}
@@ -36,12 +37,12 @@ class UploadJob(Thread):
         parser = VillageImageParser(self.server)
 
         try:
-            for image_path, date in zip(self.image_paths, self.dates):
+            for original_image, image_path, date in zip(self.original_images, self.image_paths, self.dates):
                 timestamp = datetime.fromtimestamp(int(date) / 1000.0, tz=timezone.utc)
                 modified_time = time.mktime(timestamp.astimezone().timetuple())
                 os.utime(image_path, (modified_time, modified_time))
 
-                parser.add_image(image_path)
+                parser.add_image(original_image, image_path)
 
             parser.process()
 
@@ -56,19 +57,18 @@ class UploadJob(Thread):
             'processing_time': parser.processing_time,
             'village': parser.village,
             'server': parser.server,
-            'roster': {
-                'count': parser.roster.count
-            },
-            'images': [image.filename for image in self.original_images]
+            'roster': [],
+            'projects': []
         }
+
+        if parser.roster and parser.roster.snapshots:
+            data['roster'] = SnapshotSchema(many=True).dump(parser.roster.snapshots)
 
         self.return_value = jsonify(data)
 
 
 @api.route('/village/upload/', methods=['POST'])
 def upload_images():
-    # TODO: Need to accommodate for the dates - i.e. if 10 files provided from different dates, don't group together
-    #  just by name, but also by date
     if 'images' not in request.files:
         return jsonify({'error': 'No "images" in provided files.'}), HTTPStatus.BAD_REQUEST
 
@@ -85,14 +85,16 @@ def upload_images():
 
     # Save the files locally
     saved_image_paths = []
+    original_image_paths = []
     for image in images:
+        original_image_paths.append(image.filename)
         new_filename = secure_filename(image.filename)
         new_filepath = os.path.join(current_app.config[ENV_VNH_UPLOAD_FOLDER], new_filename)
         saved_image_paths.append(new_filepath)
         image.save(new_filepath)
 
     # Create a job and add to the queue
-    job = UploadJob(images, saved_image_paths, dates, server)
+    job = UploadJob(original_image_paths, saved_image_paths, dates, server)
     _jobs[job.id] = job
     job.start()
 

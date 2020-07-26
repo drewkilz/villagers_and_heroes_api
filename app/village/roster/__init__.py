@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from time import perf_counter
 from typing import Dict, List
 
@@ -12,13 +12,21 @@ from app.models.enum import Server
 from app.models.roster import Roster as RosterModel
 from app.models.type import Type
 from app.models.village import Village
+from app.village.roster.snapshot import Snapshot
 from app.village.roster.rank import Rank
 from app.village.roster.entry import Entry  # Out of order due to circular references
 
 
 class Roster:
+    # Default to 15 minutes - if two images have timestamps > 15 minutes, then they are two difference sessions,
+    #  otherwise, they are assumed from the same session
+    DATETIME_THRESHOLD_IN_SECONDS = 15 * 60
+
+    _snapshots: List[Snapshot]
+
     def __init__(self, server_name):
-        self._data = {}
+        self._snapshots = []
+        self._original_images = []
         self._image_paths = []
         self._time = 0
         self._village_name = None
@@ -32,7 +40,8 @@ class Roster:
 
         return True if header_village_roster_location else False
 
-    def add_image(self, image_path):
+    def add_image(self, original_image, image_path):
+        self._original_images.append(original_image)
         self._image_paths.append(image_path)
 
     def process(self):
@@ -41,28 +50,48 @@ class Roster:
         if not self._image_paths:
             return
 
-        self._data = {}
+        self._snapshots = []
 
-        for image_path in self._image_paths:
+        for original_image, image_path in zip(self._original_images, self._image_paths):
             self._village_name, data = self._get_roster_data(image_path)
 
+            current_timestamp = datetime.fromtimestamp(creation_date(image_path), tz=timezone.utc)
+
+            # Find the snapshot this image belongs to by comparing timestamps - if within a threshold, then part of the
+            #  same snapshot
+            current_snapshot = None
+            found_snapshot = False
+            for snapshot_ in self._snapshots:
+                for timestamp in snapshot_.timestamps:
+                    if abs(timestamp - current_timestamp).seconds <= self.DATETIME_THRESHOLD_IN_SECONDS:
+                        current_snapshot = snapshot_
+                        found_snapshot = True
+                        break
+            if current_snapshot is None:
+                current_snapshot = Snapshot()
+
+            # Add this image to the snapshot
+            current_snapshot.original_images.append(original_image)
+            current_snapshot.images.append(image_path)
+            current_snapshot.timestamps.append(current_timestamp)
+
             for row in data:
-                if row['name'] not in self._data:
-                    self._data[row['name']] = Entry(
+                if row['name'] not in current_snapshot.entries:
+                    # Only add new entries - if a previous entry exists, keep it instead
+                    current_snapshot.entries[row['name']] = Entry(
                         int(row['level']),
                         row['name'],
                         Rank(row['rank']['name'], row['rank']['custom_name']),
-                        datetime.utcfromtimestamp(creation_date(image_path)))
+                        current_timestamp)
+
+            if not found_snapshot:
+                self._snapshots.append(current_snapshot)
 
         self._time = perf_counter() - start
 
     @property
-    def count(self):
-        return len(self._data)
-
-    @property
-    def entries(self):
-        return self._data
+    def snapshots(self):
+        return self._snapshots
 
     @property
     def processing_time(self):
@@ -160,31 +189,34 @@ class Roster:
                 village = Village(name=self._village_name, server=Type.query.filter_by(name=self._server_name).first())
                 sql_alchemy.session.add(village)
 
-            for entry_ in sorted(self.entries.values(), key=lambda entry__: entry__.rank.order):
-                print(entry_)
+            for snapshot_ in self._snapshots:
+                print(snapshot_)
 
-                # Set up or fetch the character
-                character = Character.query.filter_by(
-                    name=entry_.name, server=Type.query.filter_by(name=Server.US2.value).first()).first()
-                if character is None:
-                    character = Character(name=entry_.name,
-                                          server=Type.query.filter_by(name=Server.US2.value).first())
-                    sql_alchemy.session.add(character)
+                for entry_ in sorted(snapshot_.entries.values(), key=lambda entry__: entry__.rank.order):
+                    print(entry_)
 
-                # Set up or fetch the roster entry
-                roster = RosterModel.query.filter_by(
-                    village=village, character=character, timestamp=entry_.timestamp).first()
-                if not roster:
-                    roster = RosterModel(village=village, character=character, level=entry_.level,
-                                         rank=Type.query.filter_by(name=entry_.rank.name.value).first(),
-                                         custom_rank_name=entry_.rank.custom_name, timestamp=entry_.timestamp)
-                else:
-                    roster.level = entry_.level
-                    roster.rank = Type.query.filter_by(name=entry_.rank.name.value).first()
-                    roster.custom_rank_name = entry_.rank.custom_name
+                    # Set up or fetch the character
+                    character = Character.query.filter_by(
+                        name=entry_.name, server=Type.query.filter_by(name=Server.US2.value).first()).first()
+                    if character is None:
+                        character = Character(name=entry_.name,
+                                              server=Type.query.filter_by(name=Server.US2.value).first())
+                        sql_alchemy.session.add(character)
 
-                sql_alchemy.session.add(roster)
+                    # Set up or fetch the roster entry
+                    roster = RosterModel.query.filter_by(
+                        village=village, character=character, timestamp=entry_.timestamp).first()
+                    if not roster:
+                        roster = RosterModel(village=village, character=character, level=entry_.level,
+                                             rank=Type.query.filter_by(name=entry_.rank.name.value).first(),
+                                             custom_rank_name=entry_.rank.custom_name, timestamp=entry_.timestamp)
+                    else:
+                        roster.level = entry_.level
+                        roster.rank = Type.query.filter_by(name=entry_.rank.name.value).first()
+                        roster.custom_rank_name = entry_.rank.custom_name
 
-            sql_alchemy.session.commit()
+                    sql_alchemy.session.add(roster)
+
+                sql_alchemy.session.commit()
         finally:
             sql_alchemy.session.remove()
