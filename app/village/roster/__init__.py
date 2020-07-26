@@ -63,7 +63,8 @@ class Roster:
             found_snapshot = False
             for snapshot_ in self._snapshots:
                 for timestamp in snapshot_.timestamps:
-                    if abs(timestamp - current_timestamp).seconds <= self.DATETIME_THRESHOLD_IN_SECONDS:
+                    timedelta = abs(timestamp - current_timestamp)
+                    if timedelta.days == 0 and timedelta.seconds <= self.DATETIME_THRESHOLD_IN_SECONDS:
                         current_snapshot = snapshot_
                         found_snapshot = True
                         break
@@ -190,11 +191,7 @@ class Roster:
                 sql_alchemy.session.add(village)
 
             for snapshot_ in self._snapshots:
-                print(snapshot_)
-
                 for entry_ in sorted(snapshot_.entries.values(), key=lambda entry__: entry__.rank.order):
-                    print(entry_)
-
                     # Set up or fetch the character
                     character = Character.query.filter_by(
                         name=entry_.name, server=Type.query.filter_by(name=Server.US2.value).first()).first()
