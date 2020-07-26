@@ -38,7 +38,7 @@ class UploadJob(Thread):
         try:
             for image_path, date in zip(self.image_paths, self.dates):
                 timestamp = datetime.fromtimestamp(int(date) / 1000.0, tz=timezone.utc)
-                modified_time = time.mktime(timestamp.timetuple())
+                modified_time = time.mktime(timestamp.astimezone().timetuple())
                 os.utime(image_path, (modified_time, modified_time))
 
                 parser.add_image(image_path)
@@ -69,7 +69,6 @@ class UploadJob(Thread):
 def upload_images():
     # TODO: Need to accommodate for the dates - i.e. if 10 files provided from different dates, don't group together
     #  just by name, but also by date
-    # TODO: The July 5th data imported as July 6th ... and the times aren't respecting AM/PM - all wonky!
     if 'images' not in request.files:
         return jsonify({'error': 'No "images" in provided files.'}), HTTPStatus.BAD_REQUEST
 
