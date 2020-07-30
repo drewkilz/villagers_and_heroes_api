@@ -18,4 +18,4 @@ api = ApiBlueprint('api', __name__)
 
 
 # Imported here to avoid circular dependencies
-from app.api import authentication, items, recipes, categories, roster, upload
+from app.api import authentication, items, recipes, categories, roster, upload, equipment

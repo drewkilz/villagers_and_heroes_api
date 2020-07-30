@@ -12,6 +12,7 @@ class CategoryEnum(Enum):
     SERVER = 'Server'
     VILLAGE_RANK = 'Village Rank'
     VILLAGE_PROJECT = 'Village Project'
+    VILLAGER_CLASS = 'Villager Class'
 
 
 class Class(Enum):
@@ -182,3 +183,35 @@ class VillageProject(Enum):
     SEEDLING_NURSERY = 'Seedling Nursery'
     GEOLOGY_LAB = 'Geology Lab'
     WELLSPRING = 'Wellspring'
+
+
+class VillagerClass(Enum):
+    ALL = 'All'
+    SMITH = 'Smith'
+    CHEF = 'Chef'
+    CARPENTER = 'Carpenter'
+    TAILOR = 'Tailor'
+
+    def get_crafting_skill(self):
+        if self == self.SMITH:
+            return CraftingSkill.SMITHING
+        elif self == self.CHEF:
+            return CraftingSkill.COOKING
+        elif self == self.CARPENTER:
+            return CraftingSkill.WOODCRAFTING
+        elif self == self.TAILOR:
+            return CraftingSkill.TAILORING
+
+        return None
+
+    def get_special_recipe(self):
+        if self == self.SMITH:
+            return 'Steelforged Torc'
+        elif self == self.CHEF:
+            return 'Whispering Secrets Ring'
+        elif self == self.CARPENTER:
+            return 'Ring of the Woodland Wit'
+        elif self == self.TAILOR:
+            return "Spellwoven Weaver's Braid"
+
+        return None
