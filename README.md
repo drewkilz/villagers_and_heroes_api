@@ -72,7 +72,7 @@ Original deployment was done via:
     pip install -r requirements.txt
     
     # Create the database
-    ./create_database.sh
+    ./bin/create_database.sh
     
     # Create automatic startup of the API
     sudo vi /etc/systemd/system/villagers_and_heroes_api.service
