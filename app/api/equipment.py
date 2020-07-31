@@ -51,7 +51,8 @@ def get_equipment():
         _add_data(data, class_query, CraftingType.GLOVE)
         _add_data(data, class_query, CraftingType.BOOTS)
         _add_data(data, class_query, CraftingType.HATS)
-        _add_data(data, class_query, CraftingType.TRINKET)
+        
+        _add_data(data, query, CraftingType.TRINKET)
 
         # Preparations
         _add_data(data, query, CraftingType.POWDER)
