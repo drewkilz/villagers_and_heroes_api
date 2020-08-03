@@ -1,10 +1,14 @@
+from typing import TYPE_CHECKING
+
 from app import sql_alchemy
-from app.data import Recipe as DataRecipe
 from app.models.ingredient import Ingredient
 from app.models.item import Item
 from app.models.load import LoadMixin
 from app.models.quantity import QuantityMixin
 from app.models.enum import CategoryEnum
+
+if TYPE_CHECKING:
+    from app.data import Recipe as DataRecipe
 
 
 class Recipe(sql_alchemy.Model, QuantityMixin, LoadMixin):
@@ -29,7 +33,7 @@ class Recipe(sql_alchemy.Model, QuantityMixin, LoadMixin):
             self.id, self.name, self.skill, self.type, self.level, self.cost, self.item)
 
     @classmethod
-    def load(cls, data: DataRecipe):
+    def load(cls, data: 'DataRecipe'):
         recipe = Recipe(
             name=data.name,
             type=cls.get_type(data.type, CategoryEnum.CRAFTING_TYPE),

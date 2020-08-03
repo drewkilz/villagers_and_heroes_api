@@ -1,8 +1,12 @@
+from typing import TYPE_CHECKING
+
 from app import sql_alchemy
-from app.data import Item as DataItem
 from app.models.load import LoadMixin
 from app.models.quantity import QuantityMixin
 from app.models.enum import ItemType, CategoryEnum
+
+if TYPE_CHECKING:
+    from app.data import Item as DataItem
 
 SALVAGE_KIT = 'Salvage Kit'
 WATER = 'Water'
@@ -59,7 +63,7 @@ class Item(sql_alchemy.Model, QuantityMixin, LoadMixin):
             return None
 
     @classmethod
-    def load(cls, data: DataItem):
+    def load(cls, data: 'DataItem'):
         item = Item(
             name=data.name,
             type=cls.get_type(data.type, CategoryEnum.ITEM_TYPE),
