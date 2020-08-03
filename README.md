@@ -1,7 +1,7 @@
 Villagers and Heroes API
 ========================
 
-Code related to the game Villagers &amp; Heroes
+API for accessing and uploading data related to the game Villagers &amp; Heroes
 
 Flask
 -----
