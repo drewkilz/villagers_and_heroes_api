@@ -60,9 +60,9 @@ def get_equipment():
         # Consumables
         _add_data(data, Recipe.query.filter(Recipe.name.like('% Mana Roll')), CraftingType.FOOD, level, num_levels,
                   key='Mana Roll')
-        _add_data(data, Recipe.query.filter(Recipe.name.like('% Fish %')), CraftingType.FOOD, level, num_levels,
+        _add_data(data, Recipe.query.filter(Recipe.name.like('%Fish%')), CraftingType.FOOD, level, num_levels,
                   key='Fish Dinner')
-        _add_data(data, Recipe.query.filter(or_(Recipe.name.like('% Breakfast'), Recipe.name.like('% Brunch'))),
+        _add_data(data, Recipe.query.filter(or_(Recipe.name.like('%Breakfast'), Recipe.name.like('%Brunch'))),
                   CraftingType.FOOD, level, num_levels, key='Breakfast')
         _add_data(data, Recipe.query, CraftingType.DRAM, level, num_levels)
         _add_data(data, Recipe.query, CraftingType.MANA, level, num_levels)
