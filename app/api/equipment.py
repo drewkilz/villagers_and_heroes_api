@@ -31,46 +31,46 @@ def get_equipment():
 
     data = {}
 
-    query = Recipe.query.filter(Recipe.level.in_(range(level, level + num_levels)))
-
     if hero_class or hero_sub_class:
         class_query = None
         if hero_class:
-            class_query = query.join(Recipe.item).filter(Item.class_id.in_(hero_class))
+            class_query = Recipe.query.join(Recipe.item).filter(Item.class_id.in_(hero_class))
         if hero_sub_class:
             class_query = class_query.join(Recipe.item).filter(Item.subclass_id.in_(hero_sub_class)) if class_query \
-                else query.join(Recipe.item).filter(Item.subclass_id.in_(hero_sub_class))
+                else Recipe.query.join(Recipe.item).filter(Item.subclass_id.in_(hero_sub_class))
 
         # Hero Class / Sub-Class Equipment
-        _add_data(data, class_query, CraftingType.ARMOR)
+        _add_data(data, class_query, CraftingType.ARMOR, level, num_levels)
         _add_data(data, class_query,
                   [CraftingType.AXE, CraftingType.BOW, CraftingType.MACE, CraftingType.STAFF, CraftingType.SWORD],
-                  key='Weapon')
-        _add_data(data, class_query, CraftingType.SHIELD)
-        _add_data(data, class_query, CraftingType.BELT)
-        _add_data(data, class_query, CraftingType.GLOVE)
-        _add_data(data, class_query, CraftingType.BOOTS)
-        _add_data(data, class_query, CraftingType.HATS)
+                  level, num_levels, key='Weapon')
+        _add_data(data, class_query, CraftingType.SHIELD, level, num_levels)
+        _add_data(data, class_query, CraftingType.BELT, level, num_levels)
+        _add_data(data, class_query, CraftingType.GLOVE, level, num_levels)
+        _add_data(data, class_query, CraftingType.BOOTS, level, num_levels)
+        _add_data(data, class_query, CraftingType.HATS, level, num_levels)
         
-        _add_data(data, query, CraftingType.TRINKET)
+        _add_data(data, Recipe.query, CraftingType.TRINKET, level, num_levels)
 
         # Preparations
-        _add_data(data, query, CraftingType.POWDER)
-        _add_data(data, query, CraftingType.EMBROIDERY)
-        _add_data(data, query, CraftingType.RESIN)
+        _add_data(data, Recipe.query, CraftingType.POWDER, level, num_levels)
+        _add_data(data, Recipe.query, CraftingType.EMBROIDERY, level, num_levels)
+        _add_data(data, Recipe.query, CraftingType.RESIN, level, num_levels)
 
         # Consumables
-        _add_data(data, query.filter(Recipe.name.like('% Mana Roll')), CraftingType.FOOD, key='Mana Roll')
-        _add_data(data, query.filter(Recipe.name.like('% Fish %')), CraftingType.FOOD, key='Fish Dinner')
-        _add_data(data, query.filter(or_(Recipe.name.like('% Breakfast'), Recipe.name.like('% Brunch'))),
-                  CraftingType.FOOD, key='Breakfast')
-        _add_data(data, query, CraftingType.DRAM)
-        _add_data(data, query, CraftingType.MANA)
-        _add_data(data, query, CraftingType.HEALTH)
+        _add_data(data, Recipe.query.filter(Recipe.name.like('% Mana Roll')), CraftingType.FOOD, level, num_levels,
+                  key='Mana Roll')
+        _add_data(data, Recipe.query.filter(Recipe.name.like('% Fish %')), CraftingType.FOOD, level, num_levels,
+                  key='Fish Dinner')
+        _add_data(data, Recipe.query.filter(or_(Recipe.name.like('% Breakfast'), Recipe.name.like('% Brunch'))),
+                  CraftingType.FOOD, level, num_levels, key='Breakfast')
+        _add_data(data, Recipe.query, CraftingType.DRAM, level, num_levels)
+        _add_data(data, Recipe.query, CraftingType.MANA, level, num_levels)
+        _add_data(data, Recipe.query, CraftingType.HEALTH, level, num_levels)
 
     # Consumables for both heroes and villagers
-    _add_data(data, query.filter(Recipe.name.like('% Pie')), CraftingType.FOOD, key='Pie')
-    _add_data(data, query, CraftingType.TRIAD)
+    _add_data(data, Recipe.query.filter(Recipe.name.like('% Pie')), CraftingType.FOOD, level, num_levels, key='Pie')
+    _add_data(data, Recipe.query, CraftingType.TRIAD, level, num_levels)
 
     if villager_class:
         # Convert villager class to skills
@@ -85,29 +85,41 @@ def get_equipment():
                                                               category=Category.query.filter_by(
                                                                   name=CategoryEnum.SKILL.value).first()).first())
 
-        villager_query = query.filter(Recipe.skill_id.in_(
+        villager_query = Recipe.query.filter(Recipe.skill_id.in_(
             [villager_class_skill.id for villager_class_skill in villager_class_skills]))
 
         # Villager Class Equipment
-        _add_data(data, villager_query, CraftingType.TOOL)
-        _add_data(data, villager_query, CraftingType.NECKLACE)
+        _add_data(data, villager_query, CraftingType.TOOL, level, num_levels)
+        _add_data(data, villager_query, CraftingType.NECKLACE, level, num_levels)
         _add_data(data, villager_query.filter(Recipe.name.in_([
             VillagerClass.CARPENTER.get_special_recipe(),
             VillagerClass.CHEF.get_special_recipe(),
             VillagerClass.SMITH.get_special_recipe(),
             VillagerClass.TAILOR.get_special_recipe()]
-        )), CraftingType.SPECIAL, key='Villager Special')
+        )), CraftingType.SPECIAL, level, num_levels, key='Villager Special')
 
     return jsonify(data)
 
 
-def _add_data(data, query: BaseQuery, type_: Union[CraftingType, List[CraftingType]], key: str = None):
-    recipes = _crafting_type_query(query, type_).all()
+def _add_data(data, query: BaseQuery, type_: Union[CraftingType, List[CraftingType]], level: int, num_levels: int,
+              key: str = None):
+    recipes_query = _crafting_type_query(query, type_)
 
-    if recipes:
+    recipes = recipes_query.filter(Recipe.level.in_(range(level, level + num_levels))).all()
+    previous = recipes_query.filter(Recipe.level < level).order_by(Recipe.level.desc()).all()
+    next_ = recipes_query.filter(Recipe.level > (level + num_levels - 1)).order_by(Recipe.level.asc()).all()
+
+    previous_level = previous[0].level if previous else None
+    next_level = next_[0].level if next_ else None
+
+    if recipes or previous or next_:
         if key is None:
             key = type_[0].value if isinstance(type_, List) else type_.value
-        data[key] = [RecipeSchema().dump(recipe) for recipe in recipes]
+        data[key] = {
+            'recipes': [RecipeSchema().dump(recipe) for recipe in recipes],
+            'previous': [RecipeSchema().dump(recipe) for recipe in previous if recipe.level == previous_level],
+            'next': [RecipeSchema().dump(recipe) for recipe in next_ if recipe.level == next_level]
+        }
 
 
 def _crafting_type_query(query: BaseQuery, type_: Union[CraftingType, List[CraftingType]]):
